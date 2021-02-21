@@ -12,13 +12,403 @@
     body {padding:0; margin:0; font-family: 'notokr', 'Arial', AppleGothic, 'dotum', '돋움', sans-serif; line-height:1; color:#555; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust:100%;}
 
     article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {display: block;}
-    .bg {width: 720px; margin: 0 auto;}
+    .wrap {position: relative; width: 720px; margin: 0 auto;}
+    .txt01 {position: absolute; left: 88px; top: 154px;}
+    .txt01 div {margin-bottom: 14px;}
+    .txt01 div img {transform: translateY(-100%); opacity: 0;}
+    .txt01 div:nth-child(1) img {
+      -webkit-animation-name: txtMotion1;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      animation-name: txtMotion1;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+    .txt01 div:nth-child(2) img {
+      -webkit-animation-name: txtMotion1;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      animation-name: txtMotion1;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-delay: 0.3s;
+    }
+    .txt01 div:nth-child(3) img {
+      -webkit-animation-name: txtMotion1;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      animation-name: txtMotion1;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-delay: 0.6s;
+    }
+    @keyframes txtMotion1 {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .txt02 {position: absolute; left: 80px; top: 144px;}
+    .txt02 div {padding: 35px 0 0 4px;}
+    .txt02 div img {margin-top: 10px;}
+    .txt02 div::before {content: ''; position: absolute; left: 0; top: 0; width: 18px; height: 18px; border-radius: 100%; background-color: #f43142; transform: scale(0);}
+    .txt02 div::after {content: ''; position: absolute; left: 0; top: 0; width: 0; height: 2px; background-color: #f43142;}
+    .txt02 div:nth-child(1) {position: absolute; left: 0; top: 249px;}
+    .txt02 div:nth-child(1)::after {left: 9px; top: 9px; transform: rotate(-11deg); transform-origin: left top;}
+    .txt02 div:nth-child(2) {position: absolute; left: 186px; top: 213px;}
+    .txt02 div:nth-child(2)::after {left: 9px; top: 9px; transform: rotate(-23deg); transform-origin: left top;}
+    .txt02 div:nth-child(3) {position: absolute; left: 371px; top: 135px;}
+    .txt02 div:nth-child(3)::after {left: 9px; top: 9px; transform: rotate(-44.5deg); transform-origin: left top;}
+    .txt02 div:nth-child(4) {position: absolute; left: 500px; top: 0; padding: 67px 0 0 0;}
+    .txt02 div:nth-child(4)::before {width: 28px; height: 28px; border-radius: 100%;}
+    .txt02 div:nth-child(4)::after {left: -20px; top: -20px; width: 68px; height: 68px; border-radius: 100%; opacity: 0.1; transform: scale(0);}
+    .txt02 div:nth-child(1)::before {
+      -webkit-animation-name: imgMotion1;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      animation-name: imgMotion1;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+    }
+    .txt02 div:nth-child(2)::before {
+      -webkit-animation-name: imgMotion1;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      animation-name: imgMotion1;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-delay: 1.4s;
+    }
+    .txt02 div:nth-child(3)::before {
+      -webkit-animation-name: imgMotion1;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      animation-name: imgMotion1;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-delay: 1.8s;
+    }
+    .txt02 div:nth-child(4)::before {
+      -webkit-animation-name: imgMotion1;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      animation-name: imgMotion1;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-delay: 2.2s;
+    }
+    @keyframes imgMotion1 {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    .txt02 div:nth-child(1)::after {
+      -webkit-animation-name: imgMotion2;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-name: imgMotion2;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      animation-delay: 1.2s;
+    }
+    .txt02 div:nth-child(2)::after {
+      -webkit-animation-name: imgMotion2;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-name: imgMotion2;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      animation-delay: 1.6s;
+    }
+    .txt02 div:nth-child(3)::after {
+      -webkit-animation-name: imgMotion2;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-name: imgMotion2;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      animation-delay: 2s;
+    }
+    @keyframes imgMotion2 {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 195px;
+      }
+    }
+    .txt02 div:nth-child(4)::after {
+      -webkit-animation-name: imgMotion3;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      -webkit-animation-iteration-count: infinite;
+      animation-name: imgMotion3;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-delay: 2.6s;
+      animation-iteration-count: infinite;
+    }
+    @keyframes imgMotion3 {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    .txt02 div img:nth-child(1) {transform: rotateY(90deg);}
+    .txt02 div:nth-child(1) img:nth-child(1) {
+      -webkit-animation-name: txtMotion2;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      animation-name: txtMotion2;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      animation-delay: 1s;
+    }
+    .txt02 div:nth-child(2) img:nth-child(1) {
+      -webkit-animation-name: txtMotion2;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      animation-name: txtMotion2;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      animation-delay: 1.4s;
+    }
+    .txt02 div:nth-child(3) img:nth-child(1) {
+      -webkit-animation-name: txtMotion2;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      animation-name: txtMotion2;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      animation-delay: 1.8s;
+    }
+    .txt02 div:nth-child(4) img:nth-child(1) {
+      -webkit-animation-name: txtMotion2;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      animation-name: txtMotion2;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      animation-delay: 2.2s;
+    }
+    @keyframes txtMotion2 {
+      0% {
+        transform: rotateY(-90deg);
+      }
+      20% {
+        transform: rotateY(0deg);
+      }
+      40% {
+        transform: rotateY(90deg);
+      }
+      60% {
+        transform: rotateY(180deg);
+      }
+      80% {
+        transform: rotateY(270deg);
+      }
+      100% {
+        transform: rotateY(360deg);
+      }
+    }
+    .txt02 div img:nth-child(2) {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    .txt02 div:nth-child(1) img:nth-child(2) {
+      -webkit-animation-name: txtMotion3;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      animation-name: txtMotion3;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      animation-delay: 1s;
+    }
+    .txt02 div:nth-child(2) img:nth-child(2) {
+      -webkit-animation-name: txtMotion3;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      animation-name: txtMotion3;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      animation-delay: 1.4s;
+    }
+    .txt02 div:nth-child(3) img:nth-child(2) {
+      -webkit-animation-name: txtMotion3;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      animation-name: txtMotion3;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      animation-delay: 1.8s;
+    }
+    .txt02 div:nth-child(4) img:nth-child(2) {
+      -webkit-animation-name: txtMotion3;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      animation-name: txtMotion3;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      animation-delay: 2.2s;
+    }
+    @keyframes txtMotion3 {
+      0% {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .img {position: absolute; left: 0; top: 0;}
+    .img div {position: absolute;}
+    .img div:nth-child(1) {left: 72px; top: 539px;}
+    .img div:nth-child(2) {left: 459px; top: 520px;}
+    .img div:nth-child(3) {left: 575px; top: 539px;}
+    .img div:nth-child(4) {left: 503px; top: 632px;}
+    .img div:nth-child(1) img {
+      transform-origin: right bottom;
+      -webkit-animation-name: imgMotion4;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      -webkit-animation-iteration-count: infinite;
+      animation-name: imgMotion4;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-delay: 2.2s;
+    }
+    @keyframes imgMotion4 {
+      0% {
+        transform: rotate(0);
+      }
+      50% {
+        transform: rotate(10deg);
+      }
+      100% {
+        transform: rotate(0);
+      }
+    }
+    .img div:nth-child(2) img {
+      transform-origin: left bottom;
+      -webkit-animation-name: imgMotion5;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      -webkit-animation-iteration-count: infinite;
+      animation-name: imgMotion5;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-delay: 2.2s;
+    }
+    @keyframes imgMotion5 {
+      0% {
+        transform: rotate(0);
+      }
+      50% {
+        transform: rotate(-10deg);
+      }
+      100% {
+        transform: rotate(0);
+      }
+    }
+    .img div:nth-child(3) img {
+      transform-origin: left bottom;
+      -webkit-animation-name: imgMotion6;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: forwards;
+      -webkit-animation-iteration-count: infinite;
+      animation-name: imgMotion6;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-delay: 2.2s;
+    }
+    @keyframes imgMotion6 {
+      0% {
+        transform: rotate(0);
+      }
+      25% {
+        transform: rotate(5deg);
+      }
+      50% {
+        transform: rotate(-5deg);
+      }
+      75% {
+        transform: rotate(5deg);
+      }
+      100% {
+        transform: rotate(0);
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="bg">
+  <div class="wrap">
     <img src="images/img07.png" alt="">
-    <div></div>
+    <div class="txt01">
+      <div><img src="images/txt09.png" alt=""></div>
+      <div><img src="images/txt10.png" alt=""></div>
+      <div><img src="images/txt11.png" alt=""></div>
+    </div>
+    <div class="txt02">
+      <div>
+        <img src="images/txt01.png" alt="">
+        <img src="images/txt05.png" alt="">
+      </div>
+      <div>
+        <img src="images/txt02.png" alt="">
+        <img src="images/txt06.png" alt="">
+      </div>
+      <div>
+        <img src="images/txt03.png" alt="">
+        <img src="images/txt07.png" alt="">
+      </div>
+      <div>
+        <img src="images/txt04.png" alt="">
+        <img src="images/txt08.png" alt="">
+      </div>
+    </div>
+    <div class="img">
+      <div><img src="images/img01.png" alt=""></div>
+      <div><img src="images/img04.png" alt=""></div>
+      <div><img src="images/img02.png" alt=""></div>
+      <div><img src="images/img03.png" alt=""></div>
+    </div>
   </div>
 </body>
 </html>
