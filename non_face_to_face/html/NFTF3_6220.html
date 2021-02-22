@@ -1,0 +1,182 @@
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="format-detection" content="telephone=no, address=no, email=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Cache-control" content="No-cache">
+        <meta http-equiv="Pragma" content="No-cache">
+        <title>KEB하나은행 - 비대면 계좌개설 신청</title>
+        <link rel="stylesheet" href="../css/nftf_common.css">
+        <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../js/rolldate.js"></script>
+        <script type="text/javascript" src="../js/swiper.js"></script>
+        <script type="text/javascript" src="../js/nftf_common.js"></script>
+    </head>
+    <body>
+        <div class="wrapper j_up_scroll">
+            <header class="steps_area">
+                <button class="back_btn"></button>
+                <h2 class="h_tit">
+                    <ul>
+                        <li class="end"><span></span></li>
+                        <li class="end"><span></span></li>
+                        <li class="end"><span></span></li>
+                        <li class="ing"><span>4 인증</span></li>
+                    </ul>
+                </h2>
+                <button class="h_menu"></button>
+            </header>
+            <div class="contents">
+                <section>
+                    <div class="loading_dot">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p class="pages_tit"><span class="t_mi">본인계좌</span>를 <br>입력해 주세요.</p>
+
+                    <div id="upScroll" class="input_form_group j_focus_group on">
+                        <!-- 금융기관 선택 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup01">금융기관 선택</div>
+								<div class="input_layer">
+									<div id="idInput01" class="input_data j_check_all j_layer_open" layer-target="#layerpopup01"></div>
+								</div>
+							</div>
+						</div>
+                        <!-- //금융기관 선택 -->
+                        
+                        <!-- 계좌번호 -->
+		                <div class="input_form j_focus">
+							<div class="input_wrap">
+								<label for="idInput02" class="input_title j_focus_open">계좌번호</label>
+								<div class="input_txt">
+									<input id="idInput02" class="input_data j_input_value j_check_all" type="number">
+									<button type="button" class="input_data_del j_data_del">삭제</button>
+								</div>
+							</div>
+						</div>
+                        <!-- //계좌번호 -->
+
+                        <!-- 이체금액 -->
+						<div class="input_form j_focus">
+							<div class="input_wrap">
+								<label for="idInput03" class="input_title j_focus_open">이체금액</label>
+								<div class="input_txt input_money">
+									<input id="idInput03" class="input_data placeholder01 j_input_value j_check_all" type="number">
+									<button type="button" class="input_data_del j_data_del">삭제</button>
+									<span class="txt_won">원</span>
+								</div>
+                            </div>
+                            <div class="input_option">
+								<ul class="option_list">
+									<li><a href="#">+1만원</a></li>
+									<li><a href="#">+5만원</a></li>
+									<li><a href="#">+10만원</a></li>
+									<li><a href="#" class="clear">정정</a></li>
+								</ul>
+							</div>
+							<div class="input_error">
+								<p>가입금액은 1만원 이상으로 입력하셔야 합니다.</p>
+							</div>
+						</div>
+                        <!-- //이체금액 -->
+                        
+                        <ul class="list_dot list_dot_type02">
+                            <li><strong>전자금융(인터넷/스마트폰/폰뱅킹/ATM)을 통한 이체</strong>가 가능한 계좌여야 합니다. </li>
+                            <li>예/적금 가입시에는 신규금액으로 이체금액이 고정되고, 이외에는 1만원 이상 만원 단위로 입력할 수 있습니다.</li>
+                            <li>이체금액은 신규계좌로 입금됩니다.</li>
+                        </ul>
+                    </div>
+
+                    <div class="btn_wrap btn_fix j_btn_fix" style="display: none;">
+                        <a href="#none" class="btn_type01">다음</a>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 금융기관 -->
+            <div id="layerpopup01" class="layerpopup">
+                <div class="layer_90 tab_layer">
+                    <div class="layer_contents">
+                        <div class="pop_tit tab_area">
+                            <h5>금융기관</h5>
+                            <ul class="tabs">
+                                <li class="on">은행</li>
+                                <li>증권사</li>
+                            </ul>
+                        </div>
+                        <div class="pop_content tab_cont_area j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="tabcont">
+                                        <div class="pop_inner">
+                                            <ul class="j_select finance_list">
+                                                <li><a href="#idInput01">하나은행</a></li>
+                                                <li><a href="#idInput01">국민은행</a></li>
+                                                <li><a href="#idInput01">농협은행</a></li>
+                                                <li><a href="#idInput01">우리은행</a></li>
+                                                <li><a href="#idInput01">우체국</a></li>
+                                                <li><a href="#idInput01">신한은행</a></li>
+                                                <li><a href="#idInput01">기업은행</a></li>
+                                                <li><a href="#idInput01">경남은행</a></li>
+                                                <li><a href="#idInput01">광주은행</a></li>
+                                                <li><a href="#idInput01">대구은행</a></li>
+                                                <li><a href="#idInput01">부산은행</a></li>
+                                                <li><a href="#idInput01">산업은행</a></li>
+                                                <li><a href="#idInput01">상호저축은행<br>중앙회</a></li>
+                                                <li><a href="#idInput01">새마을금고<br>중앙회</a></li>
+                                                <li><a href="#idInput01">신협중앙회</a></li>
+                                                <li><a href="#idInput01">산림조합중앙회</a></li>
+                                                <li><a href="#idInput01">수협중앙회</a></li>
+                                                <li><a href="#idInput01">전북은행</a></li>
+                                                <li><a href="#idInput01">제주은행</a></li>
+                                                <li><a href="#idInput01">한국씨티은행</a></li>
+                                                <li><a href="#idInput01">SC은행</a></li>
+                                                <li><a href="#idInput01">케이은행</a></li>
+                                                <li><a href="#idInput01">카카오뱅크</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="tabcont">
+                                        <div class="pop_inner">
+                                            <ul class="j_select finance_list">
+                                                <li><a href="#idInput01">HMC투자증권</a></li>
+                                                <li><a href="#idInput01">케이프투자증권</a></li>
+                                                <li><a href="#idInput01">NH투자증권</a></li>
+                                                <li><a href="#idInput01">교보증권</a></li>
+                                                <li><a href="#idInput01">대신증권</a></li>
+                                                <li><a href="#idInput01">미래에셋대우</a></li>
+                                                <li><a href="#idInput01">DB금융투자</a></li>
+                                                <li><a href="#idInput01">메리츠<br>종합금융증권</a></li>
+                                                <li><a href="#idInput01">부국증권</a></li>
+                                                <li><a href="#idInput01">상섬증권</a></li>
+                                                <li><a href="#idInput01">신영증권</a></li>
+                                                <li><a href="#idInput01">신한금융투자</a></li>
+                                                <li><a href="#idInput01">에스케이증권</a></li>
+                                                <li><a href="#idInput01">유안타증권</a></li>
+                                                <li><a href="#idInput01">유진투자증권</a></li>
+                                                <li><a href="#idInput01">이베스트<br>투자증권</a></li>
+                                                <li><a href="#idInput01">키움증권</a></li>
+                                                <li><a href="#idInput01">하나금융투자</a></li>
+                                                <li><a href="#idInput01">한화투자증권</a></li>
+                                                <li><a href="#idInput01">KB증권</a></li>
+                                                <li><a href="#idInput01">하이투자증권</a></li>
+                                                <li><a href="#idInput01">한국투자증권</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //금융기관 -->
+        </div>
+    </body>
+</html>

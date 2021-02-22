@@ -1,0 +1,2325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>워크 리스트 FRONT Mobile - 이용자</title>
+    <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <style>
+        *{margin:0;padding:0; border:none; text-decoration:none; font-size:14px;}
+        /* a {font-size:13px; color:red} */
+        h1 {font-size:20px}
+        .work-wrap {margin:10px;}
+        .total-area:before {display:inline-block; content:""; width:3px; height:13px; background:rgb(7, 168, 160); vertical-align: middle;}
+        .total-area {font-size:14px; padding-bottom:10px; border-bottom:2px solid rgb(7, 168, 160); margin-bottom:10px;}
+        .total-area h2 {font-size:14px; display:inline-block; vertical-align: middle;}
+        .total-area p {font-size:14px; margin-right:20px; display:inline-block; vertical-align: middle; width:180px}
+        .total-area p span {font-weight:bold; padding-left:5px }
+
+        caption {font-size:0; color:#fff;}
+        .work-list table {width:100%; border-collapse: collapse; border-spacing:0;}
+        .work-list table thead th:first-child {border-left:1px solid #ccc; }
+        .work-list table thead th {background: rgb(61, 61, 61); color:#fff; padding:10px; border-left:1px solid #fff; font-size:12px}
+        .work-list table tbody tr:hover {background:rgb(238, 238, 238)}
+        .work-list table tbody td {padding:10px; border:1px solid #ccc; font-size:12px}
+        .work-list table select {width:100%; padding:5px;}
+        
+        .modify-list {border:1px solid #ccc; background:#333; margin: 10px 0 20px; padding:10px; color:#fff;}
+        .modify-list h2 {font-size:14px; border-bottom:1px solid #666; padding-bottom:10px}
+        .modify-list .list {margin:10px 0 10px; font-size:12px;  height:230px; overflow:auto}
+        
+        .del td {background-color:#ffe49d; text-decoration:line-through;}
+        .modify-list .date {color:#ffe49d; margin-top:10px}
+        /* .modify-list .modify strong {margin-left:20px; color:#ff7a0f} */
+        /* .modify-list .modify strong {margin-left:20px; color:#f25872} */
+        .color {background-color:#ffe49d}
+        @media (max-width: 900px) {
+            .work-list table thead th:nth-child(1),
+            .work-list table thead th:nth-child(4),
+            .work-list table thead th:nth-child(5),
+            .work-list table thead th:nth-child(6),
+            .work-list table thead th:nth-child(8),
+            .work-list table thead th:nth-child(9),
+            .work-list table thead th:nth-child(10),
+            .work-list table thead th:nth-child(11),
+            .work-list table thead th:nth-child(12),
+            .work-list table tbody tr td:nth-child(1),
+            .work-list table tbody tr td:nth-child(4),
+            .work-list table tbody tr td:nth-child(5),
+            .work-list table tbody tr td:nth-child(6),
+            .work-list table tbody tr td:nth-child(8),
+            .work-list table tbody tr td:nth-child(9),
+            .work-list table tbody tr td:nth-child(10),
+            .work-list table tbody tr td:nth-child(11),
+            .work-list table tbody tr td:nth-child(12) {display: none;}
+        }
+    </style>
+    <script>
+        $(function(){
+            var tr_ea = $(".work-list tbody tr"),
+                len = tr_ea.length,
+                textComplete = "",
+                aLink = '<a href="" target="_blank"></a>',
+                complete = 0,
+                complete2 = 0,
+                matching = ""; // 작업자 목록 담기 
+            
+            var totalArea = $('.total-area');
+
+            tr_ea.each(function(i){
+                $(this).children().first().text(i + 1); // TR갯수 만큼 첫번째 TD 에 숫자 넣어주기 
+                $(this).children().first().css({
+                    'text-align' : 'center'
+                })
+                
+                textComplete = $(this).find("td.finish").text(); // 완료 텍스트 구하기
+                // 완료 텍스트를 찾기 
+                if(textComplete == "완료"){ 
+                    link = $(this).find("td.link").text();
+                    $(this).find("td.link").contents().wrap( aLink ); 
+                    $(this).find("td.link").children().attr( "href", link );
+                    $(this).find('.link find').css({
+                        "color" : "blue"
+                    })
+                    complete++;
+                }
+                if(textComplete == "진행중"){ 
+                    link = $(this).find("td.link").text();
+                    $(this).find("td.link").contents().wrap( aLink ); 
+                    $(this).find("td.link").children().attr( "href", link );
+                    $(this).find('.link a').css({
+                        "color" : "#f25872"
+                    })
+                    complete2++;
+                }
+
+            });
+            
+            // 셀렉트 박스 선택 
+            $("#name").on("change" , function(){
+                matchingName = $(this).val(); // 셀렉트 박스 선택시 작업자 
+                console.log(matchingName)
+                tr_ea.each(function(){
+                    matching = $(this).find("td.name").text(); // 작업자 목록 가저오기 
+                    if (matching ==  matchingName ){
+                        $(this).show();
+                    }else if(matchingName == "작업자"){
+                        $(this).show();
+                    }else {
+                        $(this).hide();
+                    }
+                });
+                console.log(matching)
+            });
+                
+            // 페이지수 완료페이지 진척률 계산
+            var percent = Math.floor( complete / len * 100) // 완료된 개수 나누기 총 페이지수 로 진척 퍼센트 구하기 Math.floor로 나머지 값 버리기 
+            
+            totalArea.find(".total").children().text(len); // 토탈 TR 
+            totalArea.find(".complete").children().text(complete); // 완료 체크된 페이지
+            totalArea.find(".complete2").children().text(complete2); // 완료 체크된 페이지
+            totalArea.find(".percent").children().text(percent); // 완료 체크된 페이지
+
+        })
+    </script>
+    
+</head>
+<body>
+    <div class="work-wrap">
+        <h1>하나은행 비대면 Mobile</h1>
+        <div class="modify-list">
+            <h2>수정내역</h2>
+            <div class="list">
+                <!-- 2019.00.00 -->
+                <!-- <p class="date">2019.00.00</p>
+                <p class="modify">1. 수정내역  index.html<strong> 2019.10.21 HTML LIST 변경</strong></p> -->
+            </div>
+        </div>
+        <div class="total-area">
+            <h2>진행현황</h2>
+            <p class="total">총 본수 :<span><!-- 여기에 값 --></span> PAGE</p>
+            <p class="complete">완료 페이지 : <span><!-- 여기에 값 --></span>  PAGE</p>
+            <p class="complete2">진행 페이지 : <span><!-- 여기에 값 --></span>  PAGE</p>
+            <p class="percent">진척률 : <span><!-- 여기에 값 --></span> % </p>
+        </div>
+        
+        <div class="work-list">
+            <table>
+                <caption>작업리스트</caption>
+                <colgroup>
+                    <col width="3%" />
+                    <col width="7%" />
+                    <col width="9%" />
+                    <col width="9%" />
+                    <col width="9%" />
+                    <col width="9%" />
+                    <col width="*" />
+                    <col width="5%" />
+                    <col width="15%" />
+                    <col width="5%" />
+                    <col width="5%" />
+                    <col width="7%" />
+                    <col width="5%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>1Depth</th>
+                        <th>2Depth</th>
+                        <th>3Depth</th>
+                        <th>4Depth</th>
+                        <th>5Depth</th>
+                        <th>URL</th>
+                        <th>유형</th>
+                        <th>Description</th>
+                        <th>완료일</th>
+                        <th>수정일</th>
+                        <th></th>
+                        <th>완료</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 공통 -->
+                    <tr>
+                        <td></td>
+                        <td>상단 네비</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/guide.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>비대면계좌 신청 인트로</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_0000.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>본인인증 시작 화면</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_0100.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>이름/주민등록번호 입력</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_1100.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>이름/주민등록번호 입력</td>
+                        <td>B type Popup</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_1100_5.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>이름/주민등록번호 입력</td>
+                        <td>B type Popup</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_1100_6.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>휴대폰 인증 휴대폰번호 입력</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_1200.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>휴대폰 인증 이용약관</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_1210.html</td>
+                        <td></td>
+                        <td>휴대폰 인증 이용약관 디자인 필요함</td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"> </td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>거래제한 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_1310.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>거래제한 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_1310_2.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>신청목록</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_1320.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>가 개설 계좌 본 신청 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_1330.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품목록/ 상품가입안내 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2100.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>급여하나</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_1.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>연금하나</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_2.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>주거래하나</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_3.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>영하나 플러스 통장</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>e-플러스 통장</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_5.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>사업자 주거래 우대통장</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>중권저축계좌</td>
+                        <td>하나금융투자 국내주식</td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>N플러스 정기예금</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>e-플러스 정기예금</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>e-플러스 정기예금</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>리틀빅 정기예금</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>금연성공적금</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>마이트립(MY trip)적금</td>
+                        <td>일반형</td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>마이트립(MY trip)적금</td>
+                        <td>마일리지 1</td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>마이트립(MY trip)적금</td>
+                        <td>마일리지 2</td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>주택청약종합저축</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>(내맘) 적금</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>급여하나 월복리적금</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>연금하나 월복리적금</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>주거래하나 월복리적금</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>함께하는 사랑 적금</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>도전 365 적금</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>Young 하나 적금</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>Self-Gifting 적금</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>개인뱅킹</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>기업뱅킹</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>HAI 뱅킹 가입</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>개인용 모바일 OTP 발급/재발급</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>프리미업 직장인론</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>뱅커론</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>CSS대출</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>직장인 주거래 우대론</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>아카데미론</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>닥터클럽대출 골드</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>닥터클럽대출 플레티늄</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>KEB하나 프로패셔널론</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>로이어 클럽대출</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>KEB하나 새희망홀씨</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>하나이지세이브론</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>스마트론</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>하나VIP손님대출</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>마이홈주거래우대론</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>외화다통화보통예금</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td>글로벌페이전용통장(원화+외화)</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2201_4.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>은행연결계좌등록</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_2300.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>시작화면</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_3000.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>동의 및 상품설명서 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_3100.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"> </td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>필수 동의 및 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_3110.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>개인정보 수정 이용 동의</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_3120.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"> </td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품설명서 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_3130.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>템플릿만 필요함</td>
+                        <td class="name"> </td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>금융거래정보 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_3200.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>기본정보 입력</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_4100.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>주소검색</td>
+                        <td>검색 전</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_9100_1.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>주소검색</td>
+                        <td>검색 결과없음</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_9100_2.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>주소검색</td>
+                        <td>검색 결과</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_9100_3.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>업종 검색</td>
+                        <td>검색 전</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_4110_1.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>업종 검색</td>
+                        <td>검색 후</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_4110_2.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>입출금 통장 신청</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5100.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>이용한도 안내 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5110.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>입출금 통장 신청</td>
+                        <td>체크카드 동의사항</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5120.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>평생계좌번호 설정</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5130.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>예금상품 신청</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5200.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>적금 상품 신청</td>
+                        <td>일반</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5300.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>입출금계좌지정신청서 확인 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5310.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>적금 상품 신청</td>
+                        <td>주택청약종합저축</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5320.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>적금신청 - 외환 상품 신청</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5400.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>전자금융 신청</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5500.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>전자금융 신청</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5500_2.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>모바일 OTP 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5520.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>HAI 뱅킹 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5530.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>출금계좌 추가 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5540.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>HAI 뱅킹 신청</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5600.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>최근입금계좌 / 내계좌 / 직접입력</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5610.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>계좌별칭 입력</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5640.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>HAI뱅킹 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5650.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>모바일 OTP 발급</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5700.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>영업점 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5800.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>영업점 검색</td>
+                        <td>검색 전</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5810_1.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>영업점 검색</td>
+                        <td>검색 후</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5810_2.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>추천직원 검색</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5820.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>신청정보 확인 / 수정</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_5900.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>신분증 인증 시작</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6100.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>인증 촬영 및 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6111.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>주민등록증 확인</td>
+                        <td>주민등록증 인증확인</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6112.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>운전면허증 확인</td>
+                        <td>운전면허증 인증확인</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6113.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>여권 촬영</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6121.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>여권 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6122.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>추가 신분증 촬영</td>
+                        <td>신용카드</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6131.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>추가 신분증 촬영</td>
+                        <td>신용카드</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6132.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>추가 신분증 확인</td>
+                        <td>사업자등록증</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6142.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>추가 신분증 확인</td>
+                        <td>사업자등록증</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6143.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>추가인증 안내 및 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6200_1.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>추가인증 안내 및 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6200_2.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>1원 이체 인증 입금계좌 입력</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6210.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>은행/증권사 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6211.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>가상계좌 출금 계좌 입력</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6220.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>가상계좌 이체 신청 완료</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6221.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"> </td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>영상통화</td>
+                        <td>연결대기</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6231.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>영상통화 연결 전 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6232.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>영상통화 </td>
+                        <td>영상통화 사용자 취소</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6233.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>영상통화</td>
+                        <td>실행불가능 상태</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6235.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>영상통화</td>
+                        <td>정상 완료</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6236.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>영상통화</td>
+                        <td>연결안내</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6237.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>당행계좌 인증</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6240.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>승인완료</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6250.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"> </td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>신청완료</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_6251.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>신청결과 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7110_1.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>신청결과 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7110_2.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품가입 처리 결과</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7120.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"> </td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>상품 조회 팝업 - 상품/업무 신청</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7130.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"> </td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>시작전 확인사항 / 알아두세요</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7210.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"> </td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>시작전 확인사항 / 알아두세요</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7220.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"> </td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>신분증 재촬영 불가 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7301.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>신분증 재촬영 신분증 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7300.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"> </td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>주민등록증 촬영 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7311.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>주민등록증 촬영 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7312.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>운전면허증 촬영 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7321.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>운전면허증 촬영 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7322.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>여권 촬영 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7331.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>여권 촬영 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7332.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>추가신분증 촬영 안내</td>
+                        <td>신용카드</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7341.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>추가신분증 촬영 확인</td>
+                        <td>신용카드</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7342.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>사업자등록증 촬영 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7351.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>사업자등록증 촬영 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7352.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>신분증 재촬영 완료</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7390.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>가개설 완료</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7410.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>가개설 실패</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_7420.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>시스템 에러 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_9300.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"></td>
+                        <td class="finish">완료</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>로딩 이미지</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="link">html/NFTF3_9400.html</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="name"> </td>
+                        <td class="finish">진행중</td>
+                    </tr>
+                    
+                    <!-- // 공통/기타 > 기타 -->
+
+
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</body>
+</html>

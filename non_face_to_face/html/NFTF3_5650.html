@@ -1,0 +1,119 @@
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="format-detection" content="telephone=no, address=no, email=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Cache-control" content="No-cache">
+        <meta http-equiv="Pragma" content="No-cache">
+        <title>KEB하나은행 - 비대면 계좌개설 신청</title>
+        <link rel="stylesheet" href="../css/nftf_common.css">
+        <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../js/rolldate.js"></script>
+        <script type="text/javascript" src="../js/swiper.js"></script>
+        <script type="text/javascript" src="../js/nftf_common.js"></script>
+    </head>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            setTimeout(function(){
+                var loadingDot = document.querySelector('.loading_dot')
+                loadingDot.classList = 'loading_dot on'
+            },500)
+            var layerEvent = document.querySelectorAll('.layerpopup')
+            for(var i = 0; i<layerEvent.length; i++){
+                layerEvent[i].addEventListener('click', function(e){
+                    console.log(e.target)
+                    if(e.target.className ==='cancel'){
+                        e.currentTarget.style.display = 'none'
+                    }
+                    if(e.target.className ==='dimmed'){
+                        e.currentTarget.style.display = 'none'
+                    }
+                })
+            }
+            layerOpen.init('#layerpopup01');
+        });
+    </script>
+    <body>
+        <div class="wrapper">
+            <header class="steps_area">
+                <button class="back_btn"></button>
+                <h2 class="h_tit">
+                    <ul>
+                        <li class="end"><span></span></li>
+                        <li class="end"><span></span></li>
+                        <li class="ing"><span>3 상품신청</span></li>
+                        <li><span>4</span></li>
+                    </ul>
+                </h2>
+                <button class="h_menu"></button>
+            </header>
+            <div class="contents">
+                <section>
+                    <div class="loading_dot">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p class="pages_tit"><span class="t_mi">HAI뱅킹</span></p>
+
+                    <div id="upScroll" class="input_form_group on">
+                        <button type="button" class="btn_type04 j_layer_open" layer-target="#layerpopup01">이용안내</button>
+
+
+                    </div>
+
+                </section>
+            </div>
+
+            <!-- HAI뱅킹 서비스 안내 -->
+            <div id="layerpopup01" class="layerpopup">
+                <div class="layer_90 tab_layer">
+                    <div class="layer_contents">
+                        <div class="pop_tit tab_area">
+                            <h5>HAI뱅킹 서비스 안내</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="pop_inner">
+                                        <div class="hai_intro">
+                                            <div><img src="../images/1@2x.png" alt=""></div>
+                                            <div class="hai_slide j_slide">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide"><img src="../images/hai@2x-1.png" alt=""></div>
+                                                    <div class="swiper-slide"><img src="../images/hai@2x-2.png" alt=""></div>
+                                                    <div class="swiper-slide"><img src="../images/hai@2x-3.png" alt=""></div>
+                                                    <div class="swiper-slide"><img src="../images/hai@2x-4.png" alt=""></div>
+                                                    <div class="swiper-slide"><img src="../images/hai@2x-5.png" alt=""></div>
+                                                    <div class="swiper-slide"><img src="../images/hai@2x-6.png" alt=""></div>
+                                                </div>
+                                                <div class="swiper-pagination"></div>
+                                            </div>
+                                            <div><img src="../images/3@2x.png" alt=""></div>
+                                        </div>
+                                        <div class="txt_notice j_toggle">
+                                            <button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+                                            <div class="txt_notice_cont j_toggle_cont">
+                                                <ul class="list_type01">
+                                                    <li>HAI뱅킹에 가입하면 스마트폰 문자메시지로도 HAI뱅킹 서비스를 이용하실 수 있습니다.</li>
+                                                    <li>휴대폰을 분실하신 경우, 바로 HAI뱅킹 서비스 이용정지를 해주세요.</li>
+                                                    <li>더 많은 도움이 필요하시면 고객센터로 문의하여 주시기 바랍니다. <strong>고객센터 : 1599-1465</strong></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <p class="txt_type03">본 홍보물은 2020년 10월 31일까지 유효합니다.<br>준법감시인 심사필 2019-광고-5086호 (2019.11.11), CC 브랜드 1911060057)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //HAI뱅킹 서비스 안내 -->
+
+        </div>
+    </body>
+</html>

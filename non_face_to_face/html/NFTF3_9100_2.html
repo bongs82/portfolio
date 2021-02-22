@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>NFTF3_01본인인증</title>
+    <link rel="stylesheet" href="../css/nftf_common.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/rolldate.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/nftf_common.js"></script>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            var loadingDot = document.querySelector('.loading_dot')
+            loadingDot.classList = 'loading_dot on'
+        },500)
+        var layerEvent = document.querySelectorAll('.layerpopup')
+        for(var i = 0; i<layerEvent.length; i++){
+            layerEvent[i].addEventListener('click', function(e){
+                console.log(e.target)
+                if(e.target.className ==='cancel'){
+                    e.currentTarget.style.display = 'none'
+                }
+                if(e.target.className ==='dimmed'){
+                    e.currentTarget.style.display = 'none'
+                }
+            })
+        }
+        layerOpen.init('#layerpopup01');
+    });
+</script>
+<body>
+    <div class="wrapper">
+        <header>
+            <button class="back_btn"></button>
+            <h2 class="h_tit">본인인증</h2>
+            <button class="h_menu"></button>
+        </header>
+        <div class="contents">
+            <section>
+                <div class="loading_dot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="pages_tit"><span class="t_mi">이름과 주민번호</span>를<br>입력해주세요.</p>
+            </section>
+        </div>
+        
+        <div class="layerpopup" id="layerpopup01">
+            <div class="layer_90">
+                <div class="layer_contents">
+                    <div class="pop_tit">
+                        <h5>주소검색</h5>
+                        <div class="input_form focus">
+							<div class="input_wrap">
+								<div class="input_txt">
+									<input id="idInput01" class="input_data j_input_value j_check_all" type="text" autofocus value="ooo">
+									<button type="button" class="input_data_del j_data_del">삭제</button>
+									<button type="button" class="input_data_search">삭제</button>
+								</div>
+							</div>
+                        </div>
+                        <div class="adress_dis">
+                            <p>검색결과가 없습니다.</p>
+                        </div>
+                    </div>
+                    <div class="pop_content j_scroll">
+                        <div class="swiper-wrapper">
+                            <div class="pop_inner swiper-slide">
+                                <div class="adress_lists_area">
+                                    <p class="error_msg">검색어의 철자가 맞게 되어 있는지, 주소가 정확한지 
+                                        다시 한번 확인하신 후 검색해주세요.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="cancel">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

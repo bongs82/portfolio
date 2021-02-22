@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-control" content="No-cache">
+    <meta http-equiv="Pragma" content="No-cache">
+    <title>NFTF3_01본인인증</title>
+    <link rel="stylesheet" href="../css/nftf_common.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/rolldate.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/nftf_common.js"></script>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            var loadingDot = document.querySelector('.loading_dot')
+            loadingDot.classList = 'loading_dot on'
+        },500)
+        var layerEvent = document.querySelectorAll('.layerpopup')
+        for(var i = 0; i<layerEvent.length; i++){
+            layerEvent[i].addEventListener('click', function(e){
+                console.log(e.target)
+                if(e.target.className ==='cancel'){
+                    e.currentTarget.style.display = 'none'
+                }
+                if(e.target.parentElement.className ==='layerpopup'){
+                    e.currentTarget.style.display = 'none'
+                }
+            })
+        }
+        var sliderSelects = document.querySelectorAll('.slider_select');
+        for(var j = 0; j<sliderSelects.length; j++){
+            sliderSelects[j].addEventListener('click', function(e){
+                if(e.target.nodeName ==='A'){
+                    e.currentTarget.style.left = -100+'%'
+                    e.currentTarget.nextElementSibling.style.left = 0+'%'
+                    if(e.currentTarget.nextElementSibling.className !== 'slider_select'){
+                        e.currentTarget.parentElement.parentElement.parentElement.style.display = 'none';
+                    }
+                    console.log(e.currentTarget.nextElementSibling)
+                }
+            })
+        }
+    });
+    window.onload = function(){
+        var sliderSelects = document.querySelectorAll('.slider_select');
+        var sliderSelectArea = document.querySelector('.slider_select').offsetHeight;
+        console.log(sliderSelectArea)
+        var selectAreaHeight = document.querySelector('.layer_select .layer_contents')
+        selectAreaHeight.style.height = sliderSelectArea+'px'        
+    }
+</script>
+<body>
+    <div class="wrapper">
+        <header>
+            <button class="back_btn"></button>
+            <h2 class="h_tit">본인인증</h2>
+            <button class="h_menu"></button>
+        </header>
+        <div class="contents">
+            <section>
+                <div class="loading_dot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="pages_tit"><span class="t_mi">이름과 주민번호</span>를<br>입력해주세요.</p>
+            </section>
+        </div>
+
+        <div class="layerpopup">
+            <div class="layer_select">
+                <div class="layer_contents">
+                    <div class="slider_select">
+                        <div class="pop_tit">
+                            <h5>계좌용도</h5>
+                        </div>
+                        <div class="pop_content">
+                            <ul class="select_list">
+                                <li><a href="#none">일반급여통장</a></li>
+                                <li><a href="#none">법인통장</a></li>
+                                <li><a href="#none">아르바이트통장</a></li>
+                                <li><a href="#none">연장수급</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="slider_select">
+                        <div class="pop_tit">
+                            <h5>거래목적</h5>
+                        </div>
+                        <div class="pop_content">
+                            <ul class="select_list">
+                                <li><a href="#none">급여 및 생활비</a></li>
+                                <li><a href="#none">저축 및 투자</a></li>
+                                <li><a href="#none">보험료 납부결제</a></li>
+                                <li><a href="#none">카드자금 결제</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="slider_select">
+                        <div class="pop_tit">
+                            <h5>자금출처</h5>
+                        </div>
+                        <div class="pop_content">
+                            <ul class="select_list">
+                                <li><a href="#none">근로 및 연금소득</a></li>
+                                <li><a href="#none">퇴직소득</a></li>
+                                <li><a href="#none">부동산 임대소득</a></li>
+                                <li><a href="#none">부동산 양도소득</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="slider_select">
+                        <div class="pop_tit">
+                            <h5>자산현황</h5>
+                        </div>
+                        <div class="pop_content">
+                            <ul class="select_list">
+                                <li><a href="#none">10억원 미만</a></li>
+                                <li><a href="#none">10억원 ~ 100억원 미만</a></li>
+                                <li><a href="#none">100억원 ~ 1,000억원 미만</a></li>
+                                <li><a href="#none">1,000억원 이상</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button type="button" class="cancel">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

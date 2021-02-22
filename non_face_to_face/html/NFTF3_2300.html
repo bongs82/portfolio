@@ -1,0 +1,105 @@
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="format-detection" content="telephone=no, address=no, email=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Cache-control" content="No-cache">
+        <meta http-equiv="Pragma" content="No-cache">
+        <title>KEB하나은행 - 비대면 계좌개설 신청</title>
+        <link rel="stylesheet" href="../css/nftf_common.css">
+        <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../js/rolldate.js"></script>
+        <script type="text/javascript" src="../js/swiper.js"></script>
+        <script type="text/javascript" src="../js/nftf_common.js"></script>
+    </head>
+    <body>
+        <div class="wrapper j_up_scroll">
+            <header class="steps_area">
+                <button class="back_btn"></button>
+                <p class="h_tit">증권계좌 연결</p>
+                <button class="h_menu"></button>
+            </header>
+            <div class="contents">
+                <section>
+                    <div class="loading_dot">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p class="pages_tit"><span class="t_mi">은행 계좌</span>를<br>선택해 주세요.</p>
+
+                    <div id="upScroll" class="input_form_group j_focus_group on">
+                        <!-- 연결계좌 선택 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup01">연결계좌 선택</div>
+								<div class="input_select">
+									<div id="idInput01" class="input_data j_check_all j_layer_open" layer-target="#layerpopup01"></div>
+								</div>
+							</div>
+                        </div>
+
+                        <div class="txt_notice j_toggle">
+							<button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+							<div class="txt_notice_cont j_toggle_cont">
+								<ul class="list_type01">
+									<li>증권계좌와 연결 가능한 입출금 상품 보유 시, 보유계좌 등록을 통해 기존 계좌 이용이 가능합니다.</li>
+									<li>증권계좌와 연결 가능한 입출금상품 미 보유 시, 증권계좌와 입출금계좌가 동시 신규됩니다.</li>
+									<li>주식계좌 개설 후, 하나금융투자 온라인매체(HTS/MTS/홈페이지)에서 거래가 가능합니다.</li>
+								</ul>
+							</div>
+						</div>
+                        <!-- //연결계좌 선택 -->
+                    </div>
+
+                    <div class="btn_wrap btn_fix j_btn_fix" style="display: none;">
+                        <a href="#none" class="btn_type01">다음</a>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 연결계좌 선택 -->
+	        <div id="layerpopup01" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>연결계좌<button type="button" class="btn_tip j_layer_open" layer-target="#layerpopup01_1">알아두세요</button></h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput01">신규계좌를 개설하여 연결</a></li>
+		                                <li><a href="#idInput01">101-123456-11111</a></li>
+		                                <li><a href="#idInput01">101-123456-11111</a></li>
+		                                <li><a href="#idInput01">101-123456-11111</a></li>
+		                                <li><a href="#idInput01">101-123456-11111</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+            <!-- //연결계좌 선택 -->
+            
+            <!-- 연결계좌 선택 알아두세요 -->
+	        <div id="layerpopup01_1" class="layerpopup layer_notice">
+	            <div class="layer_center">
+	                <div class="layer_notice_cont">
+                        <ul class="list_type01">
+                            <li>증권계좌와 연결 가능한 입출금 상품 보유 시, 보유계좌 등록을 통해 기존 계좌 이용이 가능합니다.</li>
+                            <li>증권계좌와 연결 가능한 입출금상품 미 보유 시, 증권계좌와 입출금계좌가 동시 신규됩니다.</li>
+                            <li>주식계좌 개설 후, 하나금융투자 온라인매체(HTS/MTS/홈페이지)에서 거래가 가능합니다.</li>
+                        </ul>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+            <!-- //연결계좌 선택 알아두세요 -->
+        </div>
+    </body>
+</html>

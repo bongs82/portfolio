@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-control" content="No-cache">
+    <meta http-equiv="Pragma" content="No-cache">
+    <title>NFTF3_01본인인증</title>
+    <link rel="stylesheet" href="../css/nftf_common.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/rolldate.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/nftf_common.js"></script>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            var loadingDot = document.querySelector('.loading_dot')
+            loadingDot.classList = 'loading_dot on'
+        },500)
+        var layerEvent = document.querySelectorAll('.layerpopup')
+        for(var i = 0; i<layerEvent.length; i++){
+            layerEvent[i].addEventListener('click', function(e){
+                if(e.target.className ==='cancel'){
+                    e.currentTarget.style.display = 'none'
+                }
+                if(e.target.parentElement.className ==='layerpopup'){
+                    e.currentTarget.style.display = 'none'
+                }
+            })
+        }
+        layerOpen.init('#layerpopup01');
+    });
+</script>
+<body>
+    <div class="wrapper">
+        <header>
+            <button class="back_btn"></button>
+            <h2 class="h_tit">본인인증</h2>
+            <button class="h_menu"></button>
+        </header>
+        <div class="contents">
+            <section>
+                <div class="loading_dot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="pages_tit"><span class="t_mi">이름과 주민번호</span>를<br>입력해주세요.</p>
+            </section>
+        </div>
+    </div>
+    <div class="layerpopup" id="layerpopup01">
+        <div class="layer_90">
+            <div class="layer_contents">
+                <div class="pop_tit">
+                    <h5>출금계좌 추가</h5>
+                </div>
+                <div class="pop_content j_scroll">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="pop_inner">
+                                <div class="add_account j_checkbox">
+                                    <input type="checkbox" class="allcheck" id="allcheck">
+                                    <label for="allcheck">전체선택</label>
+                                    <ul class="account_list j_checkbox">
+                                        <li>
+                                            <input type="checkbox" id="check01" class="selectcheck">
+                                            <label for="check01">
+                                                저축예금
+                                                <span class="account_num">209-123456-51107</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check02" class="selectcheck">
+                                            <label for="check02">
+                                                저축예금
+                                                <span class="account_num">209-123456-51107</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check03" class="selectcheck">
+                                            <label for="check03">
+                                                주거래하나통장
+                                                <span class="account_num">209-123456-51107</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check04" class="selectcheck">
+                                            <label for="check04">
+                                                저축예금
+                                                <span class="account_num">209-123456-51107</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check05" class="selectcheck">
+                                            <label for="check05">
+                                                저축예금
+                                                <span class="account_num">209-123456-51107</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check06" class="selectcheck">
+                                            <label for="check06">
+                                                저축예금
+                                                <span class="account_num">209-123456-51107</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check07" class="selectcheck">
+                                            <label for="check07">
+                                                주거래하나통장
+                                                <span class="account_num">209-123456-51107</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check08" class="selectcheck">
+                                            <label for="check08">
+                                                주거래하나통장
+                                                <span class="account_num">209-123456-51107</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pop_fix_area">
+                    <button type="button" class="pop_btn01 j_layer_close" move-target="#idInput22">동의합니다</button>
+                </div>
+                <button type="button" class="cancel" layer-target="#layerpopup17">확인</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

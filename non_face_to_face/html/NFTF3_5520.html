@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-control" content="No-cache">
+    <meta http-equiv="Pragma" content="No-cache">
+    <title>NFTF3_01본인인증</title>
+    <link rel="stylesheet" href="../css/nftf_common.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/rolldate.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/nftf_common.js"></script>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            var loadingDot = document.querySelector('.loading_dot')
+            loadingDot.classList = 'loading_dot on'
+        },500)
+        var layerEvent = document.querySelectorAll('.layerpopup')
+        for(var i = 0; i<layerEvent.length; i++){
+            layerEvent[i].addEventListener('click', function(e){
+                console.log(e.target)
+                if(e.target.className ==='cancel'){
+                    e.currentTarget.style.display = 'none'
+                }
+                if(e.target.parentElement.className ==='layerpopup'){
+                    e.currentTarget.style.display = 'none'
+                }
+            })
+        }
+        layerOpen.init('#layerpopup01');
+    });
+</script>
+<body>
+    <div class="wrapper">
+        <header>
+            <button class="back_btn"></button>
+            <h2 class="h_tit">본인인증</h2>
+            <button class="h_menu"></button>
+        </header>
+        <div class="contents">
+            <section>
+                <div class="loading_dot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="pages_tit"><span class="t_mi">이름과 주민번호</span>를<br>입력해주세요.</p>
+            </section>
+        </div>
+        
+        <div class="layerpopup" id="layerpopup01">
+            <div class="layer_90">
+                <div class="layer_contents">
+                    <div class="pop_tit">
+                        <h5>모바일 OTP 안내</h5>
+                    </div>
+                    <div class="pop_content j_scroll">
+                        <div class="swiper-wrapper">
+                            <div class="pop_inner swiper-slide">
+                                <h5 class="txt_tit">모바일 OPT란?</h5>
+                                <div class="txt_cont">
+                                    <ul class="list_dot">
+                                        <li>앱 기반의 KEB하나은행 전용 일회용 비밀번호 생성기로 실물이 없는 무료 보안매체입니다.</li>
+                                        <li>모바일OTP는 일회용 비밀번호(숫자6자리) 입력 없이 사용 가능한 자동인증 방식을 지원합니다.</li>
+                                    </ul>
+                                </div>
+                                <h5 class="txt_tit">이용가능 단말기</h5>
+                                <div class="txt_cont">
+                                    <p>하나원큐(기업) 앱 설치가 가능한 스마트폰<br>OS : Android 4.3이상 / iOS 8.0 이상</p>
+                                </div>
+                                <h5 class="txt_tit">이용채널</h5>
+                                <div class="txt_cont">
+                                    <ul class="list_dot">
+                                        <li>개인뱅킹 (인터넷뱅킹/스마트폰뱅킹/폰뱅킹)</li>
+                                        <li>기업뱅킹 (인터넷뱅킹/스마트폰뱅킹)</li>
+                                        <li>하나은행 외에 타 금융기관에서 사용 불가</li>
+                                    </ul>
+                                </div>
+                                <h5 class="txt_tit">이용 유의사항</h5>
+                                <div class="txt_cont">
+                                    <ul class="list_dot">
+                                        <li>발급 후 3일 이내에 신청확인(활성화)을 완료하지 않으면 사용이 불가능합니다.</li>
+                                        <li>모바일OTP는 1인 1기기에서만 이용 가능하며 하나원큐와 하나원큐기업을 모두 이용하시는 손님은 앱별로 각각 발급 받으셔야 합니다.</li>
+                                        <li>기존 모바일OTP를 이용중인 휴대폰을 교체하시거나 앱을 재설치 하신 경우 모바일OTP를 재발급 받으셔야 합니다.</li>
+                                        <li>실물 보안매체를 모바일OTP로 교체발급한 경우 기존 보안매체는 이용해제가 됩니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="cancel">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

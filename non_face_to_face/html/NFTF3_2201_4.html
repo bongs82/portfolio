@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-control" content="No-cache">
+    <meta http-equiv="Pragma" content="No-cache">
+    <title>NFTF3_02-1상품선택</title>
+    <link rel="stylesheet" href="../css/nftf_common.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/rolldate.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/nftf_common.js"></script>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            var loadingDot = document.querySelector('.loading_dot')
+            loadingDot.classList = 'loading_dot on'
+        },500)
+        var layerEvent = document.querySelectorAll('.layerpopup')
+        for(var i = 0; i<layerEvent.length; i++){
+            layerEvent[i].addEventListener('click', function(e){
+                console.log(e.target)
+                if(e.target.className ==='cancel'){
+                    e.currentTarget.style.display = 'none'
+                }
+                if(e.target.className ==='dimmed'){
+                    e.currentTarget.style.display = 'none'
+                }
+            })
+        }
+        $('.tabs li').each(function(){
+            $(this).click(function(){
+                $(this).siblings().removeClass('on')
+                $(this).removeClass('on')
+                $(this).addClass('on')
+                $('.tab_cont_area .tabcont').hide()
+                $('.tab_cont_area .tabcont').eq($(this).index()).show()
+                setTimeout(function () {
+		            layerScroll.update();
+		        }, 0);
+            })
+        })
+    });
+</script>
+<body>
+    <div class="wrapper">
+        <header>
+            <button class="back_btn"></button>
+            <h2 class="h_tit">본인인증</h2>
+            <button class="h_menu"></button>
+        </header>
+        <div class="contents">
+            <section>
+                <div class="loading_dot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="pages_tit"><span class="t_mi">이름과 주민번호</span>를<br>입력해주세요.</p>
+            </section>
+        </div>
+        
+        <div class="layerpopup" id="layerpopup01">
+            <div class="layer_90 tab_layer">
+                <div class="layer_contents">
+                    <div class="pop_tit tab_area">
+                        <h5>주거래하나 통장</h5>
+                        <p class="content_info">연금이체, 급여이체, 카드결제,<br>공과금 자동이체 시 수수료 우대서비스를<br>제공하는 평생 주거래 통장</p>
+                        <ul class="tabs">
+                            <li class="on">상품개요</li>
+                            <li>상품내용</li>
+                            <li>금리안내</li>
+                        </ul>
+                    </div>
+                    <div class="pop_content j_scroll">
+                        <div class="swiper-wrapper">
+                            <div class="pop_inner swiper-slide">
+                                <p class="product_info">만 30세 이하 젊은 그대를 위한!</p>
+                                <div class="tab_cont_area">
+                                    <div class="tabcont img_link type01">
+                                        <img src="../images/icon-img04@2x.png" alt="영하나플러스통장">
+                                        <!-- <a href="#none"></a> -->
+                                    </div>
+                                    <div class="tabcont">
+                                        <div class="cont_part">
+                                            <h4>상품특징</h4>
+                                            <p>다양한 수수료 우대서비스를 제공하는 YOUTH고객 전용통장</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입대상</h4>
+                                            <p>만 30세이하 실명의 개인 및 개인사업자 (1인 1계좌)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>예금종류</h4>
+                                            <p>저축예금</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>전환여부</h4>
+                                            <ul class="num_list_circle">
+                                                <li><span>①</span>저축예금에 한하여 동 상품으로 전환가능 <br>
+                                                    (단, 기존 수수료면제통장에서 전환 시 수수료면제횟수는 해당월은 기존상품의 잔여횟수를 적용하고, 다음달부터는 동 상품의 실적에 따라 수수료면제혜택 제공)</li>
+                                                <li><span>②</span>상품가입(전환) 후, 만 35세가 되는 시점의 익월 첫 영업일에 [주거래하나통장]으로 자동 전환됨.<br>
+                                                    (단, [주거래하나통장]을 보유하고 있는 경우에는 [저축예금]으로 자동전환 됨. 전환이후에는 전환된 상품의 우대서비스 및 혜택만 제공)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>수수료 우대 서비스</h4>
+                                            <p>아래의 서비스 제공 조건 중 1가지 이상을 해당월에 충족한 경우, 충족월 다음달 (익월 1일부터 말일까지)에 수수료 우대 서비스를 제공</p>
+                                            <h5 class="mt10">【서비스 제공 조건】</h5>
+                                            <ul class="num_list_circle">
+                                                <li><span>①</span>본인명의 하나카드(신용/체크)의 대금을 이 통장에서 결제 시</li>
+                                                <li><span>②</span>타인으로부터 월 건당 10만원 이상 입금 시</li>
+                                            </ul>
+                                            <h5 class="mt10">【수수료 우대】</h5>
+                                            <ul class="num_list_circle">
+                                                <li><span>①</span>당행 자동화기기를 통한 현금인출 수수료 무제한 면제</li>
+                                                <li><span>②</span>당행 자동화기기를 통한 타행이체 수수료 무제한 면제</li>
+                                                <li><span>③</span>인터넷뱅킹, 스마트폰뱅킹, 폰뱅킹(ARS)을 통한 타행 이체 수수료 무제한 면제</li>
+                                                <li><span>④</span>납부자자동이체 수수료 무제한 면제</li>
+                                                <li><span>⑤</span>타행 자동화기기를 통한 현금 인출 수수료 월5회 면제</li>
+                                            </ul>
+                                            <p>※ 이 통장을 신규 후 다음달 말일까지는 제공조건 충족여부와 관계없이 수수료 우대서비스 제공</p>
+                                            <p>※ 이 통장을 통한 거래에서 발생하는 수수료에 한하여 제공됨</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>세제혜택</h4>
+                                            <p>비과세종합저축 가능 (전 금융기관 통합한도 범위내)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>유의사항</h4>
+                                            <div class="txt_cont mt10">
+                                                <ul class="list_dot">
+                                                    <li>수수료우대서비스는 이 통장에 의한 거래에만 적용되며, 매월 요건 충족여부를 확인하여 다음월에 수수료우대 서비스를 제공합니다.</li>
+                                                    <li>우대서비스 내용은 은행의 사정에 의해 변경될 수 있습니다. 동 내용 변경시 변경사유, 변경내용 등 관련 내용을 영업점 및 당행 인터넷 홈페이지에 1개월간 게시합니다.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="tabcont">
+                                        <div class="cont_part">
+                                            <h4>기본금리</h4>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 50%;">
+                                                    <col style="width: 50%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>금액</th>
+                                                        <th>금리(연율,세전)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>5천만원 미만</td>
+                                                        <td>0.1%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5천만원 이상</td>
+                                                        <td>0.2%</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p class="norm">(2020.01.30 기준, 세전)</p>
+                                            <p>※ 가입일에 영업점 및 은행 홈페이지에 게시한 저축예금 고시금리</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="client_safely">
+                                    <p class="tit">예금자 보호</p>
+                                    <p class="kdic_mark">이 예금은 예금자 보호법에 따라, 예금보험공사가 보호하되, 보호한도는 본 은행에 있는 귀하의 모든 예금대상 금융상품의 원금과 소정의 이자를 합하여 1인당 “최고 5천만원”이며, 5천만원을 초과하는 나머지 금액은 보호하지 않습니다.</p>
+                                    <p class="kdic">준법감시인 심사필 2020-상품-1002호(2020.01.02)<br>
+                                        본 공시내용의 유효기간 2020.01.02 ~ 2023.01.01<br>
+                                        기준일 : 2020년 02월 03일</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="cancel">취소</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            layerOpen.init('#layerpopup01');
+        </script>
+    </div>
+</body>
+</html>

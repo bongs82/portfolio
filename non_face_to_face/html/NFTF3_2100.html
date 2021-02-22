@@ -1,0 +1,635 @@
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="format-detection" content="telephone=no, address=no, email=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Cache-control" content="No-cache">
+        <meta http-equiv="Pragma" content="No-cache">
+        <title>KEB하나은행 - 비대면 계좌개설 신청</title>
+        <link rel="stylesheet" href="../css/nftf_common.css">
+        <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../js/rolldate.js"></script>
+        <script type="text/javascript" src="../js/swiper.js"></script>
+        <script type="text/javascript" src="../js/nftf_common.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <button class="back_btn"></button>
+                <p class="h_tit">상품선택</p>
+                <button class="h_menu"></button>
+            </header>
+            <div class="contents">
+                <section>
+                    <div class="loading_dot">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p class="pages_tit"><span class="t_mi">상품을 체크한 후</span><br>가입해 주세요.</p>
+
+                    <div class="product_check_list">
+                        <div class="tab_area">
+                            <ul class="tabs">
+                                <li  class="on"><a href="#none">입출금통장</a></li>
+                                <li><a href="#none">예금</a></li>
+                                <li><a href="#none">적금</a></li>
+                                <li><a href="#none">전자금융</a></li>
+                                <li><a href="#none">신용대출</a></li>
+                                <li><a href="#none">외환</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab_cont_area">
+                            <div class="tabcont">
+                                <ul class="check_list">
+                                    <li>
+                                        <a href="#none">
+                                            <strong>급여하나 통장</strong>
+                                            급여이체 하나로~ <br>
+                                            각종 금융수수료가 면제되는 급여 전용통장
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>연금하나 통장</strong>
+                                            국민연금, 기초(노령)연금 등 각종 <br>
+                                            연금손님에게 금리, 수수료 우대 통장
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>주거래하나 통장</strong>
+                                            수수료를 아껴주는 똑똑한 우리집 생활비 통장~
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a check-target=".checkpopup02" href="#none">
+                                            <strong>영하나플러스 통장</strong>
+                                            만 30세 이하 젊은 그대를 위한!
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>e-플러스 통장</strong>
+                                            1원만 맡겨도 연 0.5+
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a check-target=".checkpopup01" href="#none">
+                                            <strong>사업자 주거래 우대통장</strong>
+                                            개인사업자만 누리는 크나큰 혜택
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none" check-target=".checkpopup04">
+                                            <strong>증권저축계좌 <br>
+                                            (하나금융투자 국내주식)</strong>
+                                            개인사업자만 누리는 크나큰 혜택
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tabcont">
+                                <ul class="check_list">
+                                    <li>
+                                        <a href="#none">
+                                            <strong>N플러스 정기예금</strong>
+                                            3천만원까지 금리 플러스+
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>e-플러스 정기예금</strong>
+                                            금액제한 없이 자유롭게
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>리틀빅 정기예금</strong>
+                                            적은 금액일수록 Big 금리로
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tabcont">
+                                <ul class="check_list">
+                                    <li>
+                                        <a href="#none">
+                                            <strong>금연성공적금</strong>
+                                            금연성공시 특별금리를 제공하는 상품
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>마이트립(My Trip)적금<br>(일반형)</strong>
+                                            즐거운 여행의 시작! 여행전용적금
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>마이트립(My Trip)적금<br>(마일리지 Ⅰ)</strong>
+                                            이자도 받는 여행전용적금
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>마이트립(My Trip)적금<br>(마일리지 Ⅱ)</strong>
+                                            이자도 받는 여행전용적금
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>주택청약종합저축</strong>
+                                            내집마련은 기본 <br>소득공제 혜택까지 드립니다.
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>(내맘) 적금</strong>
+                                            저축금액, 만기일, 자동이체 구간까지 <br>내 맘대로 디자인 DIY 적금
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>급여하나 월복리적금</strong>
+                                            급여실적 하나로~ <br>이자에 이자가 붙는 연금이체손님 전용 월복리 적음
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>연금하나 월복리적금</strong>
+                                            연금실적 하나로~ <br>이자에 이자가 붙는 연금이체손님 전용 월복리 적금
+
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>주거래하나 월복리적금</strong>
+                                            이자에 이자가 붙는 각종 생활비 <br>이체손님 대상 월복리 적금
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>함께하는 사랑 적금</strong>
+                                            지역 경제 활성화 및<br>소외계층 지원을 위한 적금
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>도전365 적금</strong>
+                                            걸음수 UP! 금리도 UP!
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>Young 하나 적금</strong>
+                                            Young하니까, 첫거래 우대+
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>Self-Gifting(셀프기프팅)적금</strong>
+                                            나만을 위한 힐링 적금
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tabcont">
+                                <ul class="check_list">
+                                    <li>
+                                        <a href="#none">
+                                            <strong>개인뱅킹</strong>
+                                            개인용(인터넷/스마트폰/HAI뱅킹/폰뱅킹)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" check-target=".checkpopup03">
+                                            <strong>기업뱅킹</strong>
+                                            개인사업자용(인터넷/스마트폰)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>HAI 뱅킹 가입</strong>
+                                            인공지능 뱅킹 서비스
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" check-target=".checkpopup05">
+                                            <strong>개인용 모바일OTP 발급/재발급</strong>
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tabcont">
+                                <ul class="check_list">
+                                    <li>
+                                        <a href="#none"  check-target=".checkpopup08">
+                                            <strong>프리미엄 직장인론</strong>
+                                            지정업체 임직원 및 공무원 손님을 위한 상품
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>뱅커론</strong>
+                                            은행원(제1금융권) 손님을 위한 상품
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>CSS대출</strong>
+                                            KEB하나은행의 신용평가시스템으로 산출되는 상품
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>직장인 주거래 우대론</strong>
+                                            중소기업 직장인 손님을 위한 상품
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>아카데미론</strong>
+                                            교육자 손님을 위한 상품
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>닥터클럽대출·골드</strong>
+                                            봉직의사 손님을 위한 상품
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>닥터클럽대출·플래티늄</strong>
+                                            개업의사 손님을 위한 상품
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>KEB하나 프로페셔널론</strong>
+                                            전문직종사자 손님을 위한 상품
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>로이어클럽대출</strong>
+                                            법조인 손님을 위한 상품
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>KEB하나 새희망홀씨</strong>
+                                            근로소득, 사업소득, 연금소득자 손님을 위한 <br>서민금융 상품
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>하나이지세이브론</strong>
+                                            고금리를 저금리로 바꾸고 싶은 손님을 위한 상품
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>스마트론</strong>
+                                            KEB하나은행 우수 손님을 위한 상품
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>하나VIP손님대출</strong>
+                                            KEB하나은핸 VIP 손님을 위한 상품
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <strong>마이홈주거래우대론</strong>
+                                            본인소융 주택에 거주하는 손님을 위한 상품
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tabcont">
+                                <ul class="check_list">
+                                    <li>
+                                        <a href="#none" check-target=".checkpopup06">
+                                            <strong>외화다통화보통예금</strong>
+                                            여러 통화를 거래할 수 있는 외화 입출금 통장
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                    <li>
+                                        <a href="#none" check-target=".checkpopup07">
+                                            <strong>글로벌페이전용통장(원화+외화)</strong>
+                                            글로벌페이카드 결제를 위한 전용통장
+
+                                        </a>
+                                        <button class="popup_open">팝업오픈</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_wrap btn_fix" style="display:none">
+                        <a href="#none" class="btn_type01 j_layer_open join_btn" layer-target="#layerpopup01"><span class="list_sum"></span>건 모두 가입</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="layerpopup check_popup">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>현재 상품을 선택하셨습니다.<br>아래 모두 가입 버튼을 탭 하시면 선택한 상품을 함께 신청할 수 있습니다.
+                        </p>
+                    </div>
+                    <div class="btn_area">
+                        <button type="button" class="confirm">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup cancel_popup">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>현재 상품의 선택을 해제하시겠습니까?</p>
+                    </div>
+                    <div class="btn_area btn_02">
+                        <button type="button" class="cancel">취소</button>
+                        <button type="button" class="confirm">해제</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="layerpopup01" class="layerpopup">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_tit">
+                        <h5>아래 상품을<br>모두 가입하시겠습니까?</h5>
+                    </div>
+                    <div class="pop_content j_scroll">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <ul class="checking_list">
+                                    <!-- <li>
+                                        <span>입출금</span>
+                                        <strong>급여하나 통장</strong>
+                                    </li>
+                                    <li>
+                                        <span>적금</span>
+                                        <strong>마이트립(My Trip)적금(마일리지II)</strong>
+                                    </li>
+                                    <li>
+                                        <span>전자금융</span>
+                                        <strong>항목 최대 3개 까지 그후 스크롤 두줄인개인뱅킹</strong>
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_area btn_02">
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                        <button type="button" class="confirm j_layer_close">모두 가입</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup checkpopup01">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>개인사업자 전용상품으로, <br>
+                            사업자등록증이 필요합니다.
+                            </p>
+                    </div>
+                    <div class="btn_area">
+                        <button type="button" class="confirm">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup checkpopup02">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>만35세가 되는 시점의 익월 첫영업일에 “주거래하나통장”으로 자동전환됩니다. <br>
+                            (단, “주거래하나통장”을  보유중인 경우 “저축예금”으로 전환)</p>
+                    </div>
+                    <div class="btn_area">
+                        <button type="button" class="confirm">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup checkpopup03">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>개인사업자 전용상품으로, 
+                            사업자등록증이 필요합니다. <br>
+                            (손님의 당행 고객자격이 개인사업자로 변경됩니다.)
+                            </p>
+                    </div>
+                    <div class="btn_area">
+                        <button type="button" class="confirm">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup checkpopup04">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>만 14세 이상~만 19세 미만 미성년자인<br> 
+                            경우 주민등록증, 여권 외에 추가 신분증이 필요합니다.<br>
+                            (추가 신분증: 학생증 또는 청소년증)</p>
+                    </div>
+                    <div class="btn_area btn_02">
+                        <button type="button" class="cancel">취소</button>
+                        <button type="button" class="confirm">가입</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup checkpopup04">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>개인사업자 전용상품으로, 
+                            사업자등록증이 필요합니다. <br>
+                            (손님의 당행 고객자격이 개인사업자로 변경됩니다.)
+                            </p>
+                    </div>
+                    <div class="btn_area">
+                        <button type="button" class="confirm">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup checkpopup05">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>모바일OTP 발급/재발급은 다른 상품과 함께 가입할 수 없습니다. <br>
+                            모바일OTP 발급/재발급만 바로 가입하시겠습니까?
+                            </p>
+                    </div>
+                    <div class="btn_area btn_02">
+                        <button type="button" class="cancel">취소</button>
+                        <button type="button" class="confirm">가입</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup checkpopup05">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>모바일OTP 발급/재발급은 다른 상품과 함께 가입할 수 없습니다. <br>
+                            먼저 다른 상품의 선택을 해제해주세요.
+                            </p>
+                    </div>
+                    <div class="btn_area">
+                        <button type="button" class="confirm">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup checkpopup06">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>외화다통화보통예금 상품은 다른 상품과 함께 가입할 수 없습니다. <br>
+                            외화다통화보통예금 상품만 바로 가입하시겠습니까?</p>
+                    </div>
+                    <div class="btn_area btn_02">
+                        <button type="button" class="cancel">취소</button>
+                        <button type="button" class="confirm">가입</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup checkpopup06">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>외화다통화보통예금 상품은 다른 상품과 함께 가입할 수 없습니다. <br>
+                            먼저 다른 상품의 선택을 해제해주세요.</p>
+                    </div>
+                    <div class="btn_area">
+                        <button type="button" class="confirm">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup checkpopup07">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>글로벌페이 전용통장(원화+외화)은 글로벌페이 체크카드 사용을 위한 전용 통장으로 일반 입출금 거래가 제한됩니다. <br> 계속 진행하시겠습니까?</p>
+                    </div>
+                    <div class="btn_area btn_02">
+                        <button type="button" class="cancel">취소</button>
+                        <button type="button" class="confirm">가입</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup checkpopup07">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>글로벌페이전용통장은 다른 상품과 함께 가입할 수 없습니다. <br>
+                            먼저 다른 상품의 선택을 해제해주세요.</p>
+                    </div>
+                    <div class="btn_area">
+                        <button type="button" class="confirm">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup checkpopup07">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>글로벌페이전용통장은 만 17세 미만은 가입할 수 없습니다.</p>
+                    </div>
+                    <div class="btn_area">
+                        <button type="button" class="confirm">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup checkpopup08">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>모바일 브랜치로 이동합니다.</p>
+                    </div>
+                    <div class="btn_area btn_02">
+                        <button type="button" class="cancel">취소</button>
+                        <button type="button" class="confirm">가입</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

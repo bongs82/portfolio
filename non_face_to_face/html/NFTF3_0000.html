@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-control" content="No-cache">
+    <meta http-equiv="Pragma" content="No-cache">
+    <title>NFTF3_01본인인증</title>
+    <link rel="stylesheet" href="../css/nftf_common.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/rolldate.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/nftf_common.js"></script>
+</head>
+<script>
+    $(document).ready(function(){
+        $('.ready').click(function(){
+            $('.wrapper').children('.first_intro').removeClass('on')
+            setTimeout(function(){
+                $('.wrapper').children('.first_intro').addClass('on')
+            },500)
+            $('.wrapper').children('.conect_page').hide()
+        })
+    })
+</script>
+<body>
+    <div class="wrapper">
+        <div class="first_intro">
+            <p class="intro_tit">기분 좋은<br>첫 만남</p>
+            <div class="img_area"><img src="../images/intro-mockup@2x.png" alt="img"></div>
+            <span class="progressbar"></span>
+        </div>
+        <div class="conect_page">
+            <div class="go_center">
+                <p class="intro_tit"><span class="t_mi">잠깐!</span>준비물 챙기셨나요?</p>
+                <div class="readiness_lists">
+                    <ul>
+                        <li>
+                            <span>신분증
+                                <em>주민등록증, 운전면허증,<br> 
+                                    여권+신용카드</em>
+                            </span>
+                        </li>
+                        <li><span>본인명의 스마트폰</span></li>
+                        <li><span>이메일 주소</span></li>
+                    </ul>
+                </div>
+            </div>
+            <a class="inquire point_position tpye01" href="#none">신청결과 조회</a>
+            <div class="btn_area">
+                <button type="button" class="ready">준비했어요</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

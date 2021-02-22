@@ -1,0 +1,534 @@
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="format-detection" content="telephone=no, address=no, email=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Cache-control" content="No-cache">
+        <meta http-equiv="Pragma" content="No-cache">
+        <title>KEB하나은행 - 비대면 계좌개설 신청</title>
+        <link rel="stylesheet" href="../css/nftf_common.css">
+        <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../js/rolldate.js"></script>
+        <script type="text/javascript" src="../js/swiper.js"></script>
+        <script type="text/javascript" src="../js/nftf_common.js"></script>
+        
+    </head>
+    <body>
+        <div class="wrapper j_up_scroll">
+            <header class="steps_area">
+                <button class="back_btn"></button>
+                <h2 class="h_tit">
+                    <ul>
+                        <li class="end"><span></span></li>
+                        <li class="end"><span></span></li>
+                        <li class="ing"><span>3 상품신청</span></li>
+                        <li><span>4</span></li>
+                    </ul>
+                </h2>
+                <button class="h_menu"></button>
+            </header>
+            <div class="contents">
+                <section>
+                    <div class="loading_dot">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p class="pages_tit"><span class="t_mi">HAI뱅킹</span></p>
+
+                    <div id="upScroll" class="input_form_group j_focus_group on">
+                        <button type="button" class="btn_type04 j_layer_open" layer-target="#layerpopup01">이용안내</button>
+
+                        <!-- 출금 계좌 -->
+                        <div class="input_form input_form_sel j_focus">
+                            <div class="input_wrap">
+                                <div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup02">출금 계좌</div>
+                                <div class="input_select">
+                                    <div id="idInput01" class="input_data j_check_all j_layer_open" layer-target="#layerpopup02"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //출금 계좌 -->
+
+                        <!-- 출금계좌 비밀번호 -->
+                        <div class="input_form j_focus"><!-- class error_on 추가시 에러 메시지 노출 -->
+                            <div class="input_wrap">
+                                <label for="idInput02" class="input_title j_focus_open">출금계좌 비밀번호</label>
+                                <div class="input_txt">
+                                    <input type="password" id="idInput02" class="input_data j_input_value j_check_all">
+                                    <button type="button" class="input_data_del j_data_del">삭제</button>
+                                </div>
+                            </div>
+                            <div class="input_error">
+                                <p>연속되는 숫자는 비밀번호로 사용할 수 없습니다.</p>
+                            </div>
+                        </div>
+                        <!-- //출금계좌 비밀번호 -->
+
+                        <!-- 입금계좌 추가 -->
+                        <div class="list_type02">
+                            <strong class="list_title">입금계좌 추가</strong>
+                            <ul>
+                                <li>
+                                    <p class="bank">KEB하나은행</p>
+                                    <p class="account_num">209-9111464-51107</p>
+                                    <p class="name">이하나</p>
+                                    <div class="input_wrap j_focus02">
+                                        <div class="input_txt">
+                                            <input type="text" class="input_data j_input_modify" value="내계좌" readonly="readonly" placeholder="계좌별칭">
+                                            <button type="button" class="input_data_modify j_data_modify">편집</button>
+                                            <button type="button" class="input_data_del j_data_del">삭제</button>
+                                        </div>
+                                    </div>
+                                    <div class="input_error">
+                                        <p>계좌별칭을 입력하세요.</p>
+                                    </div>
+                                    <button type="button" class="list_del">삭제</button>
+                                </li>
+                                <li>
+                                    <p class="bank">KEB하나은행</p>
+                                    <p class="account_num">209-9111464-51107</p>
+                                    <p class="name">이하나</p>
+                                    <div class="input_wrap j_focus02">
+                                        <div class="input_txt">
+                                            <input type="text" class="input_data j_input_modify" value="내계좌" readonly="readonly"placeholder="계좌별칭">
+                                            <button type="button" class="input_data_modify j_data_modify">편집</button>
+                                            <button type="button" class="input_data_del j_data_del">삭제</button>
+                                        </div>
+                                    </div>
+                                    <div class="input_error">
+                                        <p>계좌별칭을 입력하세요.</p>
+                                    </div>
+                                    <button type="button" class="list_del">삭제</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //입금계좌 추가 -->
+
+                        <div class="btn_wrap">
+                            <button type="button" class="btn_type05 j_layer_open" layer-target="#layerpopup03">+ 입금계좌 추가</button>
+                        </div>
+                        <p class="txt_type01">입금계좌는 최대 10개까지 추가 할 수 있고,<br>별칭을 지정하여 쉽고 빠르게 이체할 수 있습니다.</p>
+                    </div>
+
+                    <div class="btn_wrap btn_fix j_btn_fix" style="display: none;">
+                        <a href="#none" class="btn_type01">다음</a>
+                    </div>
+                </section>
+            </div>
+
+            <!-- HAI뱅킹 서비스 안내 -->
+            <div id="layerpopup01" class="layerpopup">
+                <div class="layer_90 tab_layer">
+                    <div class="layer_contents">
+                        <div class="pop_tit tab_area">
+                            <h5>HAI뱅킹 서비스 안내</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="pop_inner">
+                                        <div class="hai_intro">
+                                            <div><img src="../images/1@2x.png" alt=""></div>
+                                            <div class="hai_slide j_slide">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide"><img src="../images/hai@2x-1.png" alt=""></div>
+                                                    <div class="swiper-slide"><img src="../images/hai@2x-2.png" alt=""></div>
+                                                    <div class="swiper-slide"><img src="../images/hai@2x-3.png" alt=""></div>
+                                                    <div class="swiper-slide"><img src="../images/hai@2x-4.png" alt=""></div>
+                                                    <div class="swiper-slide"><img src="../images/hai@2x-5.png" alt=""></div>
+                                                    <div class="swiper-slide"><img src="../images/hai@2x-6.png" alt=""></div>
+                                                </div>
+                                                <div class="swiper-pagination"></div>
+                                            </div>
+                                            <div><img src="../images/3@2x.png" alt=""></div>
+                                        </div>
+                                        <div class="txt_notice j_toggle">
+                                            <button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+                                            <div class="txt_notice_cont j_toggle_cont">
+                                                <ul class="list_type01">
+                                                    <li>HAI뱅킹에 가입하면 스마트폰 문자메시지로도 HAI뱅킹 서비스를 이용하실 수 있습니다.</li>
+                                                    <li>휴대폰을 분실하신 경우, 바로 HAI뱅킹 서비스 이용정지를 해주세요.</li>
+                                                    <li>더 많은 도움이 필요하시면 고객센터로 문의하여 주시기 바랍니다. <strong>고객센터 : 1599-1465</strong></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <p class="txt_type03">본 홍보물은 2020년 10월 31일까지 유효합니다.<br>준법감시인 심사필 2019-광고-5086호 (2019.11.11), CC 브랜드 1911060057)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //HAI뱅킹 서비스 안내 -->
+            
+            <!-- 출금 계좌 -->
+            <div id="layerpopup02" class="layerpopup">
+                <div class="layer_select">
+                    <div class="layer_contents">
+                        <div class="pop_tit">
+                            <h5>출금 계좌</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+                                    <ul class="select_list j_select">
+                                        <li><a href="#idInput01">101-123456-11111</a></li>
+                                        <li><a href="#idInput01">101-123456-11111</a></li>
+                                        <li><a href="#idInput01">101-123456-11111</a></li>
+                                        <li><a href="#idInput01">101-123456-11111</a></li>
+                                        <li><a href="#idInput01">101-123456-11111</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //출금 계좌 -->
+
+            <!-- 입금 계좌 -->
+            <div id="layerpopup03" class="layerpopup">
+                <div class="layer_90 tab_layer">
+                    <div class="layer_contents">
+                        <div class="pop_tit tab_area">
+                            <h5>입금계좌</h5>
+                            <ul class="tabs">
+                                <li class="on">최금임금계좌</li>
+                                <li>내계좌</li>
+                                <li>직접입력</li>
+                            </ul>
+                        </div>
+                        <div class="pop_content tab_cont_area j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="tabcont">
+                                        <div class="pop_inner">
+                                            <ul class="account_lists">
+                                                <li>
+                                                    <a href="#none" class="j_layer_open" layer-target="#layerpopup05">
+                                                        <p class="bank">KEB하나은행</p>
+                                                        <p class="account_num">209-9111464-51107</p>
+                                                        <p class="name">이하나</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none" class="j_layer_open" layer-target="#layerpopup05">
+                                                        <p class="bank">KEB하나은행</p>
+                                                        <p class="account_num">209-9111464-51107</p>
+                                                        <p class="name">이하나</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none" class="j_layer_open" layer-target="#layerpopup05">
+                                                        <p class="bank">KEB하나은행</p>
+                                                        <p class="account_num">209-9111464-51107</p>
+                                                        <p class="name">이하나</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none" class="j_layer_open" layer-target="#layerpopup05">
+                                                        <p class="bank">KEB하나은행</p>
+                                                        <p class="account_num">209-9111464-51107</p>
+                                                        <p class="name">이하나</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none" class="j_layer_open" layer-target="#layerpopup05">
+                                                        <p class="bank">KEB하나은행</p>
+                                                        <p class="account_num">209-9111464-51107</p>
+                                                        <p class="name">이하나</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none" class="j_layer_open" layer-target="#layerpopup05">
+                                                        <p class="bank">KEB하나은행</p>
+                                                        <p class="account_num">209-9111464-51107</p>
+                                                        <p class="name">이하나</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none" class="j_layer_open" layer-target="#layerpopup05">
+                                                        <p class="bank">KEB하나은행</p>
+                                                        <p class="account_num">209-9111464-51107</p>
+                                                        <p class="name">이하나</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none" class="j_layer_open" layer-target="#layerpopup05">
+                                                        <p class="bank">KEB하나은행</p>
+                                                        <p class="account_num">209-9111464-51107</p>
+                                                        <p class="name">이하나</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none" class="j_layer_open" layer-target="#layerpopup05">
+                                                        <p class="bank">KEB하나은행</p>
+                                                        <p class="account_num">209-9111464-51107</p>
+                                                        <p class="name">이하나</p>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="tabcont">
+                                        <div class="pop_inner">
+                                            <ul class="account_lists">
+                                                <li>
+                                                    <a href="#none" class="j_layer_open" layer-target="#layerpopup05">
+                                                        <p class="bank">KEB하나은행</p>
+                                                        <p class="account_num">209-9111464-51107</p>
+                                                        <p class="name">이하나</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none" class="j_layer_open" layer-target="#layerpopup05">
+                                                        <p class="bank">KEB하나은행</p>
+                                                        <p class="account_num">209-9111464-51107</p>
+                                                        <p class="name">이하나</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none" class="j_layer_open" layer-target="#layerpopup05">
+                                                        <p class="bank">KEB하나은행</p>
+                                                        <p class="account_num">209-9111464-51107</p>
+                                                        <p class="name">이하나</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none" class="j_layer_open" layer-target="#layerpopup05">
+                                                        <p class="bank">KEB하나은행</p>
+                                                        <p class="account_num">209-9111464-51107</p>
+                                                        <p class="name">이하나</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none" class="j_layer_open" layer-target="#layerpopup05">
+                                                        <p class="bank">KEB하나은행</p>
+                                                        <p class="account_num">209-9111464-51107</p>
+                                                        <p class="name">이하나</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none" class="j_layer_open" layer-target="#layerpopup05">
+                                                        <p class="bank">KEB하나은행</p>
+                                                        <p class="account_num">209-9111464-51107</p>
+                                                        <p class="name">이하나</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none" class="j_layer_open" layer-target="#layerpopup05">
+                                                        <p class="bank">KEB하나은행</p>
+                                                        <p class="account_num">209-9111464-51107</p>
+                                                        <p class="name">이하나</p>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="tabcont">
+                                        <div class="pop_inner">
+                                            <!-- 금융기관 선택 -->
+                                            <div class="input_form input_form_sel j_focus">
+                                                <div class="input_wrap">
+                                                    <div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup04">금융기관 선택</div>
+                                                    <div class="input_layer">
+                                                        <div id="idInput03" class="input_data j_layer_open" layer-target="#layerpopup04"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- //금융기관 선택 -->
+
+                                            <!-- 계좌번호 -->
+                                            <div class="input_form j_focus">
+                                                <div class="input_wrap">
+                                                    <label for="idInput04" class="input_title j_focus_open">계좌번호</label>
+                                                    <div class="input_txt">
+                                                        <input id="idInput04" class="input_data j_input_value" type="text">
+                                                        <button type="button" class="input_data_del j_data_del">삭제</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- //계좌번호 -->
+
+                                            <div class="btn_area normal">
+                                                <button type="button" class=" j_layer_open" layer-target="#layerpopup06">계좌 확인</button>
+                                            </div>
+
+                                            <div class="txt_notice j_toggle">
+                                                <button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+                                                <div class="txt_notice_cont j_toggle_cont">
+                                                    <ul class="list_type01">
+                                                        <li>먼저 금융기관을 선택하시고, 계좌번호는 ‘-’ 없이 입력해 주세요.</li>
+                                                        <li>계좌 확인을 누르시면 예금주를 확인합니다.  </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //입금 계좌 -->
+
+            <!-- 금융기관 -->
+            <div id="layerpopup04" class="layerpopup">
+                <div class="layer_90 tab_layer">
+                    <div class="layer_contents">
+                        <div class="pop_tit tab_area">
+                            <h5>금융기관</h5>
+                            <ul class="tabs">
+                                <li class="on">은행</li>
+                                <li>증권사</li>
+                            </ul>
+                        </div>
+                        <div class="pop_content tab_cont_area j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="tabcont">
+                                        <div class="pop_inner">
+                                            <ul class="j_select finance_list">
+                                                <li><a href="#idInput03">하나은행</a></li>
+                                                <li><a href="#idInput03">국민은행</a></li>
+                                                <li><a href="#idInput03">농협은행</a></li>
+                                                <li><a href="#idInput03">우리은행</a></li>
+                                                <li><a href="#idInput03">우체국</a></li>
+                                                <li><a href="#idInput03">신한은행</a></li>
+                                                <li><a href="#idInput03">기업은행</a></li>
+                                                <li><a href="#idInput03">경남은행</a></li>
+                                                <li><a href="#idInput03">광주은행</a></li>
+                                                <li><a href="#idInput03">대구은행</a></li>
+                                                <li><a href="#idInput03">부산은행</a></li>
+                                                <li><a href="#idInput03">산업은행</a></li>
+                                                <li><a href="#idInput03">상호저축은행<br>중앙회</a></li>
+                                                <li><a href="#idInput03">새마을금고<br>중앙회</a></li>
+                                                <li><a href="#idInput03">신협중앙회</a></li>
+                                                <li><a href="#idInput03">산림조합중앙회</a></li>
+                                                <li><a href="#idInput03">수협중앙회</a></li>
+                                                <li><a href="#idInput03">전북은행</a></li>
+                                                <li><a href="#idInput03">제주은행</a></li>
+                                                <li><a href="#idInput03">한국씨티은행</a></li>
+                                                <li><a href="#idInput03">SC은행</a></li>
+                                                <li><a href="#idInput03">케이은행</a></li>
+                                                <li><a href="#idInput03">카카오뱅크</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="tabcont">
+                                        <div class="pop_inner">
+                                            <ul class="j_select finance_list">
+                                                <li><a href="#idInput03">HMC투자증권</a></li>
+                                                <li><a href="#idInput03">케이프투자증권</a></li>
+                                                <li><a href="#idInput03">NH투자증권</a></li>
+                                                <li><a href="#idInput03">교보증권</a></li>
+                                                <li><a href="#idInput03">대신증권</a></li>
+                                                <li><a href="#idInput03">미래에셋대우</a></li>
+                                                <li><a href="#idInput03">DB금융투자</a></li>
+                                                <li><a href="#idInput03">메리츠<br>종합금융증권</a></li>
+                                                <li><a href="#idInput03">부국증권</a></li>
+                                                <li><a href="#idInput03">상섬증권</a></li>
+                                                <li><a href="#idInput03">신영증권</a></li>
+                                                <li><a href="#idInput03">신한금융투자</a></li>
+                                                <li><a href="#idInput03">에스케이증권</a></li>
+                                                <li><a href="#idInput03">유안타증권</a></li>
+                                                <li><a href="#idInput03">유진투자증권</a></li>
+                                                <li><a href="#idInput03">이베스트<br>투자증권</a></li>
+                                                <li><a href="#idInput03">키움증권</a></li>
+                                                <li><a href="#idInput03">하나금융투자</a></li>
+                                                <li><a href="#idInput03">한화투자증권</a></li>
+                                                <li><a href="#idInput03">KB증권</a></li>
+                                                <li><a href="#idInput03">하이투자증권</a></li>
+                                                <li><a href="#idInput03">한국투자증권</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                </script>
+                            </div>
+                        </div>
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //금융기관 -->
+
+            <!-- 계좌별칭 입력 -->
+            <div id="layerpopup05" class="layerpopup">
+                <div class="layer_90 tab_layer">
+                    <div class="layer_contents">
+                        <div class="pop_tit tab_area">
+                            <h5>계좌별칭 입력</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="pop_inner">
+                                        <div class="txt_type02">
+                                            <p class="bank">KEB하나은행</p>
+                                            <p class="account_num">209-9111464-51107</p>
+                                            <p class="name">이하나</p>
+                                        </div>
+                                        <!-- 계좌번호 -->
+                                        <div class="input_form j_focus">
+                                            <div class="input_wrap">
+                                                <label for="idInput05" class="input_title j_focus_open">계좌별칭</label>
+                                                <div class="input_txt input_txt_count">
+                                                    <input id="idInput05" class="input_data j_input_value" type="text">
+                                                    <button type="button" class="input_data_del j_data_del">삭제</button>
+                                                    <div class="input_count">6/20</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //계좌번호 -->
+
+                                        <div class="txt_notice j_toggle">
+                                            <button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+                                            <div class="txt_notice_cont j_toggle_cont">
+                                                <ul class="list_type01">
+                                                    <li>한글은 최대 10자, 영문, 숫자의 경우 20자 이내로 등록할 수 있습니다.</li>
+                                                    <li>특수문자와 공백은 사용할 수 없습니다.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pop_fix_area">
+                            <button type="button" class="pop_btn01 j_layer_all_close">확인</button>
+                        </div>
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //계좌별칭 입력 -->
+
+            <!-- 예금주명 확인 -->
+            <div id="layerpopup06" class="layerpopup">
+                <div class="layer_center">
+                    <div class="layer_contents">
+                        <div class="pop_content">
+                            <p>홍길동</p>
+                            <p>예금주명이 맞습니까?</p>
+                        </div>
+                        <div class="btn_area btn_02">
+                            <button type="button" class="cancel j_layer_close">아니요</button>
+                            <button type="button" class="confirm j_layer_open j_layer_close" layer-target="#layerpopup05">예</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //예금주명 확인 -->
+        </div>
+    </body>
+</html>

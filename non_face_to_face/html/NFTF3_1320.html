@@ -1,0 +1,155 @@
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="format-detection" content="telephone=no, address=no, email=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Cache-control" content="No-cache">
+        <meta http-equiv="Pragma" content="No-cache">
+        <title>KEB하나은행 - 비대면 계좌개설 신청</title>
+        <link rel="stylesheet" href="../css/nftf_common.css">
+        <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../js/rolldate.js"></script>
+        <script type="text/javascript" src="../js/swiper.js"></script>
+        <script type="text/javascript" src="../js/nftf_common.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <button class="back_btn"></button>
+                <p class="h_tit"></p>
+                <button class="h_menu"></button>
+            </header>
+            <div class="contents">
+                <section>
+                    <div class="loading_dot" style="visibility: hidden;">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p class="pages_tit"><span class="t_de">신청중인 상품이<br><span class="color01"><em class="t_de number"></em>건</span> 있습니다.</span></p>
+
+                    <div class="applying_products">
+                        <ul class="applying_list">
+                            <li>
+                                <button class="btn_type05 j_layer_open t_de" layer-target="#layerpopup01">이어서 진행</button>
+                                <span class="date">2019.11.27</span>
+                                <ul class="list_dot">
+                                    <li>하나멤버스 주거래 통장</li>
+                                    <li>하나멤버스 우대적금</li>
+                                    <li>전자금융(개인뱅킹)</li>
+                                </ul>
+                                <button type="button" class="list_del" layer-target="#layerpopup02">삭제</button>
+                            </li>
+                            <li>
+                                <button class="btn_type05 j_layer_open t_de" layer-target="#layerpopup01">이어서 진행</button>
+                                <span class="date">2019.11.28</span>
+                                <ul class="list_dot">
+                                    <li>모바일 OTP 발금/재발급</li>
+                                </ul>
+                                <button type="button" class="list_del" layer-target="#layerpopup02">삭제</button>
+                            </li>
+                            <li>
+                                <button class="btn_type05 j_layer_open t_de" layer-target="#layerpopup01">이어서 진행</button>
+                                <span class="date">2019.11.29</span>
+                                <ul class="list_dot">
+                                    <li>실명 확인 요청</li>
+                                </ul>
+                                <button type="button" class="list_del" layer-target="#layerpopup02">삭제</button>
+                            </li>
+                            <li>
+                                <button class="btn_type05 j_layer_open t_de" layer-target="#layerpopup01">이어서 진행</button>
+                                <span class="date">2019.11.30</span>
+                                <ul class="list_dot">
+                                    <li>모바일 OTP 발금/재발급</li>
+                                </ul>
+                                <button type="button" class="list_del" layer-target="#layerpopup02">삭제</button>
+                            </li>
+                            <li>
+                                <button class="btn_type05 j_layer_open t_de" layer-target="#layerpopup01">이어서 진행</button>
+                                <span class="date">2019.11.31</span>
+                                <ul class="list_dot">
+                                    <li>실명 확인 요청</li>
+                                </ul>
+                                <button type="button" class="list_del" layer-target="#layerpopup02">삭제</button>
+                            </li>
+                            <li>
+                                <button class="btn_type05 j_layer_open t_de" layer-target="#layerpopup01">이어서 진행</button>
+                                <span class="date">2019.12.01</span>
+                                <ul class="list_dot">
+                                    <li>실명 확인 요청</li>
+                                </ul>
+                                <button type="button" class="list_del" layer-target="#layerpopup02">삭제</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn_wrap btn_fix">
+                        <a href="#none" class="btn_type01 j_layer_open" layer-target="#layerpopup03">다른 상품 가입</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="layerpopup" id="layerpopup01">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>가입신청 화면으로 이동합니다.</p>
+                    </div>
+                    <div class="btn_area btn_02">
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                        <button type="button" class="confirm j_layer_close">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup" id="layerpopup02">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>신청 중인 내역을 취소할 경우 <br>
+                            처음부터 다시 신청하셔야 합니다. <br>
+                            신청을 취소하시겠습니까?
+                            </p>
+                    </div>
+                    <div class="btn_area btn_02">
+                        <button type="button" class="cancel j_layer_close">아니오</button>
+                        <button type="button" class="confirm" layer-target="#layerpopup04">예</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup" id="layerpopup03">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>신청이 완료되지 않은 상품은 <br>
+                            중복 신청이 제한됩니다. <br>
+                            다른 상품을 가입하시겠습니까?</p>
+                    </div>
+                    <div class="btn_area btn_02">
+                        <button type="button" class="cancel j_layer_close">아니오</button>
+                        <button type="button" class="confirm j_layer_close">예</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup" id="layerpopup04">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>신청하셨던 손님의 정보가 <br>
+                            모두 삭제 되었습니다.</p>
+                    </div>
+                    <div class="btn_area">
+                        <button type="button" class="confirm">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

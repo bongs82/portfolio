@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-control" content="No-cache">
+    <meta http-equiv="Pragma" content="No-cache">
+    <title>NFTF3_02-1상품선택</title>
+    <link rel="stylesheet" href="../css/nftf_common.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/rolldate.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/nftf_common.js"></script>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            var loadingDot = document.querySelector('.loading_dot')
+            loadingDot.classList = 'loading_dot on'
+        },500)
+        var layerEvent = document.querySelectorAll('.layerpopup')
+        for(var i = 0; i<layerEvent.length; i++){
+            layerEvent[i].addEventListener('click', function(e){
+                console.log(e.target)
+                if(e.target.className ==='cancel'){
+                    e.currentTarget.style.display = 'none'
+                }
+                if(e.target.className ==='dimmed'){
+                    e.currentTarget.style.display = 'none'
+                }
+            })
+        }
+        $('.tabs li').each(function(){
+            $(this).click(function(){
+                $(this).siblings().removeClass('on')
+                $(this).removeClass('on')
+                $(this).addClass('on')
+                $('.tab_cont_area .tabcont').hide()
+                $('.tab_cont_area .tabcont').eq($(this).index()).show()
+                setTimeout(function () {
+		            layerScroll.update();
+		        }, 0);
+            })
+        })
+    });
+</script>
+<body>
+    <div class="wrapper">
+        <header>
+            <button class="back_btn"></button>
+            <h2 class="h_tit">본인인증</h2>
+            <button class="h_menu"></button>
+        </header>
+        <div class="contents">
+            <section>
+                <div class="loading_dot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="pages_tit"><span class="t_mi">이름과 주민번호</span>를<br>입력해주세요.</p>
+            </section>
+        </div>
+        
+        <div class="layerpopup" id="layerpopup01">
+            <div class="layer_90 tab_layer">
+                <div class="layer_contents">
+                    <div class="pop_tit tab_area">
+                        <h5>주거래하나 통장</h5>
+                        <p class="content_info">연금이체, 급여이체, 카드결제,<br>공과금 자동이체 시 수수료 우대서비스를<br>제공하는 평생 주거래 통장</p>
+                        <ul class="tabs">
+                            <li class="on">상품개요</li>
+                            <li>상품내용</li>
+                            <li>금리안내</li>
+                        </ul>
+                    </div>
+                    <div class="pop_content j_scroll">
+                        <div class="swiper-wrapper">
+                            <div class="pop_inner swiper-slide">
+                                <p class="product_info">수수료를 아껴주는 똑똑한 우리집<br>생활비 통장~</p>
+                                <div class="tab_cont_area">
+                                    <div class="tabcont img_link type01">
+                                        <img src="../images/icon-img03@2x.png" alt="주거래 통장 손님편">
+                                        <a href="#none"></a>
+                                    </div>
+                                    <div class="tabcont">
+                                        <div class="cont_part">
+                                            <h4>상품특징</h4>
+                                            <p>급여(연금)실적이 없어도, 카드대금, 공과금 실적, 청약통장 저축 등으로 수수료를 아낄 수 있는 통장</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입대상</h4>
+                                            <p>실명의 개인 또는 개인사업자 (1인 1계좌)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>예금종류</h4>
+                                            <p>저축예금</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>전환여부</h4>
+                                            <p>저축예금에 한하여 동 상품으로 전환가능 <br>
+                                                (단, 기존 수수료면제통장에서 전환 시 수수료면제횟수는 해당월은 기존상품의 잔여횟수를 적용하고, 다음달부터는 동 상품의 실적에 따라 수수료면제횟수 적용)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>수수료 우대 서비스</h4>
+                                            <p>아래의 제공조건을 충족하는 경우 충족월 다음달에 수수료우대서비스를 제공합니다.<br>
+                                                (이 통장을 통한 거래에 한 하여 제공)</p>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 30%;">
+                                                    <col style="width: 35%;">
+                                                    <col style="width: 35%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>구분</th>
+                                                        <th>제공조건(주1)</th>
+                                                        <th>제공조건(주2)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>주거래하나<br>우대</td>
+                                                        <td class="left">이 통장에 주거래이체실적 1가지 항목 충족</td>
+                                                        <td class="left">수수료우대 I (무제한)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>주거래플러스<br>우대</td>
+                                                        <td class="left">이 통장에 주거래이체실적 2가지 항목 이상 충족</td>
+                                                        <td class="left">수수료우대 I (무제한) + 수수료우대 II (월10회)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>하나멤버스<br>우대</td>
+                                                        <td class="left">하나금융그룹의 하나멤버스 회원</td>
+                                                        <td class="left">수수료우대 I (월10회)</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p class="table_tit ">(주1) 제공조건 : <br> 주거래이체항목의 충족 갯수에 따라 주거래하나 우대 또는 주거래플러스 우대서비스 제공</p>
+                                            <table class="mt10 type_row">
+                                                <colgroup>
+                                                    <col style="width: 30%;">
+                                                    <col style="width: 70%;">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">급여 입금</th>
+                                                        <td class="left">
+                                                            타인으로부터 건별 50만원이상 급여적요* 포함 입금 또는 급여지정일 전후 1영업일내 입금
+                                                            (*급여 적요 : 급여, 월급, 봉급, 연봉, 급료, 상여, 성과, 보너스, SALARY, BONUS 등)
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">연금 입금</th>
+                                                        <td class="left">4대 공적연금(국민,공무원,군인,사학), 기초(노령)연금, 보훈연금, 산재보험보험급여, 하나은행에서 가입한 개인연금(주택연금,연금신탁,연금보험,연금펀드), 기타연금(고객 지정 연금수급일 전후 1영업일에 대량이체방식으로 건당 20만원이상 입금되고 적요에 ‘연금’ 또는 ‘보험사명’이 기재된 연금)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">카드 가맹점대금 입금</th>
+                                                        <td class="left">하나카드/BC카드 가맹점 대금</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">아파트관리비 출금</th>
+                                                        <td class="left">자동이체방식으로 이체되는 아파트관리비</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">카드 결제대금 출금</th>
+                                                        <td class="left">하나카드/현대카드의 결제대금으로 월 5만원 이상 (신용,체크 합산)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">주택청약종합저축 납입</th>
+                                                        <td class="left">하나은행의 본인명의 주택청약종합저축에 납입 <br>
+                                                            (청년 우대형 주택청약종합저축 포함)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">공과금 2건 출금</th>
+                                                        <td class="left">도시가스요금, 전기료, 통신요금, 보험료 등 지로/CMS/펌뱅킹으로 이체 <br>
+                                                            (단, 타행카드 결제대금 제외)</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p class="table_tit ">(주2) 우대수수료 내용</p>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 45%;">
+                                                    <col style="width: 55%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>수수료우대 I</th>
+                                                        <th>수수료우대 Ⅱ</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="left">
+                                                            ① 당행 자동화기기를 통한 마감 후 현금인출 수수료 면제 <br>
+                                                            ② 당행 자동화기기를 통한 타행이체 수수료 면제<br>
+                                                            ③ 인터넷뱅킹, 폰뱅킹(ARS), 스마트폰뱅킹을 통한 타행이체 수수료 면제<br>
+                                                            ④ 납부자자동이체 및 타행자동이체 수수료 면제
+                                                        </td>
+                                                        <td class="left">
+                                                            ① 타행 자동화기기*를 통한 현금 인출 수수료 면제<br>
+                                                            ② 창구 타행이체 수수료 면제<br>
+                                                            * CD기 공동망 참여 금융회사로 타행 점내 설치된 자동화기기에 한해 서비스 제공. 은행 외부 설치된 CD기 및 한컴/효성/나이스 등 VAN사 CD기 출금하는 경우 수수료우대 없음
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p>※ 이 통장을 신규 가입후 다음달 말일까지는 제공조건 충족여부와 관계없이 수수료우대 I 를 총합 월 10회 제공합니다.</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>세제혜택</h4>
+                                            <p>개인의 경우 비과세종합저축 가능 (전 금융기관 통합한도 범위내)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>유의사항</h4>
+                                            <div class="txt_cont mt10">
+                                                <ul class="list_dot">
+                                                    <li>수수료우대서비스는 이 통장에 의한 거래에만 적용되며, 매월 요건 충족여부를 확인하여 다음월에 수수료우대 서비스를 제공합니다.</li>
+                                                    <li>우대서비스 내용 및 대상 요건은 변경 가능하며, 변경 시 재고시 합니다.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>상품내용 변경에 관한 사항</h4>
+                                            <table class="mt10 type_row">
+                                                <colgroup>
+                                                    <col style="width: 30%;">
+                                                    <col style="width: 70%;">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2018.3.16 변경)</th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;기본금리 적용방식 변경&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>우대금리 제공구간에는 기본금리 미제공</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>우대금리 제공구간에도 기본금리 제공</dd>
+                                                            </dl>
+                                                            <p class="t_mi">&lt;우대금리 변경&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>연 1.50%</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>연 1.40%</dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tabcont">
+                                        <div class="cont_part">
+                                            <h4>기본금리</h4>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 50%;">
+                                                    <col style="width: 50%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>금액</th>
+                                                        <th>금리(연율,세전)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>5천만원 미만</td>
+                                                        <td>0.1%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5천만원 이상</td>
+                                                        <td>0.2%</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p class="norm">(2018.09.17 기준, 세전)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="client_safely">
+                                    <p class="tit">예금자 보호</p>
+                                    <p class="kdic_mark">이 예금은 예금자 보호법에 따라, 예금보험공사가 보호하되, 보호한도는 본 은행에 있는 귀하의 모든 예금대상 금융상품의 원금과 소정의 이자를 합하여 1인당 “최고 5천만원”이며, 5천만원을 초과하는 나머지 금액은 보호하지 않습니다.</p>
+                                    <p class="kdic">준법감시인 심사필 2018-상품-1144호(2018.08.07) <br>
+                                        본 공시내용의 유효기간 2018.08.07 ~ 2021.08.06 <br>
+                                        기준일자: 2018년 09월 17일</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="cancel">취소</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            layerOpen.init('#layerpopup01');
+        </script>
+    </div>
+</body>
+</html>

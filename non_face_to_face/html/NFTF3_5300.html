@@ -1,0 +1,1084 @@
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="format-detection" content="telephone=no, address=no, email=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Cache-control" content="No-cache">
+        <meta http-equiv="Pragma" content="No-cache">
+        <title>KEB하나은행 - 비대면 계좌개설 신청</title>
+        <link rel="stylesheet" href="../css/nftf_common.css">
+        <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../js/rolldate.js"></script>
+        <script type="text/javascript" src="../js/swiper.js"></script>
+        <script type="text/javascript" src="../js/nftf_common.js"></script>
+    </head>
+    <body>
+        <div class="wrapper j_up_scroll">
+            <header class="steps_area">
+                <button class="back_btn"></button>
+                <h2 class="h_tit">
+                    <ul>
+                        <li class="end"><span></span></li>
+                        <li class="end"><span></span></li>
+                        <li class="ing"><span>3 상품신청</span></li>
+                        <li><span>4</span></li>
+                    </ul>
+                </h2>
+                <button class="h_menu"></button>
+            </header>
+            <div class="contents">
+                <section>
+                    <div class="loading_dot">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p class="pages_tit"><span class="t_mi">적금상품명</span></p>
+
+                    <div id="upScroll" class="input_form_group j_focus_group on">
+                        <!-- 적립방식 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup01">적립방식</div>
+								<div class="input_select">
+									<div id="idInput01" class="input_data j_check_all j_layer_open" layer-target="#layerpopup01"></div>
+								</div>
+							</div>
+						</div>
+                        <!-- //적립방식 -->
+
+                        <!-- 적립방식 비활성화 -->
+						<div class="input_form input_form_sel disabled">
+							<div class="input_wrap">
+								<div class="input_title">적립방식</div>
+								<div class="input_select">
+									<div class="input_data">자유적립</div>
+								</div>
+							</div>
+						</div>
+                        <!-- //적립방식 비활성화 -->
+
+                        <!-- 신규 가입금액 -->
+						<div class="input_form j_focus">
+							<div class="input_wrap">
+								<label for="idInput02" class="input_title j_focus_open">신규 가입금액</label>
+								<div class="input_txt input_money">
+									<input id="idInput02" class="input_data placeholder01 j_input_value j_check_all" type="number" placeholder="1만원 이상 3천만원 이하">
+									<button type="button" class="input_data_del j_data_del">삭제</button>
+									<span class="txt_won">원</span>
+								</div>
+							</div>
+							<div class="input_error">
+								<p>가입금액은 1만원 이상으로 입력하셔야 합니다.</p>
+							</div>
+						</div>
+                        <!-- //신규 가입금액 -->
+
+                        <!-- 신규 가입금액 T-핀크 적금 -->
+						<div class="input_form j_focus">
+							<div class="input_wrap">
+								<label for="idInput03" class="input_title j_focus_open j_layer_open" layer-target="#layerpopup02">신규 가입금액</label>
+								<div class="input_select">
+									<div id="idInput03" class="input_data j_check_all j_layer_open" layer-target="#layerpopup02"></div>
+								</div>
+							</div>
+						</div>
+                        <!-- //신규 가입금액 T-핀크 적금 -->
+
+                        <!-- 가입기간 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup03">가입기간</div>
+								<div class="input_select">
+									<div id="idInput04" class="input_data j_check_all j_layer_open" layer-target="#layerpopup03"></div>
+								</div>
+							</div>
+						</div>
+                        <!-- //가입기간 -->
+                        
+                        <!-- 추천인 우대번호 입력(선택) -->
+						<div class="input_form02 j_focus02">
+							<div class="input_check">
+								<input type="checkbox" id="inputCheck01" class="j_input_check" input-target="#idInputSub01">
+								<label for="inputCheck01">
+									추천인 우대번호 입력(선택)
+								</label>
+							</div>
+							<div class="input_wrap">
+								<div class="input_txt">
+									<input id="idInputSub01" class="input_data j_input_value" type="text">
+									<button type="button" class="input_data_del j_data_del">삭제</button>
+								</div>
+							</div>
+							<p class="txt_notice02">손님과 추천인에게 연 0.3% 우대금리를 제공합니다.(계좌 별 1회, 최대 0.3%까지)</p>
+						</div>
+						<!-- 추천인 우대번호 입력(선택) -->
+                    </div>
+
+                    <div class="input_form_group j_focus_group">
+                        <!-- 신규 비밀번호 -->
+						<div class="input_form j_focus"><!-- class error_on 추가시 에러 메시지 노출 -->
+							<div class="input_wrap">
+								<label for="idInput05" class="input_title j_focus_open">신규 비밀번호</label>
+								<div class="input_txt">
+									<input type="password" id="idInput05" class="input_data j_input_value j_check_all">
+									<button type="button" class="input_data_del j_data_del">삭제</button>
+								</div>
+							</div>
+							<div class="input_error">
+								<p>연속되는 숫자는 비밀번호로 사용할 수 없습니다.</p>
+							</div>
+						</div>
+						<!-- //신규 비밀번호 -->
+
+						<!-- 비밀번호 확인 -->
+						<div class="input_form j_focus"><!-- class error_on 추가시 에러 메시지 노출 -->
+							<div class="input_wrap">
+								<label for="idInput06" class="input_title j_focus_open">비밀번호 확인</label>
+								<div class="input_txt">
+									<input type="password" id="idInput06" class="input_data j_input_value j_check_all">
+									<button type="button" class="input_data_del j_data_del">삭제</button>
+								</div>
+							</div>
+							<div class="input_error">
+								<p>입력하신 비밀번호가 일치하지 않습니다.</p>
+							</div>
+						</div>
+
+						<div class="txt_notice j_toggle">
+							<button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+							<div class="txt_notice_cont j_toggle_cont">
+								<ul class="list_type01">
+									<li>숫자 4자리로 입력하세요.</li>
+									<li>주만등록번호, 생년월일, 전화번호(휴대폰번호)는 등록할 수 없습니다.</li>
+									<li>동일숫자 또는 연속된 숫자는 등록할 수 없습니다.<br>(ex. 1111, 1234)</li>
+								</ul>
+							</div>
+						</div>
+						<!-- //비밀번호 확인 -->
+                    </div>
+
+                    <div class="input_form_group j_focus_group">
+                        <!-- 출금 계좌 -->
+                        <div class="input_form input_form_sel j_focus">
+                            <div class="input_wrap">
+                                <div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup04">출금 계좌</div>
+                                <div class="input_select">
+                                    <div id="idInput07" class="input_data j_check_all j_layer_open" layer-target="#layerpopup04"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //출금 계좌 -->
+
+                        <!-- 출금계좌 비밀번호 -->
+                        <div class="input_form j_focus"><!-- class error_on 추가시 에러 메시지 노출 -->
+                            <div class="input_wrap">
+                                <label for="idInput08" class="input_title j_focus_open">출금계좌 비밀번호</label>
+                                <div class="input_txt">
+                                    <input type="password" id="idInput08" class="input_data j_input_value j_check_all">
+                                    <button type="button" class="input_data_del j_data_del">삭제</button>
+                                </div>
+                            </div>
+                            <div class="input_error">
+                                <p>연속되는 숫자는 비밀번호로 사용할 수 없습니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="txt_notice j_toggle">
+							<button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+							<div class="txt_notice_cont j_toggle_cont">
+								<ul class="list_type01">
+									<li>선택하시는 계좌는 예/적금 출금계좌 및 적금 자동이체 계좌로 등록됩니다.</li>
+									<li>출금계좌 잔액은 가입금액 이상이어야 하며 부족한 경우 추가 입금이 필요합니다.</li>
+								</ul>
+							</div>
+						</div>
+                        <!-- //출금계좌 비밀번호 -->
+                    </div>
+
+                    <div class="input_form_group j_focus_group">
+                        <!-- 자동이체 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup05">자동이체</div>
+								<div class="input_select">
+									<div id="idInput09" class="input_data j_check_all j_layer_open" layer-target="#layerpopup05"></div>
+								</div>
+							</div>
+                        </div>
+
+                        <!-- 자동이체 금연성공적금 신청시 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup06">자동이체</div>
+								<div class="input_select">
+									<div id="idInput10" class="input_data j_check_all j_layer_open" layer-target="#layerpopup06"></div>
+								</div>
+							</div>
+                        </div>
+                        <!-- //자동이체 금연성공적금 신청시 -->
+                        
+                        <div class="txt_notice j_toggle">
+							<button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+							<div class="txt_notice_cont j_toggle_cont">
+								<ul class="list_type01">
+									<li>자동이체는 가입 시 출금계좌에서 처리됩니다.</li>
+									<li>입출금통장 동시 가입 시에는 해당계좌에서 처리됩니다.</li>
+								</ul>
+							</div>
+						</div>
+                        <!-- //자동이체 -->
+                    </div>
+
+                    <div class="input_form_group j_focus_group">
+                        <!-- 자동이체 금액 -->
+						<div class="input_form j_focus">
+							<div class="input_wrap">
+								<label for="idInput11" class="input_title j_focus_open">자동이체 금액</label>
+								<div class="input_txt input_money">
+									<input id="idInput11" class="input_data j_input_value j_check_all" type="number">
+									<button type="button" class="input_data_del j_data_del">삭제</button>
+									<span class="txt_won">원</span>
+								</div>
+							</div>
+						</div>
+                        <!-- //자동이체 금액 -->
+
+                        <!-- 자동이체 금액 -->
+						<div class="input_form disabled">
+							<div class="input_wrap">
+								<label for="idInput12" class="input_title j_focus_open">자동이체 금액</label>
+								<div class="input_txt input_money">
+									<input id="idInput12" class="input_data" type="number" disabled="disabled" value="50000">
+									<span class="txt_won">원</span>
+								</div>
+							</div>
+						</div>
+						<p class="txt_notice02">자동이체 금액은 신규 가입 금액과 동일합니다.</p>
+                        <!-- //자동이체 금액 -->
+
+                        <!-- 자동이체 지정일 -->
+                        <!-- 일반 적금 상품 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup08">자동이체 지정일</div>
+								<div class="input_select">
+									<div id="idInput13" class="input_data j_check_all j_layer_open" layer-target="#layerpopup08"></div>
+								</div>
+							</div>
+                        </div>
+                        <p class="txt_notice02">2020.02.31부터 매월 자동이체 됩니다.</p>
+                        <!-- //일반 적금 상품 -->
+
+                        <!-- 금연성공적금 신청시 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup09">자동이체 주기</div>
+								<div class="input_select">
+									<div id="idInput14" class="input_data j_check_all j_layer_open" layer-target="#layerpopup09"></div>
+								</div>
+							</div>
+                        </div>
+
+						<div class="input_form j_focus">
+							<div class="input_wrap">
+								<label for="idInput15" class="input_title j_focus_open">자동이체 시작일</label>
+								<div class="input_txt input_calendar">
+									<input id="idInput15" class="input_data placeholder01 j_input_value j_check_all" readonly="readonly" placeholder="ex) 20201108" onfocus="this.blur()">
+								</div>
+							</div>
+						</div>
+						<script>
+                            //달력
+                            new Rolldate({
+                                el: '#idInput15',
+                                format: 'YYYY-MM-DD',
+                                trigger:'click',
+                                lang: {
+	                                title: '자동이체 시작일'
+								},
+								//beginYear: 2000,
+                                //endYear: 2100
+                                init: function() {
+                                    $('html,body').css('overflow','hidden');
+                                    $('.contents,.rolldate-mask').on('touchmove',function(e) {e.preventDefault();});
+                                },
+                                moveEnd: function(scroll) {
+                                    
+                                },
+                                confirm: function(date) {
+                                    $(this.config.el).addClass('check_on');
+
+                                    focusMove.init($(this.config.el));
+
+                                    $('html,body').css('overflow','');
+                                    $('.contents,.rolldate-mask').off('touchmove');
+
+                                    bottomBtn.init();
+                                },
+                                cancel: function() {
+                                    $('html,body').css('overflow','');
+                                    $('.contents,.rolldate-mask').off('touchmove');
+                                    $('.j_focus, .j_focus02').removeClass('focus');
+                                }
+                            });
+                        </script>
+                        <!-- //금연성공적금 신청시 -->
+
+                        <!-- 내맘 적금 신청시 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup10">자동이체 주기</div>
+								<div class="input_select">
+									<div id="idInput16" class="input_data j_check_all j_layer_open" layer-target="#layerpopup10"></div>
+								</div>
+							</div>
+                        </div>
+
+                        <div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup11">자동이체 지정일</div>
+								<div class="input_select">
+									<div id="idInput17" class="input_data j_check_all j_layer_open" layer-target="#layerpopup11"></div>
+								</div>
+							</div>
+                        </div>
+                        <p class="txt_notice02">2020.02.31부터 매월 자동이체 됩니다.</p>
+
+						<div class="input_form j_focus">
+							<div class="input_wrap">
+								<label for="idInput18" class="input_title j_focus_open">자동이체 시작일</label>
+								<div class="input_txt input_calendar">
+									<input id="idInput18" class="input_data placeholder01 j_input_value j_check_all" readonly="readonly" placeholder="ex) 20201108" onfocus="this.blur()">
+								</div>
+							</div>
+						</div>
+						<script>
+                            //달력
+                            new Rolldate({
+                                el: '#idInput18',
+                                format: 'YYYY-MM-DD',
+                                trigger:'click',
+                                lang: {
+	                                title: '자동이체 시작일'
+								},
+								//beginYear: 2000,
+                                //endYear: 2100
+                                init: function() {
+                                    $('html,body').css('overflow','hidden');
+                                    $('.contents,.rolldate-mask').on('touchmove',function(e) {e.preventDefault();});
+                                },
+                                moveEnd: function(scroll) {
+                                    
+                                },
+                                confirm: function(date) {
+                                    $(this.config.el).addClass('check_on');
+
+                                    focusMove.init($(this.config.el));
+
+                                    $('html,body').css('overflow','');
+                                    $('.contents,.rolldate-mask').off('touchmove');
+
+                                    bottomBtn.init();
+                                },
+                                cancel: function() {
+                                    $('html,body').css('overflow','');
+                                    $('.contents,.rolldate-mask').off('touchmove');
+                                    $('.j_focus, .j_focus02').removeClass('focus');
+                                }
+                            });
+                        </script>
+
+                        <div class="txt_notice j_toggle on">
+							<button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+							<div class="txt_notice_cont j_toggle_cont" style="display: block;">
+								<ul class="list_type01">
+									<li>월별 자동이체 금액은 최대 500만원 이내로(1천원이상) 지정 가능합니다.</li>
+									<li>계약기간 2/3 경과 후 기 적립잔액의 1/2초과 입금은 불가합니다.</li>
+									<li>매주단위 자동이체는 휴일인 경우 익영업일 처리되며, 매일 단위 자동이체는 은행영업일에만 이체됩니다. </li>
+									<li>적금 만기 재예치시 자동이체도 자동연장됩니다. 단, 이체 지정일이 적금 재예치일과 동일한 경우 재예치일 당일에도 자동이체에 의한 적금 납입이 처리됩니다.</li>
+									<li>자동이체는 가입 시 출금계좌에서 처리됩니다.</li>
+									<li>입출금통장 동시 가입 시에는 해당계좌에서 처리됩니다.</li>
+								</ul>
+							</div>
+						</div>
+                        <!-- //내맘 적금 신청시 -->
+
+                        <!-- 주택청약좁합저축 신청시 -->
+                        <div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup12">자동이체 지정일</div>
+								<div class="input_select">
+									<div id="idInput19" class="input_data j_check_all j_layer_open" layer-target="#layerpopup12"></div>
+								</div>
+							</div>
+                        </div>
+                        <p class="txt_notice02">2020.02.31부터 매월 자동이체 됩니다.</p>
+
+						<div class="input_form j_focus">
+							<div class="input_wrap">
+								<label for="idInput20" class="input_title j_focus_open">자동이체 종료일</label>
+								<div class="input_txt input_calendar">
+									<input id="idInput20" class="input_data placeholder01 j_input_value j_check_all" readonly="readonly" placeholder="ex) 20201108" onfocus="this.blur()">
+								</div>
+                            </div>
+                            <div class="input_option">
+								<ul class="option_list">
+									<li><a href="#">6개월</a></li>
+									<li><a href="#">1년</a></li>
+									<li><a href="#">2년</a></li>
+									<li><a href="#">미지정</a></li>
+								</ul>
+							</div>
+						</div>
+						<script>
+                            //달력
+                            new Rolldate({
+                                el: '#idInput20',
+                                format: 'YYYY-MM-DD',
+                                trigger:'click',
+                                lang: {
+	                                title: '자동이체 종료일'
+								},
+								//beginYear: 2000,
+                                //endYear: 2100
+                                init: function() {
+                                    $('html,body').css('overflow','hidden');
+                                    $('.contents,.rolldate-mask').on('touchmove',function(e) {e.preventDefault();});
+                                },
+                                moveEnd: function(scroll) {
+                                    
+                                },
+                                confirm: function(date) {
+                                    $(this.config.el).addClass('check_on');
+
+                                    focusMove.init($(this.config.el));
+
+                                    $('html,body').css('overflow','');
+                                    $('.contents,.rolldate-mask').off('touchmove');
+
+                                    bottomBtn.init();
+                                },
+                                cancel: function() {
+                                    $('html,body').css('overflow','');
+                                    $('.contents,.rolldate-mask').off('touchmove');
+                                    $('.j_focus, .j_focus02').removeClass('focus');
+                                }
+                            });
+                        </script>
+                        <!-- //주택청약좁합저축 신청시 -->
+                        <!-- //자동이체 지정일 -->
+                    </div>
+
+                    <div class="input_form_group j_focus_group">
+                        <!-- 마일리지 적립 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup13">마일리지 적립</div>
+								<div class="input_select">
+									<div id="idInput21" class="input_data j_check_all j_layer_open" layer-target="#layerpopup13"></div>
+								</div>
+							</div>
+                        </div>
+                        <!-- //마일리지 적립 -->
+                    </div>
+
+                    <div class="input_form_group j_focus_group">
+                        <!-- 만기 자동 재예치 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup14">만기 자동 재예치</div>
+								<div class="input_select">
+									<div id="idInput22" class="input_data j_check_all j_layer_open" layer-target="#layerpopup14"></div>
+								</div>
+							</div>
+                        </div>
+                        <!-- //만기 자동 재예치 -->
+
+                        <!-- 만기해지 방법 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup18">만기해지 방법</div>
+								<div class="input_select">
+									<div id="idInput23" class="input_data j_check_all j_layer_open" layer-target="#layerpopup18"></div>
+								</div>
+							</div>
+                        </div>
+                        <p class="txt_notice02">함께 가입하는 입출금통장으로 자동 입금됩니다.</p>
+                        <!-- //만기해지 방법 -->
+
+                        <!-- 자동해지 시점 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup19">자동해지 시점</div>
+								<div class="input_select">
+									<div id="idInput24" class="input_data j_check_all j_layer_open" layer-target="#layerpopup19"></div>
+								</div>
+							</div>
+                        </div>
+                        <div class="txt_notice j_toggle">
+							<button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+							<div class="txt_notice_cont j_toggle_cont">
+								<ul class="list_type01">
+									<li><strong>이연만기일 해지</strong><br>이연된 일수만큼 연장된 만기일에 해지합니다. 정액적립식 적금의 월 저축금을 약정일보다 늦게 납입하여 만기일이 늦춰지는 것을 의미합니다. 이연 발생 시 이연만기일에 해지하면 약정한 계약금액을 수령하실 수 있습니다. (월부금 완납계좌에 한함)</li>
+									<li><strong>만기일 해지</strong><br>납입이 이연된 적금을 기존 만기일에 해지할 경우 지연이자(순지연일수X월부금납입지연금리)를 계약금액에서 차감한 후 지급합니다.</li>
+								</ul>
+							</div>
+						</div>
+                        <!-- //자동해지 시점 -->
+
+                        <!-- 만기 SMS 안내 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup20">만기 SMS 안내</div>
+								<div class="input_select">
+									<div id="idInput25" class="input_data j_check_all j_layer_open" layer-target="#layerpopup20"></div>
+								</div>
+							</div>
+                        </div>
+                        <p class="txt_notice02">만기 1주일 전 휴대폰번호로 1회 발송됩니다.</p>
+                        <!-- //만기 SMS 안내 -->
+                    </div>
+
+                    <div class="btn_wrap btn_fix j_btn_fix" style="display: none;">
+                        <a href="#none" class="btn_type01">다음</a>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- 적립방식 -->
+	        <div id="layerpopup01" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>적립방식</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput01">자유적립</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+            <!-- //적립방식 -->
+
+            <!-- 신규 가입금액 -->
+	        <div id="layerpopup02" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>신규 가입금액</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput03">5만원</a></li>
+		                                <li><a href="#idInput03">10만원</a></li>
+		                                <li><a href="#idInput03">15만원</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+            <!-- //신규 가입금액 -->
+
+            <!-- 가입기간 -->
+	        <div id="layerpopup03" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>가입기간</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput04">1개월</a></li>
+		                                <li><a href="#idInput04">2개월</a></li>
+		                                <li><a href="#idInput04">3개월</a></li>
+		                                <li><a href="#idInput04">4개월</a></li>
+		                                <li><a href="#idInput04">5개월</a></li>
+		                                <li><a href="#idInput04">6개월</a></li>
+		                                <li><a href="#idInput04">7개월</a></li>
+		                                <li><a href="#idInput04">8개월</a></li>
+		                                <li><a href="#idInput04">9개월</a></li>
+		                                <li><a href="#idInput04">10개월</a></li>
+		                                <li><a href="#idInput04">11개월</a></li>
+		                                <li><a href="#idInput04">12개월</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+            <!-- //가입기간 -->
+
+            <!-- 출금 계좌 -->
+            <div id="layerpopup04" class="layerpopup">
+                <div class="layer_select">
+                    <div class="layer_contents">
+                        <div class="pop_tit">
+                            <h5>출금 계좌</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+                                    <ul class="select_list j_select">
+                                        <li><a href="#idInput07">101-123456-11111</a></li>
+                                        <li><a href="#idInput07">101-123456-11111</a></li>
+                                        <li><a href="#idInput07">101-123456-11111</a></li>
+                                        <li><a href="#idInput07">101-123456-11111</a></li>
+                                        <li><a href="#idInput07">101-123456-11111</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //출금 계좌 -->
+
+            <!-- 자동이체 -->
+	        <div id="layerpopup05" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>자동이체<button type="button" class="btn_tip j_layer_open" layer-target="#layerpopup05_1">알아두세요</button></h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput09">신청함</a></li>
+		                                <li><a href="#idInput09">신청 안 함</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+            <!-- //자동이체 -->
+
+            <!-- 자동이체 금연성공적금 신청시 -->
+	        <div id="layerpopup06" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>자동이체<button type="button" class="btn_tip j_layer_open" layer-target="#layerpopup05_1">알아두세요</button></h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput10" class="j_layer_open" layer-target="#layerpopup07">신청함</a></li>
+		                                <li><a href="#idInput10">신청 안 함</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+            </div>
+            
+            <div id="layerpopup07" class="layerpopup">
+                <div class="layer_center">
+                    <div class="layer_contents">
+                        <div class="pop_content">
+                            <p>금연성공적금은 HAI뱅킹을 통한 입금 100회차 이상인 경우 우대금리를 제공하니, 가입 완료 후 HAI뱅킹을 신청하시기 바랍니다.<br>자동이체 신청을 계속 하시겠습니까?</p>
+                        </div>
+                        <div class="btn_area btn_02">
+                            <button type="button" class="cancel j_layer_close">취소</button>
+                            <button type="button" class="confirm j_layer_close j_focus_move" move-target="#idInput10">신청</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<!-- //자동이체 금연성공적금 신청시 -->
+			
+			<!-- 자동이체 알아두세요 -->
+	        <div id="layerpopup05_1" class="layerpopup layer_notice">
+	            <div class="layer_center">
+	                <div class="layer_notice_cont">
+                        <ul class="list_type01">
+							<li>자동이체는 가입 시 출금계좌에서 처리됩니다.</li>
+							<li>입출금통장 동시 가입 시에는 해당계좌에서 처리됩니다.</li>
+						</ul>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+            <!-- //자동이체 알아두세요 -->
+
+            <!-- 자동이체 지정일 -->
+            <!-- 일반 적금 상품 -->
+	        <div id="layerpopup08" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>자동이체 지정일</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput13">1일</a></li>
+		                                <li><a href="#idInput13">2일</a></li>
+		                                <li><a href="#idInput13">3일</a></li>
+		                                <li><a href="#idInput13">4일</a></li>
+		                                <li><a href="#idInput13">5일</a></li>
+		                                <li><a href="#idInput13">6일</a></li>
+		                                <li><a href="#idInput13">7일</a></li>
+		                                <li><a href="#idInput13">8일</a></li>
+		                                <li><a href="#idInput13">9일</a></li>
+		                                <li><a href="#idInput13">10일</a></li>
+		                                <li><a href="#idInput13">11일</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+            </div>
+            <!-- //일반 적금 상품 -->
+
+            <!-- 금연성공적금 신청시 -->
+	        <div id="layerpopup09" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>자동이체 주기</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput14">매월</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+            </div>
+            <!-- //금연성공적금 신청시 -->
+
+            <!-- 내맘적금 신청시 -->
+	        <div id="layerpopup10" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>자동이체 주기</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput16">매월</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+            </div>
+
+            <div id="layerpopup11" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>자동이체 지정일</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput17">1일</a></li>
+		                                <li><a href="#idInput17">2일</a></li>
+		                                <li><a href="#idInput17">3일</a></li>
+		                                <li><a href="#idInput17">4일</a></li>
+		                                <li><a href="#idInput17">5일</a></li>
+		                                <li><a href="#idInput17">6일</a></li>
+		                                <li><a href="#idInput17">7일</a></li>
+		                                <li><a href="#idInput17">8일</a></li>
+		                                <li><a href="#idInput17">9일</a></li>
+		                                <li><a href="#idInput17">10일</a></li>
+		                                <li><a href="#idInput17">11일</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+            </div>
+            <!-- //내맘적금 신청시 -->
+
+            <!-- 주택청약종합저축 신청시 -->
+            <div id="layerpopup12" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>자동이체 지정일</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput19">1일</a></li>
+		                                <li><a href="#idInput19">2일</a></li>
+		                                <li><a href="#idInput19">3일</a></li>
+		                                <li><a href="#idInput19">4일</a></li>
+		                                <li><a href="#idInput19">5일</a></li>
+		                                <li><a href="#idInput19">6일</a></li>
+		                                <li><a href="#idInput19">7일</a></li>
+		                                <li><a href="#idInput19">8일</a></li>
+		                                <li><a href="#idInput19">9일</a></li>
+		                                <li><a href="#idInput19">10일</a></li>
+		                                <li><a href="#idInput19">11일</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+            </div>
+            <!-- //주택청약종합저축 신청시 -->
+            <!-- //자동이체 지정일 -->
+
+            <!-- 마일리지 적립 항공사 -->
+	        <div id="layerpopup13" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>마일리지 적립 항공사</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput21">대한항공</a></li>
+		                                <li><a href="#idInput21">아시아나항공</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+            <!-- //마일리지 적립 항공사 -->
+
+            <!-- 만기 자동 재예치 -->
+	        <div id="layerpopup14" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>만기 자동 재예치</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput22" class="j_layer_open" layer-target="#layerpopup15">신청함</a></li>
+		                                <li><a href="#idInput22">신청안함</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+            </div>
+
+            <div id="layerpopup15" class="layerpopup">
+                <div class="layer_center">
+                    <div class="layer_contents">
+                        <div class="pop_content">
+                            <p>예금 계약기간 만료 후 손님이 직접 해지신청을 해야만 원리금이 예금 가입시 출금 계좌로 입금됩니다.(미해지 기간 동안 이율은 만기 후 이율이 적용되며, 본인인증을 거친 후 해지가 됩니다.)</p>
+                        </div>
+                        <div class="btn_area">
+                            <button type="button" class="confirm j_layer_close j_layer_open" layer-target="#layerpopup16">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 입출금계좌지정신청서 확인 -->
+            <div id="layerpopup16" class="layerpopup">
+                <div class="layer_90">
+                    <div class="layer_contents">
+                        <div class="pop_tit">
+                            <h5>입출금계좌지정신청서 확인</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="pop_inner">
+                                        <div class="agreement_doc">
+											<h5 class="doc_tit">입출금계좌 지정(변경)신청서 <br>( “(내맘)적금” 만기 자동재예치용 )</h5>
+											<div class="doc_cont">
+												<span class="to_bank">㈜하나은행 귀중</span>
+												<p class="doc_txt">본인은 「(내맘)적금 특약』 에 의거하여, 이 적금의 만기 도래시 최초 계약 기간 단위로 최대 3회 자동재예치 되는 것에 대해 충분히 이해하였으며, 자동재예치 시에는 최소 가입금액 1천원을 제외한 세후 원리금 전액이 아래 지정하는 본인의 입출금계좌로 입금되는 것에 동의하고, 이를 신청합니다.</p>
+												<table class="type_col">
+													<colgroup>
+														<col style="width: 30%;">
+														<col style="width: 70%;">
+													</colgroup>
+													<thead>
+														<tr>
+															<th>상품명</th>
+															<th>본인명의 입출금 계좌번호</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="center">(내맘) 적금</td>
+															<td class="center">예금 신규금액을 출금한 계좌로 자동 지정</td>
+														</tr>
+													</tbody>
+												</table>
+												<p class="notice_tit">※ 유의사항</p>
+												<ul class="num_list">
+													<li>이 적금은 만기일에 최초 계약기간 단위로 최대 3회까지 자동재예치되는 상품으로, 재예치 시 1천원을 제외한 나머지 세후 원리금은 신규시 지정한 본인명의 입출금계좌에 입금됩니다.</li>
+													<li>입출금계좌 지정은 적금 가입시 필수로 신청하여야 하며, 인터넷뱅킹/스마트폰뱅킹으로 예금을 개설한 경우, 최초 신규금액을 출금한 계좌로 자동 지정됩니다.</li>
+													<li>압류 등 법적으로 가해진 지급제한이 있거나 만기일 전에 고객이 자의로 재예치를 해제하는 등 기타 재예치를 할 수 없는 경우에는 만기일에 재예치되지 않습니다.</li>
+													<li>만기재예치 시, 적금 계좌의 자동이체도 자동연장됩니다.</li>
+												</ul>
+												<p class="apply_ckeck">본인은 이 적금이 최초 계약기간 단위로 만기자동재예치(총 3회) 및 만기재예치시 최소 가입금액 1천원을 제외한 세후 원리금이 본인의 입출금계좌로 입금되는 것에 동의하며, 이를 신청합니다.</p>
+											</div>
+										</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pop_fix_area">
+                            <button type="button" class="pop_btn01 j_layer_close j_focus_move" move-target="#idInput22">동의합니다</button>
+                        </div>
+                        <button type="button" class="cancel j_layer_open" layer-target="#layerpopup17">취소</button>
+                    </div>
+                </div>
+			</div>
+            <!-- //입출금계좌지정신청서 확인 -->
+
+            <div id="layerpopup17" class="layerpopup">
+                <div class="layer_center">
+                    <div class="layer_contents">
+                        <div class="pop_content">
+                            <p>만기 자동 재예치를 신청하기 위해서는 아래 동의합니다 버튼을 선택하여 입출금계좌 지정 신청서 내용에 동의하셔야 합니다. 동의 없이 본 팝업을 닫으시겠습니까?</p>
+                        </div>
+                        <div class="btn_area btn_02">
+                            <button type="button" class="cancel j_layer_close">취소</button>
+                            <button type="button" class="confirm j_layer_open j_layer_all_close" layer-target="#layerpopup14">닫기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //만기 자동 재예치 -->
+
+            <!-- 만기해지 방법 -->
+	        <div id="layerpopup18" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>만기해지 방법</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput23">자동해지</a></li>
+		                                <li><a href="#idInput23">직접해지</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+            <!-- //만기해지 방법 -->
+
+            <!-- 자동해지 시점 -->
+	        <div id="layerpopup19" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>자동해지 시점<button type="button" class="btn_tip j_layer_open" layer-target="#layerpopup19_1">알아두세요</button></h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput24">이연만기일</a></li>
+		                                <li><a href="#idInput24">만기일</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+			<!-- //자동해지 시점 -->
+			
+			<!-- 자동해지 시점 알아두세요 -->
+	        <div id="layerpopup19_1" class="layerpopup layer_notice">
+	            <div class="layer_center">
+	                <div class="layer_notice_cont">
+                        <ul class="list_type01">
+							<li><strong>이연만기일 해지</strong><br>이연된 일수만큼 연장된 만기일에 해지합니다. 정액적립식 적금의 월 저축금을 약정일보다 늦게 납입하여 만기일이 늦춰지는 것을 의미합니다. 이연 발생 시 이연만기일에 해지하면 약정한 계약금액을 수령하실 수 있습니다. (월부금 완납계좌에 한함)</li>
+							<li><strong>만기일 해지</strong><br>납입이 이연된 적금을 기존 만기일에 해지할 경우 지연이자(순지연일수X월부금납입지연금리)를 계약금액에서 차감한 후 지급합니다.</li>
+						</ul>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+            <!-- //자동해지 시점 알아두세요 -->
+
+            <!-- 만기 SMS 안내 -->
+	        <div id="layerpopup20" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>만기 SMS 안내</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput25">수신함</a></li>
+		                                <li><a href="#idInput25">수신 안함</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+            <!-- //만기 SMS 안내 -->
+        </div>
+    </body>
+</html>

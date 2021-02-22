@@ -1,0 +1,752 @@
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="format-detection" content="telephone=no, address=no, email=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Cache-control" content="No-cache">
+        <meta http-equiv="Pragma" content="No-cache">
+        <title>KEB하나은행 - 비대면 계좌개설 신청</title>
+        <link rel="stylesheet" href="../css/nftf_common.css">
+        <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../js/rolldate.js"></script>
+        <script type="text/javascript" src="../js/swiper.js"></script>
+        <script type="text/javascript" src="../js/nftf_common.js"></script>
+    </head>
+    <body>
+        <div class="wrapper j_up_scroll">
+            <header class="steps_area">
+                <button class="back_btn"></button>
+                <h2 class="h_tit">
+                    <ul>
+                        <li class="end"><span></span></li>
+                        <li class="end"><span></span></li>
+                        <li class="ing"><span>3 상품신청</span></li>
+                        <li><span>4</span></li>
+                    </ul>
+                </h2>
+                <button class="h_menu"></button>
+            </header>
+            <div class="contents">
+                <section>
+                    <div class="loading_dot">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p class="pages_tit"><span class="t_mi">주택청약종합저축</span></p>
+
+                    <div id="upScroll" class="input_form_group j_focus_group on">
+                        <!-- 신규 가입금액 -->
+						<div class="input_form j_focus">
+							<div class="input_wrap">
+								<label for="idInput01" class="input_title j_focus_open">신규 가입금액</label>
+								<div class="input_txt input_money">
+									<input id="idInput01" class="input_data placeholder01 j_input_value j_check_all" type="number" placeholder="1만원 이상 3천만원 이하">
+									<button type="button" class="input_data_del j_data_del">삭제</button>
+									<span class="txt_won">원</span>
+								</div>
+							</div>
+							<div class="input_error">
+								<p>가입금액은 1만원 이상으로 입력하셔야 합니다.</p>
+							</div>
+						</div>
+                        <!-- //신규 가입금액 -->
+
+                        <!-- 청약 입금회차 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup01">청약 입금회차</div>
+								<div class="input_select">
+									<div id="idInput02" class="input_data j_check_all j_layer_open" layer-target="#layerpopup01"></div>
+								</div>
+							</div>
+                        </div>
+                        
+                        <div class="txt_notice j_toggle">
+							<button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+							<div class="txt_notice_cont j_toggle_cont">
+								<ul class="list_type01">
+									<li>매일 08:00 ~ 22:00까지 가입 가능합니다. (주말, 공휴일 등 은행 비영업일 포함)</li>
+									<li>2만원 ~ 1,500만원 까지 1회차로 지정 가능하며, 잔액이 1,500만원 초과일 경우 회차별  최대 50만원 범위 내, 24회차까지 선납 가능합니다.</li>
+									<li>총 25회까지 입금회차 지정이 가능하고, (신규금액÷입금회차)는 2만원 이상 10원 단위로 가능합니다.</li>
+								</ul>
+							</div>
+						</div>
+                        <!-- //청약 입금회차 -->
+                    </div>
+
+                    <div class="input_form_group j_focus_group">
+                        <!-- 신규 비밀번호 -->
+						<div class="input_form j_focus"><!-- class error_on 추가시 에러 메시지 노출 -->
+							<div class="input_wrap">
+								<label for="idInput03" class="input_title j_focus_open">신규 비밀번호</label>
+								<div class="input_txt">
+									<input type="password" id="idInput03" class="input_data j_input_value j_check_all">
+									<button type="button" class="input_data_del j_data_del">삭제</button>
+								</div>
+							</div>
+							<div class="input_error">
+								<p>연속되는 숫자는 비밀번호로 사용할 수 없습니다.</p>
+							</div>
+						</div>
+						<!-- //신규 비밀번호 -->
+
+						<!-- 비밀번호 확인 -->
+						<div class="input_form j_focus"><!-- class error_on 추가시 에러 메시지 노출 -->
+							<div class="input_wrap">
+								<label for="idInput04" class="input_title j_focus_open">비밀번호 확인</label>
+								<div class="input_txt">
+									<input type="password" id="idInput04" class="input_data j_input_value j_check_all">
+									<button type="button" class="input_data_del j_data_del">삭제</button>
+								</div>
+							</div>
+							<div class="input_error">
+								<p>입력하신 비밀번호가 일치하지 않습니다.</p>
+							</div>
+						</div>
+
+						<div class="txt_notice j_toggle">
+							<button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+							<div class="txt_notice_cont j_toggle_cont">
+								<ul class="list_type01">
+									<li>숫자 4자리로 입력하세요.</li>
+									<li>주만등록번호, 생년월일, 전화번호(휴대폰번호)는 등록할 수 없습니다.</li>
+									<li>동일숫자 또는 연속된 숫자는 등록할 수 없습니다.<br>(ex. 1111, 1234)</li>
+								</ul>
+							</div>
+						</div>
+						<!-- //비밀번호 확인 -->
+                    </div>
+
+                    <div class="input_form_group j_focus_group">
+                        <!-- 출금 계좌 -->
+                        <div class="input_form input_form_sel j_focus">
+                            <div class="input_wrap">
+                                <div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup02">출금 계좌</div>
+                                <div class="input_select">
+                                    <div id="idInput05" class="input_data j_check_all j_layer_open" layer-target="#layerpopup02"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //출금 계좌 -->
+
+                        <!-- 출금계좌 비밀번호 -->
+                        <div class="input_form j_focus"><!-- class error_on 추가시 에러 메시지 노출 -->
+                            <div class="input_wrap">
+                                <label for="idInput06" class="input_title j_focus_open">출금계좌 비밀번호</label>
+                                <div class="input_txt">
+                                    <input type="password" id="idInput06" class="input_data j_input_value j_check_all">
+                                    <button type="button" class="input_data_del j_data_del">삭제</button>
+                                </div>
+                            </div>
+                            <div class="input_error">
+                                <p>연속되는 숫자는 비밀번호로 사용할 수 없습니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="txt_notice j_toggle">
+							<button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+							<div class="txt_notice_cont j_toggle_cont">
+								<ul class="list_type01">
+									<li>선택하시는 계좌는 예/적금 출금계좌 및 적금 자동이체 계좌로 등록됩니다.</li>
+									<li>출금계좌 잔액은 가입금액 이상이어야 하며 부족한 경우 추가 입금이 필요합니다.</li>
+								</ul>
+							</div>
+						</div>
+                        <!-- //출금계좌 비밀번호 -->
+                    </div>
+
+                    <div class="input_form_group j_focus_group">
+                        <!-- 자동이체 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup03">자동이체</div>
+								<div class="input_select">
+									<div id="idInput07" class="input_data j_check_all j_layer_open" layer-target="#layerpopup03"></div>
+								</div>
+							</div>
+                        </div>
+                        
+                        <div class="txt_notice j_toggle">
+							<button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+							<div class="txt_notice_cont j_toggle_cont">
+								<ul class="list_type01">
+									<li>자동이체는 가입 시 출금계좌에서 처리됩니다.</li>
+									<li>입출금통장 동시 가입 시에는 해당계좌에서 처리됩니다.</li>
+								</ul>
+							</div>
+						</div>
+                        <!-- //자동이체 -->
+                    </div>
+
+                    <div class="input_form_group j_focus_group">
+                        <!-- 자동이체 금액 -->
+                        <div class="input_form j_focus">
+                            <div class="input_wrap">
+                                <label for="idInput08" class="input_title j_focus_open">자동이체 금액</label>
+                                <div class="input_txt input_money">
+                                    <input id="idInput08" class="input_data j_input_value j_check_all" type="number">
+                                    <button type="button" class="input_data_del j_data_del">삭제</button>
+                                    <span class="txt_won">원</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //자동이체 금액 -->
+
+                        <!-- 자동이체 지정일 -->
+                        <div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup04">자동이체 지정일</div>
+								<div class="input_select">
+									<div id="idInput09" class="input_data j_check_all j_layer_open" layer-target="#layerpopup04"></div>
+								</div>
+							</div>
+                        </div>
+                        <p class="txt_notice02">2020.02.31부터 매월 자동이체 됩니다.</p>
+
+						<div class="input_form j_focus">
+							<div class="input_wrap">
+								<label for="idInput10" class="input_title j_focus_open">자동이체 종료일</label>
+								<div class="input_txt input_calendar">
+									<input id="idInput10" class="input_data placeholder01 j_input_value j_check_all" readonly="readonly" placeholder="ex) 20201108" onfocus="this.blur()">
+								</div>
+                            </div>
+						</div>
+						<script>
+                            //달력
+                            new Rolldate({
+                                el: '#idInput10',
+                                format: 'YYYY-MM-DD',
+                                trigger:'click',
+                                lang: {
+	                                title: '자동이체 종료일'
+								},
+								//beginYear: 2000,
+                                //endYear: 2100
+                                init: function() {
+                                    $('html,body').css('overflow','hidden');
+                                    $('.contents,.rolldate-mask').on('touchmove',function(e) {e.preventDefault();});
+                                },
+                                moveEnd: function(scroll) {
+                                    
+                                },
+                                confirm: function(date) {
+                                    $(this.config.el).addClass('check_on');
+
+                                    focusMove.init($(this.config.el));
+
+                                    $('html,body').css('overflow','');
+                                    $('.contents,.rolldate-mask').off('touchmove');
+
+                                    bottomBtn.init();
+                                },
+                                cancel: function() {
+                                    $('html,body').css('overflow','');
+                                    $('.contents,.rolldate-mask').off('touchmove');
+                                    $('.j_focus, .j_focus02').removeClass('focus');
+                                }
+                            });
+                        </script>
+                        <!-- //자동이체 지정일 -->
+                    </div>
+
+                    <div class="input_form_group j_focus_group">
+                        <!-- 거주지역 -->
+						<div class="input_form input_form_sel disabled">
+							<div class="input_wrap">
+								<div class="input_title">거주지역</div>
+								<div class="input_layer">
+									<div class="input_data">서울 서초구 동작대로 216 동양빌딩 4층</div>
+								</div>
+							</div>
+                        </div>
+                        <p class="txt_notice02">주민등록상 주소지에 해당하지 않는 경우 하나은행 영업점이나 스마트폰/인터넷뱅킹에서 주소를 변경하시기 바랍니다.</p>
+                        <!-- //거주지역 -->
+
+                        <!-- 슬라이드 셀렉트 -->
+                        <!-- 주거구분 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup05"  layer-slide-index="0">주거구분</div>
+								<div class="input_select">
+									<div id="idInput11" class="input_data j_check_all j_layer_open" layer-target="#layerpopup05"  layer-slide-index="0"></div>
+								</div>
+							</div>
+                        </div>
+                        <!-- //주거구분 -->
+
+                        <!-- 주거종류 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup05"  layer-slide-index="1">주거종류</div>
+								<div class="input_select">
+									<div id="idInput12" class="input_data j_check_all j_layer_open" layer-target="#layerpopup05"  layer-slide-index="1"></div>
+								</div>
+							</div>
+                        </div>
+                        <!-- //주거종류 -->
+
+                        <!-- 직업 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup05"  layer-slide-index="2">직업</div>
+								<div class="input_select">
+									<div id="idInput13" class="input_data j_check_all j_layer_open" layer-target="#layerpopup05"  layer-slide-index="2"></div>
+								</div>
+							</div>
+                        </div>
+                        <!-- //직업 -->
+
+                        <!-- 결혼여부 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup05"  layer-slide-index="3">결혼여부</div>
+								<div class="input_select">
+									<div id="idInput14" class="input_data j_check_all j_layer_open" layer-target="#layerpopup05"  layer-slide-index="3"></div>
+								</div>
+							</div>
+                        </div>
+                        <!-- //결혼여부 -->
+
+                        <!-- 희망 입주 지역 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup05"  layer-slide-index="4">희망 입주 지역</div>
+								<div class="input_select">
+									<div id="idInput15" class="input_data j_check_all j_layer_open" layer-target="#layerpopup05"  layer-slide-index="4"></div>
+								</div>
+							</div>
+                        </div>
+                        <!-- //희망 입주 지역 -->
+
+                        <!-- 희망 주택 형태 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup05"  layer-slide-index="5">희망 주택 형태</div>
+								<div class="input_select">
+									<div id="idInput16" class="input_data j_check_all j_layer_open" layer-target="#layerpopup05"  layer-slide-index="5"></div>
+								</div>
+							</div>
+                        </div>
+                        <!-- //희망 주택 형태 -->
+
+                        <!-- 희망 주택 (전용 ㎡)면적 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup05"  layer-slide-index="6">희망 주택 (전용 ㎡)면적</div>
+								<div class="input_select">
+									<div id="idInput17" class="input_data j_check_all j_layer_open" layer-target="#layerpopup05"  layer-slide-index="6"></div>
+								</div>
+							</div>
+                        </div>
+                        <!-- //희망 주택 (전용 ㎡)면적 -->
+                        <!-- //슬라이드 셀렉트 -->
+
+                        <!-- 희망 입주 시기 -->
+                        <div class="input_form j_focus">
+							<div class="input_wrap">
+								<label for="idInput16" class="input_title j_focus_open">희망 입주 시기</label>
+								<div class="input_txt input_calendar">
+									<input id="idInput18" class="input_data placeholder01 j_input_value j_check_all" readonly="readonly" placeholder="ex) 20201108" onfocus="this.blur()">
+								</div>
+                            </div>
+						</div>
+						<script>
+                            //달력
+                            new Rolldate({
+                                el: '#idInput18',
+                                format: 'YYYY-MM',
+                                trigger:'click',
+                                lang: {
+	                                title: '희망 입주 시기'
+								},
+								//beginYear: 2000,
+                                //endYear: 2100
+                                init: function() {
+                                    $('html,body').css('overflow','hidden');
+                                    $('.contents,.rolldate-mask').on('touchmove',function(e) {e.preventDefault();});
+                                    console.log(this.config.el,$(this.config.el));
+                                    $('#rolldate-year').css('width','45%');
+                                },
+                                moveEnd: function(scroll) {
+                                    
+                                },
+                                confirm: function(date) {
+                                    $(this.config.el).addClass('check_on');
+
+                                    focusMove.init($(this.config.el));
+
+                                    $('html,body').css('overflow','');
+                                    $('.contents,.rolldate-mask').off('touchmove');
+
+                                    bottomBtn.init();
+                                },
+                                cancel: function() {
+                                    $('html,body').css('overflow','');
+                                    $('.contents,.rolldate-mask').off('touchmove');
+                                    $('.j_focus, .j_focus02').removeClass('focus');
+                                }
+                            });
+                        </script>
+                        <!-- //희망 입주 시기 -->
+                    </div>
+
+                    <div class="input_form_group j_focus_group">
+						<div class="input_form02 j_focus">
+							<div class="input_check">
+								<input type="checkbox" id="inputCheck01" class="j_input_check j_check_all" input-target="#idInputSub01">
+								<label for="inputCheck01">
+									위 정보를 주택공급정책 자료로 활용함에 동의합니다.
+								</label>
+							</div>
+                        </div>
+
+                        <p class="txt_notice02">『주택공급에 관한 규칙』 제5조에 의거한 조사로서 입주자저축 가입신청서와는 무관하며, 단지 주택공급정책 자료로 활용됩니다.</p>
+                        
+                        <div class="txt_notice j_toggle">
+							<button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+							<div class="txt_notice_cont j_toggle_cont">
+								<ul class="list_type01">
+									<li>주택청약종합저축 납입 회차는 국민주택 청약 시 순위 산정과 관련이 있습니다. 국민주택 청약 시 회차별 입금액은 10만원 까지만 인정되며 회차별 입금액이 많은 계좌가 청약에 유리합니다.</li>
+									<li>납입 시 1회차 당 2만원 ~ 50만원 까지 10원 단위로 입금이 가능하며, 계좌 잔액이 1,500만원에 도달할 때까지는 1,500만원에 미달하는 금액을 한번에 입금 가능합니다.</li>
+									<li>신규가입 후, 추가입금 및 선납은 정상 회차에 추가하여 최고 24회차까지 입금 가능합니다.</li>
+								</ul>
+							</div>
+						</div>
+                    </div>
+
+                    <div class="btn_wrap btn_fix j_btn_fix" style="display: none;">
+                        <a href="#none" class="btn_type01 j_layer_open" layer-target="#layerpopup06">다음</a>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- 청약 입금회차 -->
+	        <div id="layerpopup01" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>청약 입금회차<button type="button" class="btn_tip j_layer_open" layer-target="#layerpopup01_1">알아두세요</button></h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput02">1회차</a></li>
+		                                <li><a href="#idInput02">2회차</a></li>
+		                                <li><a href="#idInput02">3회차</a></li>
+		                                <li><a href="#idInput02">4회차</a></li>
+		                                <li><a href="#idInput02">5회차</a></li>
+		                                <li><a href="#idInput02">6회차</a></li>
+		                                <li><a href="#idInput02">7회차</a></li>
+		                                <li><a href="#idInput02">8회차</a></li>
+		                                <li><a href="#idInput02">9회차</a></li>
+		                                <li><a href="#idInput02">10회차</a></li>
+		                                <li><a href="#idInput02">11회차</a></li>
+		                                <li><a href="#idInput02">12회차</a></li>
+		                                <li><a href="#idInput02">13회차</a></li>
+		                                <li><a href="#idInput02">14회차</a></li>
+		                                <li><a href="#idInput02">15회차</a></li>
+		                                <li><a href="#idInput02">16회차</a></li>
+		                                <li><a href="#idInput02">17회차</a></li>
+		                                <li><a href="#idInput02">18회차</a></li>
+		                                <li><a href="#idInput02">19회차</a></li>
+		                                <li><a href="#idInput02">20회차</a></li>
+		                                <li><a href="#idInput02">21회차</a></li>
+		                                <li><a href="#idInput02">22회차</a></li>
+		                                <li><a href="#idInput02">23회차</a></li>
+		                                <li><a href="#idInput02">24회차</a></li>
+		                                <li><a href="#idInput02">25회차</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+            <!-- //청약 입금회차 -->
+
+            <!-- 청약 입금회차 알아두세요 -->
+	        <div id="layerpopup01_1" class="layerpopup layer_notice">
+	            <div class="layer_center">
+	                <div class="layer_notice_cont">
+                        <ul class="list_type01">
+                            <li>매일 08:00 ~ 22:00까지 가입 가능합니다. (주말, 공휴일 등 은행 비영업일 포함)</li>
+                            <li>2만원 ~ 1,500만원 까지 1회차로 지정 가능하며, 잔액이 1,500만원 초과일 경우 회차별  최대 50만원 범위 내, 24회차까지 선납 가능합니다.</li>
+                            <li>총 25회까지 입금회차 지정이 가능하고, (신규금액÷입금회차)는 2만원 이상 10원 단위로 가능합니다.</li>
+                        </ul>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+            <!-- //청약 입금회차 알아두세요 -->
+
+            <!-- 출금 계좌 -->
+            <div id="layerpopup02" class="layerpopup">
+                <div class="layer_select">
+                    <div class="layer_contents">
+                        <div class="pop_tit">
+                            <h5>출금 계좌</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+                                    <ul class="select_list j_select">
+                                        <li><a href="#idInput05">101-123456-11111</a></li>
+                                        <li><a href="#idInput05">101-123456-11111</a></li>
+                                        <li><a href="#idInput05">101-123456-11111</a></li>
+                                        <li><a href="#idInput05">101-123456-11111</a></li>
+                                        <li><a href="#idInput05">101-123456-11111</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //출금 계좌 -->
+
+            <!-- 자동이체 -->
+	        <div id="layerpopup03" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>자동이체<button type="button" class="btn_tip j_layer_open" layer-target="#layerpopup03_1">알아두세요</button></h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput07">신청함</a></li>
+		                                <li><a href="#idInput07">신청 안 함</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+            <!-- //자동이체 -->
+
+            <!-- 자동이체 알아두세요 -->
+	        <div id="layerpopup03_1" class="layerpopup layer_notice">
+	            <div class="layer_center">
+	                <div class="layer_notice_cont">
+                        <ul class="list_type01">
+							<li>자동이체는 가입 시 출금계좌에서 처리됩니다.</li>
+							<li>입출금통장 동시 가입 시에는 해당계좌에서 처리됩니다.</li>
+						</ul>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+            <!-- //자동이체 알아두세요 -->
+
+            <!-- 자동이체 지정일 -->
+            <div id="layerpopup04" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>자동이체 지정일</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput09">1일</a></li>
+		                                <li><a href="#idInput09">2일</a></li>
+		                                <li><a href="#idInput09">3일</a></li>
+		                                <li><a href="#idInput09">4일</a></li>
+		                                <li><a href="#idInput09">5일</a></li>
+		                                <li><a href="#idInput09">6일</a></li>
+		                                <li><a href="#idInput09">7일</a></li>
+		                                <li><a href="#idInput09">8일</a></li>
+		                                <li><a href="#idInput09">9일</a></li>
+		                                <li><a href="#idInput09">10일</a></li>
+		                                <li><a href="#idInput09">11일</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+            </div>
+            <!-- //자동이체 지정일 -->
+
+            <!-- 슬라이드 셀렉트 주거구분, 주거종류, 직업, 결혼여부, 희망 입주 지역, 희망 주택 형태, 희망 주택 (전용 ㎡)면적 -->
+	        <div id="layerpopup05" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                	<div class="layer_contents_slide j_select_slide_cont">
+		                	<!-- 주거구분 -->
+		                    <div class="slider_select j_select_slide">
+		                        <div class="pop_tit">
+                                    <h5>주거구분</h5>
+                                </div>
+                                <div class="pop_content j_scroll">
+                                    <div class="swiper-wrapper">
+                                        <div class="pop_inner swiper-slide">
+                                            <ul class="select_list j_select">
+                                                <li><a href="#idInput11">자택</a></li>
+                                                <li><a href="#idInput11">전세</a></li>
+                                                <li><a href="#idInput11">월세</a></li>
+                                                <li><a href="#idInput11">기타</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+		                    </div>
+		                    <!-- //주거구분 -->
+		                    <!-- 주거종류 -->
+		                    <div class="slider_select j_select_slide">
+		                        <div class="pop_tit">
+                                    <h5>주거종류</h5>
+                                </div>
+                                <div class="pop_content j_scroll">
+                                    <div class="swiper-wrapper">
+                                        <div class="pop_inner swiper-slide">
+                                            <ul class="select_list j_select">
+                                                <li><a href="#idInput12">아파트</a></li>
+                                                <li><a href="#idInput12">단독주택</a></li>
+                                                <li><a href="#idInput12">빌라</a></li>
+                                                <li><a href="#idInput12">연립</a></li>
+                                                <li><a href="#idInput12">다세대</a></li>
+                                                <li><a href="#idInput12">기타</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+		                    </div>
+		                    <!-- //주거종류 -->
+		                    <!-- 직업 -->
+		                    <div class="slider_select j_select_slide">
+		                        <div class="pop_tit">
+                                    <h5>직업</h5>
+                                </div>
+                                <div class="pop_content j_scroll">
+                                    <div class="swiper-wrapper">
+                                        <div class="pop_inner swiper-slide">
+                                            <ul class="select_list j_select">
+                                                <li><a href="#idInput13">회사원</a></li>
+                                                <li><a href="#idInput13">자영업</a></li>
+                                                <li><a href="#idInput13">공무원</a></li>
+                                                <li><a href="#idInput13">전문직</a></li>
+                                                <li><a href="#idInput13">주부</a></li>
+                                                <li><a href="#idInput13">학생</a></li>
+                                                <li><a href="#idInput13">기타</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+		                    </div>
+		                    <!-- //직업 -->
+		                    <!-- 결혼여부 -->
+		                    <div class="slider_select j_select_slide">
+		                        <div class="pop_tit">
+                                    <h5>결혼여부</h5>
+                                </div>
+                                <div class="pop_content j_scroll">
+                                    <div class="swiper-wrapper">
+                                        <div class="pop_inner swiper-slide">
+                                            <ul class="select_list j_select">
+                                                <li><a href="#idInput14">기혼</a></li>
+                                                <li><a href="#idInput14">미혼</a></li>
+                                                <li><a href="#idInput14">무응답</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+		                    </div>
+                            <!-- //결혼여부 -->
+                            <!-- 희망 입주 지역 -->
+		                    <div class="slider_select j_select_slide">
+		                        <div class="pop_tit">
+                                    <h5>희망 입주 지역</h5>
+                                </div>
+                                <div class="pop_content j_scroll">
+                                    <div class="swiper-wrapper">
+                                        <div class="pop_inner swiper-slide">
+                                            <ul class="select_list j_select">
+                                                <li><a href="#idInput15">서울</a></li>
+                                                <li><a href="#idInput15">서울</a></li>
+                                                <li><a href="#idInput15">서울</a></li>
+                                                <li><a href="#idInput15">서울</a></li>
+                                                <li><a href="#idInput15">서울</a></li>
+                                                <li><a href="#idInput15">서울</a></li>
+                                                <li><a href="#idInput15">서울</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+		                    </div>
+                            <!-- //희망 입주 지역 -->
+                            <!-- 희망 주택 형태 -->
+		                    <div class="slider_select j_select_slide">
+		                        <div class="pop_tit">
+                                    <h5>희망 주택 형태</h5>
+                                </div>
+                                <div class="pop_content j_scroll">
+                                    <div class="swiper-wrapper">
+                                        <div class="pop_inner swiper-slide">
+                                            <ul class="select_list j_select">
+                                                <li><a href="#idInput16">아파트</a></li>
+                                                <li><a href="#idInput16">단독주택</a></li>
+                                                <li><a href="#idInput16">빌라</a></li>
+                                                <li><a href="#idInput16">연립</a></li>
+                                                <li><a href="#idInput16">다세대</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+		                    </div>
+                            <!-- //희망 주택 형태 -->
+                            <!-- 희망 주택 (전용 ㎡)면적 -->
+		                    <div class="slider_select j_select_slide">
+		                        <div class="pop_tit">
+                                    <h5>희망 주택 (전용 ㎡)면적</h5>
+                                </div>
+                                <div class="pop_content j_scroll">
+                                    <div class="swiper-wrapper">
+                                        <div class="pop_inner swiper-slide">
+                                            <ul class="select_list j_select">
+                                                <li><a href="#idInput17">40m2이하</a></li>
+                                                <li><a href="#idInput17">40m2초과 60m2이하</a></li>
+                                                <li><a href="#idInput17">60m2초과 85m2이하</a></li>
+                                                <li><a href="#idInput17">85m2초과 102m2이하</a></li>
+                                                <li><a href="#idInput17">102m2초과 135m2이하</a></li>
+                                                <li><a href="#idInput17">135m2초과</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+		                    </div>
+                            <!-- //희망 주택 (전용 ㎡)면적 -->
+                        </div>
+                        <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+                </div>
+            </div>
+            <!-- //슬라이드 셀렉트 주거구분, 주거종류, 직업, 결혼여부, 희망 입주 지역, 희망 주택 형태, 희망 주택 (전용 ㎡)면적 -->
+
+	        <div id="layerpopup06" class="layerpopup">
+	            <div class="layer_center">
+                    <div class="layer_contents">
+                        <div class="pop_content">
+                            <p>거주지역에 따라 청약 접수가능 지역에 영향이 있으므로, 거주지 변경이 있을 시 청약하고자 하는 주택의 모집공고일 전일까지 주민등록등본상 거주지를 변경하시기 바랍니다.</p>
+                        </div>
+                        <div class="btn_area">
+                            <button type="button" class="confirm j_layer_close j_layer_open" layer-target="#layerpopup16">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

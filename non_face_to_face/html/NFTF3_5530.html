@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-control" content="No-cache">
+    <meta http-equiv="Pragma" content="No-cache">
+    <title>NFTF3_01본인인증</title>
+    <link rel="stylesheet" href="../css/nftf_common.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/rolldate.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/nftf_common.js"></script>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            var loadingDot = document.querySelector('.loading_dot')
+            loadingDot.classList = 'loading_dot on'
+        },500)
+        var layerEvent = document.querySelectorAll('.layerpopup')
+        for(var i = 0; i<layerEvent.length; i++){
+            layerEvent[i].addEventListener('click', function(e){
+                console.log(e.target)
+                if(e.target.className ==='cancel'){
+                    e.currentTarget.style.display = 'none'
+                }
+                if(e.target.parentElement.className ==='layerpopup'){
+                    e.currentTarget.style.display = 'none'
+                }
+            })
+        }
+        layerOpen.init('#layerpopup01');
+    });
+</script>
+<body>
+    <div class="wrapper">
+        <header>
+            <button class="back_btn"></button>
+            <h2 class="h_tit">본인인증</h2>
+            <button class="h_menu"></button>
+        </header>
+        <div class="contents">
+            <section>
+                <div class="loading_dot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="pages_tit"><span class="t_mi">이름과 주민번호</span>를<br>입력해주세요.</p>
+            </section>
+        </div>
+        
+        <div class="layerpopup" id="layerpopup01">
+            <div class="layer_90">
+                <div class="layer_contents">
+                    <div class="pop_tit">
+                        <h5>HAI뱅킹 서비스 안내</h5>
+                    </div>
+                    <div class="pop_content j_scroll">
+                        <div class="swiper-wrapper">
+
+                            <div class="pop_inner swiper-slide">
+                                <h5 class="txt_tit">인공지능과 대화로 쉽고 빠르게 척척!</h5>
+                                <div class="txt_cont">
+                                    <p>통장잔액, 거래내역, 펀드수익률, 환율조회 서비스를 문자메시지 혹은 하나멤버스 대화창에서 편리하게 조회할 수 있습니다.</p>
+                                    <p class="txt_icon01">&nbsp;HAI뱅킹 서비스 “가입함” 을 누르면 자동 가입됩니다.</p>
+                                </div>
+                                <h5 class="txt_tit row02">편리한 금융 HAI뱅킹 서비스,<br>이렇게 다양해요.</h5>
+                                <div class="txt_cont" cols>
+                                    <ul class="list_dot">
+                                        <li>통장 잔액/거래내역/자산현황 조회</li>
+                                        <li>환율 조회</li>
+                                        <li>펀드수익률 조회</li>
+                                        <li>적금 가입</li>
+                                        <li>세금납부</li>
+                                        <li>환전</li>
+                                        <li>송금/간편 해외송금 <span class="color01">*</span></li>
+                                    </ul>
+                                    <p class="txt_icon02">&nbsp;송금/간편 해외송금 서비스를 이용하시려면 “하나원큐App(메뉴바)>인공지능 HAI뱅킹 > 설정하기＂에서 별칭 등록 후 이용할 수 있어요.</p>
+                                </div>
+                                
+                                <h5 class="txt_tit">문자메시지, 이렇게 보내세요.</h5>
+                                <div class="txt_cont">
+                                    <p class="msg">“엄마에게 10만원 보내줘”</p>
+                                    <p class="msg">“적금 가입할래(적금 가입)”</p>
+                                    <p class="msg">“엔화 환전할꺼야(환전신청)”</p>
+                                    <p class="msg">“세금 낼래(지방세 납부)”</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="cancel">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

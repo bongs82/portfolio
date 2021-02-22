@@ -1,0 +1,416 @@
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="format-detection" content="telephone=no, address=no, email=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Cache-control" content="No-cache">
+        <meta http-equiv="Pragma" content="No-cache">
+        <title>KEB하나은행 - 비대면 계좌개설 신청</title>
+        <link rel="stylesheet" href="../css/nftf_common.css">
+        <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../js/rolldate.js"></script>
+        <script type="text/javascript" src="../js/swiper.js"></script>
+        <script type="text/javascript" src="../js/nftf_common.js"></script>
+    </head>
+    <body>
+        <div class="wrapper j_up_scroll">
+            <header class="steps_area">
+                <button class="back_btn"></button>
+                <h2 class="h_tit">
+                    <ul>
+                        <li class="end"><span></span></li>
+                        <li class="end"><span></span></li>
+                        <li class="ing"><span>3 상품신청</span></li>
+                        <li><span>4</span></li>
+                    </ul>
+                </h2>
+                <button class="h_menu"></button>
+            </header>
+            <div class="contents">
+                <section>
+                    <div class="loading_dot">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p class="pages_tit"><span class="t_mi">예금 상품명</span></p>
+
+                    <div id="upScroll" class="input_form_group j_focus_group on">
+                        <!-- 신규 가입금액 -->
+						<div class="input_form j_focus">
+							<div class="input_wrap">
+								<label for="idInput01" class="input_title j_focus_open">신규 가입금액</label>
+								<div class="input_txt input_money">
+									<input id="idInput01" class="input_data placeholder01 j_input_value j_check_all" type="number" placeholder="1만원 이상 3천만원 이하">
+									<button type="button" class="input_data_del j_data_del">삭제</button>
+									<span class="txt_won">원</span>
+								</div>
+							</div>
+							<div class="input_error">
+								<p>가입금액은 1만원 이상으로 입력하셔야 합니다.</p>
+							</div>
+						</div>
+                        <!-- //신규 가입금액 -->
+                        
+                        <!-- 만기일자 -->
+						<div class="input_form j_focus">
+							<div class="input_wrap">
+								<label for="idInput02" class="input_title j_focus_open">만기일자</label>
+								<div class="input_txt input_calendar">
+									<input id="idInput02" class="input_data placeholder01 j_input_value j_check_all" readonly="readonly" placeholder="ex) 20201108" onfocus="this.blur()">
+								</div>
+							</div>
+							<div class="input_option">
+								<ul class="option_list">
+									<li><a href="#">6개월</a></li>
+									<li><a href="#">1년</a></li>
+									<li><a href="#">2년</a></li>
+									<li><a href="#">3년</a></li>
+								</ul>
+							</div>
+						</div>
+						<script>
+                            //달력
+                            new Rolldate({
+                                el: '#idInput02',
+                                format: 'YYYY-MM-DD',
+                                trigger:'click',
+                                lang: {
+	                                title: '만기일자'
+								},
+								//beginYear: 2000,
+                                //endYear: 2100
+                                init: function() {
+                                    $('html,body').css('overflow','hidden');
+                                    $('.contents,.rolldate-mask').on('touchmove',function(e) {e.preventDefault();});
+                                },
+                                moveEnd: function(scroll) {
+                                    
+                                },
+                                confirm: function(date) {
+                                    $(this.config.el).addClass('check_on');
+
+                                    focusMove.init($(this.config.el));
+
+                                    $('html,body').css('overflow','');
+                                    $('.contents,.rolldate-mask').off('touchmove');
+
+                                    bottomBtn.init();
+                                },
+                                cancel: function() {
+                                    $('html,body').css('overflow','');
+                                    $('.contents,.rolldate-mask').off('touchmove');
+                                    $('.j_focus, .j_focus02').removeClass('focus');
+                                }
+                            });
+                        </script>
+						<p class="txt_notice02">1개월 이상 3년 이내로 입력하세요.</p>
+                        <!-- //만기일자 -->
+                        
+                        <!-- 가입기간 -->
+						<div class="input_form input_form_sel j_focus">
+							<div class="input_wrap">
+								<div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup01">가입기간</div>
+								<div class="input_select">
+									<div id="idInput03" class="input_data j_check_all j_layer_open" layer-target="#layerpopup01"></div>
+								</div>
+							</div>
+						</div>
+						<!-- //가입기간 -->
+                    </div>
+
+                    <div class="input_form_group j_focus_group">
+                        <!-- 신규 비밀번호 -->
+						<div class="input_form j_focus"><!-- class error_on 추가시 에러 메시지 노출 -->
+							<div class="input_wrap">
+								<label for="idInput04" class="input_title j_focus_open">신규 비밀번호</label>
+								<div class="input_txt">
+									<input type="password" id="idInput04" class="input_data j_input_value j_check_all">
+									<button type="button" class="input_data_del j_data_del">삭제</button>
+								</div>
+							</div>
+							<div class="input_error">
+								<p>계좌 비밀번호는 연속되지 않은 숫자로 입력해 주세요.</p>
+							</div>
+						</div>
+						<!-- //신규 비밀번호 -->
+
+						<!-- 비밀번호 확인 -->
+						<div class="input_form j_focus"><!-- class error_on 추가시 에러 메시지 노출 -->
+							<div class="input_wrap">
+								<label for="idInput05" class="input_title j_focus_open">비밀번호 확인</label>
+								<div class="input_txt">
+									<input type="password" id="idInput05" class="input_data j_input_value j_check_all">
+									<button type="button" class="input_data_del j_data_del">삭제</button>
+								</div>
+							</div>
+							<div class="input_error">
+								<p>동일한 번호를 입력해주세요.</p>
+							</div>
+						</div>
+
+						<div class="txt_notice j_toggle">
+							<button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+							<div class="txt_notice_cont j_toggle_cont">
+								<ul class="list_type01">
+									<li>숫자 4자리로 입력하세요.</li>
+									<li>주만등록번호, 생년월일, 전화번호(휴대폰번호)는 등록할 수 없습니다.</li>
+									<li>동일숫자 또는 연속된 숫자는 등록할 수 없습니다.<br>(ex. 1111, 1234)</li>
+								</ul>
+							</div>
+						</div>
+						<!-- //비밀번호 확인 -->
+                    </div>
+
+                    <div class="input_form_group j_focus_group">
+                        <!-- 출금 계좌 -->
+                        <div class="input_form input_form_sel j_focus">
+                            <div class="input_wrap">
+                                <div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup02">출금 계좌</div>
+                                <div class="input_select">
+                                    <div id="idInput06" class="input_data j_check_all j_layer_open" layer-target="#layerpopup02"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //출금 계좌 -->
+
+                        <!-- 출금계좌 비밀번호 -->
+                        <div class="input_form j_focus"><!-- class error_on 추가시 에러 메시지 노출 -->
+                            <div class="input_wrap">
+                                <label for="idInput07" class="input_title j_focus_open">출금계좌 비밀번호</label>
+                                <div class="input_txt">
+                                    <input type="password" id="idInput07" class="input_data j_input_value j_check_all">
+                                    <button type="button" class="input_data_del j_data_del">삭제</button>
+                                </div>
+                            </div>
+                            <div class="input_error">
+                                <p>연속되는 숫자는 비밀번호로 사용할 수 없습니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="txt_notice j_toggle">
+							<button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+							<div class="txt_notice_cont j_toggle_cont">
+								<ul class="list_type01">
+									<li>선택하시는 계좌는 예/적금 출금계좌 및 적금 자동이체 계좌로 등록됩니다.</li>
+									<li>출금계좌 잔액은 가입금액 이상이어야 하며 부족한 경우 추가 입금이 필요합니다.</li>
+								</ul>
+							</div>
+						</div>
+                        <!-- //출금계좌 비밀번호 -->
+                    </div>
+
+                    <div class="input_form_group j_focus_group">
+                        <!-- 이자 지급 방법 -->
+                        <div class="input_form input_form_sel j_focus">
+                            <div class="input_wrap">
+                                <div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup03">이자 지급 방법</div>
+                                <div class="input_select">
+                                    <div id="idInput08" class="input_data j_check_all j_layer_open" layer-target="#layerpopup03"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //이자 지급 방법 -->
+
+                        <!-- 만기해지 방법 -->
+                        <div class="input_form input_form_sel j_focus">
+                            <div class="input_wrap">
+                                <div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup04">만기해지 방법</div>
+                                <div class="input_select">
+                                    <div id="idInput09" class="input_data j_check_all j_layer_open" layer-target="#layerpopup04"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="txt_notice02">함께 가입하는 입출금통장으로 자동 입금됩니다.</p>
+                        <div class="txt_notice j_toggle">
+							<button type="button" class="txt_notice_open j_toggle_open">알아두세요</button>
+							<div class="txt_notice_cont j_toggle_cont">
+								<ul class="list_type01">
+									<li><strong>자동해지</strong><br>만기 시 원리금이 자동 해지되어 가입 시 출금계좌로 자동 입금됩니다.</li>
+									<li><strong>직접해지</strong><br>만기 후 직접 해지 신청을 해야만 원리금이 가입 시 출금계좌로 입금됩니다. (해지 시 본인인증 필요)</li>
+								</ul>
+							</div>
+						</div>
+                        <!-- //만기해지 방법 -->
+
+                        <!-- 만기 SMS 안내 -->
+                        <div class="input_form input_form_sel j_focus">
+                            <div class="input_wrap">
+                                <div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup06">만기 SMS 안내</div>
+                                <div class="input_select">
+                                    <div id="idInput10" class="input_data j_check_all j_layer_open" layer-target="#layerpopup06"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="txt_notice02">만기 1주일 전 휴대폰번호로 1회 발송됩니다.</p>
+                        <!-- //만기 SMS 안내 -->
+                    </div>
+
+                    <div class="btn_wrap btn_fix j_btn_fix" style="display: none;">
+                        <a href="#none" class="btn_type01">다음</a>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 가입기간 -->
+	        <div id="layerpopup01" class="layerpopup">
+	            <div class="layer_select">
+	                <div class="layer_contents">
+	                    <div class="pop_tit">
+                            <h5>가입기간</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+		                            <ul class="select_list j_select">
+		                                <li><a href="#idInput03">1개월</a></li>
+		                                <li><a href="#idInput03">2개월</a></li>
+		                                <li><a href="#idInput03">3개월</a></li>
+		                                <li><a href="#idInput03">4개월</a></li>
+		                                <li><a href="#idInput03">5개월</a></li>
+		                                <li><a href="#idInput03">6개월</a></li>
+		                                <li><a href="#idInput03">7개월</a></li>
+		                                <li><a href="#idInput03">8개월</a></li>
+		                                <li><a href="#idInput03">9개월</a></li>
+		                                <li><a href="#idInput03">10개월</a></li>
+		                                <li><a href="#idInput03">11개월</a></li>
+		                                <li><a href="#idInput03">12개월</a></li>
+		                            </ul>
+		                        </div>
+                            </div>
+                        </div>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+            <!-- //가입기간 -->
+            
+            <!-- 출금 계좌 -->
+            <div id="layerpopup02" class="layerpopup">
+                <div class="layer_select">
+                    <div class="layer_contents">
+                        <div class="pop_tit">
+                            <h5>출금 계좌</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+                                    <ul class="select_list j_select">
+                                        <li><a href="#idInput06">101-123456-11111</a></li>
+                                        <li><a href="#idInput06">101-123456-11111</a></li>
+                                        <li><a href="#idInput06">101-123456-11111</a></li>
+                                        <li><a href="#idInput06">101-123456-11111</a></li>
+                                        <li><a href="#idInput06">101-123456-11111</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //출금 계좌 -->
+
+            <!-- 이자 지급 방법 -->
+            <div id="layerpopup03" class="layerpopup">
+                <div class="layer_select">
+                    <div class="layer_contents">
+                        <div class="pop_tit">
+                            <h5>이자 지급 방법</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+                                    <ul class="select_list j_select">
+                                        <li><a href="#idInput08">일시 지급</a></li>
+                                        <li><a href="#idInput08">월 이자 지급</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //이자 지급 방법 -->
+
+            <!-- 만기해지 방법 -->
+            <div id="layerpopup04" class="layerpopup">
+                <div class="layer_select">
+                    <div class="layer_contents">
+                        <div class="pop_tit">
+                            <h5>만기해지 방법<button type="button" class="btn_tip j_layer_open" layer-target="#layerpopup04_1">알아두세요</button></h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+                                    <ul class="select_list j_select">
+                                        <li><a href="#idInput09">자동해지</a></li>
+                                        <li><a href="#idInput09" class=" j_layer_open" layer-target="#layerpopup05">직접해지</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 만기해지 방법 알아두세요 -->
+	        <div id="layerpopup04_1" class="layerpopup layer_notice">
+	            <div class="layer_center">
+	                <div class="layer_notice_cont">
+                        <ul class="list_type01">
+                            <li><strong>자동해지</strong><br>만기 시 원리금이 자동 해지되어 가입 시 출금계좌로 자동 입금됩니다.</li>
+                            <li><strong>직접해지</strong><br>만기 후 직접 해지 신청을 해야만 원리금이 가입 시 출금계좌로 입금됩니다. (해지 시 본인인증 필요)</li>
+                        </ul>
+	                    <button type="button" class="cancel j_layer_close">취소</button>
+	                </div>
+	            </div>
+	        </div>
+            <!-- //만기해지 방법 알아두세요 -->
+
+            <div id="layerpopup05" class="layerpopup">
+                <div class="layer_center">
+                    <div class="layer_contents">
+                        <div class="pop_content">
+                            <p>직접해지를 선택하시면 예금기간 만료 후 직접 해지조작을 하셔야 하며, ARS 인증을 거쳐야 합니다.</p>
+                        </div>
+                        <div class="btn_area">
+                            <button type="button" class="confirm j_layer_all_close">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //만기해지 방법 -->
+
+            <!-- 만기 SMS 안내 -->
+            <div id="layerpopup06" class="layerpopup">
+                <div class="layer_select">
+                    <div class="layer_contents">
+                        <div class="pop_tit">
+                            <h5>만기 SMS 안내</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+                                    <ul class="select_list j_select">
+                                        <li><a href="#idInput10">수신함</a></li>
+                                        <li><a href="#idInput10">수신 안 함</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //만기 SMS 안내 -->
+            <script>
+                //layerOpen.init('#layerpopup01');
+            </script>
+        </div>
+    </body>
+</html>
