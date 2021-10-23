@@ -93,3 +93,16 @@
     background-size: 266px 40px;
     font-size: 0;
 }
+
+.control {
+    width: 20px;
+    height: 20px;
+    background: url('../images/btn_play.png') no-repeat 0 0;
+    background-size: 20px 20px;
+    font-size: 0;
+}
+.control.pause {
+    margin: 17px 0 0 15px;
+    background: url('../images/btn_pause.png') no-repeat 0 0;
+    background-size: 20px 20px;
+}
