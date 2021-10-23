@@ -56,6 +56,19 @@
         opacity: 1;
     }
 }
+@keyframes opacityCon2 {
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes opacityCon3 {
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 
 .item01_txt01 {
     position: absolute;
@@ -118,13 +131,8 @@
     font-size: 0;
 }
 .swiper-slide-active .item01_img01 {
-    animation: item01_img01 1s forwards;
+    animation: opacityCon2 1s 2s forwards;
 }
-/* @keyframes item01_img01 {
-    100% {
-        opacity: 0.5;
-    }
-} */
 .item01_img02 {
     position: absolute;
     left: 6px;
@@ -136,6 +144,9 @@
     font-size: 0;
     opacity: 0.5;
 }
+.swiper-slide-active .item01_img02 {
+    animation: opacityCon2 1s 4.5s forwards;
+}
 .item01_img03 {
     position: absolute;
     right: 6px;
@@ -145,6 +156,9 @@
     background: url('../images/img_cont01_3.png') no-repeat 0 0;
     background-size: 85px auto;
     font-size: 0;
+}
+.swiper-slide-active .item01_img03 {
+    animation: opacityCon2 1s 7s forwards;
 }
 .item01_img04 {
     position: absolute;
@@ -158,6 +172,9 @@
     font-size: 0;
     opacity: 0;
 }
+.swiper-slide-active .item01_img04 {
+    animation: opacityCon 1s 2s forwards;
+}
 .item01_img05 {
     position: absolute;
     left: 50%;
@@ -170,6 +187,9 @@
     font-size: 0;
     opacity: 0;
 }
+.swiper-slide-active .item01_img05 {
+    animation: opacityCon 1s 4.5s forwards;
+}
 .item01_img06 {
     position: absolute;
     left: 50%;
@@ -181,6 +201,9 @@
     background-size: 283px auto;
     font-size: 0;
     opacity: 0;
+}
+.swiper-slide-active .item01_img06 {
+    animation: opacityCon 1s 7s forwards;
 }
 
 .item01 .hand {
@@ -195,31 +218,53 @@
     opacity: 0;
 }
 
-/* .swiper-slide-active .item01 .hand {
-    animation: item01_hand 5s 1.5s forwards;
-} */
+.swiper-slide-active .item01 .hand {
+    animation: item01_hand 8s 1.5s forwards;
+}
 @keyframes item01_hand {
-    10% {
+    6% {
         opacity: 1;
+        transform: scale(1);
     }
-    20% {
+    12% {
         transform: scale(0.9);
+    }
+    18% {
+        transform: scale(1);
     }
     30% {
         left: 245px;
         top: 123px;
+    }
+    36% {
+        left: 154px;
+        top: 182px;
         transform: scale(1);
     }
-    40% {
-        left: 245px;
-        top: 123px;
+    42% {
+        transform: scale(0.9);
     }
-    50% {}
-    60% {}
-    70% {}
-    80% {}
-    90% {}
+    48% {
+        transform: scale(1);
+    }
+    60% {
+        left: 154px;
+        top: 182px;
+    }
+    66% {
+        left: 245px;
+        top: 240px;
+        transform: scale(1);
+    }
+    72% {
+        transform: scale(0.9);
+    }
+    78% {
+        transform: scale(1);
+    }
     100% {
+        left: 245px;
+        top: 240px;
         opacity: 1;
     }
 }
