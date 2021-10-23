@@ -19,6 +19,7 @@
     height: 616px;
     background: #f2f2f2 url('../images/bg_bottom.png') repeat-x 0 bottom;
     background-size: 360px auto;
+    border-top: 1px solid #ebebeb;
 }
 .cont02 .bg {
     width: 360px;
@@ -32,12 +33,19 @@
 .tab {
     display: flex;
     justify-content: center;
+    height: 54px;
+    border-top: 1px solid #ebebeb;
 }
 .tab ul {
     display: flex;
+    height: 42px;
+    padding-top: 21px;
 }
-.tab ul li {
-
+.tab ul li.on {
+    border-bottom: 3px solid #000;
+}
+.tab ul li + li {
+    margin-left: 12px ;
 }
 .tab ul li a {
     display: block;
