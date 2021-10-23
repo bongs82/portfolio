@@ -138,9 +138,8 @@
     width: 82px;
     height: 50px;
     background: url('../images/img_cont01_1_2.png') no-repeat 0 0;
-    background-size: 85px auto;
+    background-size: 82px auto;
     font-size: 0;
-    opacity: 0.5;
 }
 .swiper-slide-active .item01_img02 {
     animation: opacityCon2 1s 4.5s forwards;
@@ -152,7 +151,7 @@
     width: 82px;
     height: 50px;
     background: url('../images/img_cont01_1_3.png') no-repeat 0 0;
-    background-size: 85px auto;
+    background-size: 82px auto;
     font-size: 0;
 }
 .swiper-slide-active .item01_img03 {
