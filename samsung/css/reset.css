@@ -1,26 +1,5 @@
 @charset "utf-8";
 
-@font-face {
-    font-family:'SamsungOneKorean';
-    font-style:normal;
-    font-weight:normal;
-    src:url('/sec/static/_font/SamsungOneKorean-400.eot');
-    src:url('/sec/static/_font/SamsungOneKorean-400.eot?#iefix') format("embedded-opentype"),
-        url('/sec/static/_font/SamsungOneKorean-400.woff2') format("woff2"),
-        url('/sec/static/_font/SamsungOneKorean-400.woff') format("woff"),
-        url('/sec/static/_font/SamsungOneKorean-400.ttf') format("truetype");
-}
-@font-face {
-    font-family:'SamsungOneKorean';
-    font-style:normal;
-    font-weight:bold;
-    src:url('/sec/static/_font/SamsungOneKorean-700.eot');
-    src:url('/sec/static/_font/SamsungOneKorean-700.eot?#iefix') format("embedded-opentype"),
-        url('/sec/static/_font/SamsungOneKorean-700.woff2') format("woff2"),
-        url('/sec/static/_font/SamsungOneKorean-700.woff') format("woff"),
-        url('/sec/static/_font/SamsungOneKorean-700.ttf') format("truetype");
-}
-
 html,body { min-height:100%; }
 html, body, div, h1, h2, h3, h4, h5, h6, span, object, iframe,
  p, blockquote, pre,
