@@ -99,7 +99,21 @@
     opacity: 0;
 }
 .swiper-slide-active .item01_txt02 {
-    animation: opacityCon 1s 0.5s forwards;
+    animation: item01_txt02 4s 0.5s infinite;
+}
+@keyframes item01_txt02 {
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .item01_bg {
@@ -307,7 +321,21 @@
     opacity: 0;
 }
 .swiper-slide-active .item02_txt02 {
-    animation: opacityCon 1s 0.5s forwards;
+    animation: item02_txt02 4s 0.5s infinite;
+}
+@keyframes item02_txt02 {
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 .item02_txt03 {
     position: absolute;
@@ -711,7 +739,21 @@
     opacity: 0;
 }
 .swiper-slide-active .item03_txt02 {
-    animation: opacityCon 1s 0.5s forwards;
+    animation: item03_txt02 4s 0.5s infinite;
+}
+@keyframes item03_txt02 {
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 .item03_txt03 {
     position: absolute;
@@ -1083,7 +1125,21 @@
     opacity: 0;
 }
 .swiper-slide-active .item04_txt02 {
-    animation: opacityCon 1s 0.5s forwards;
+    animation: item04_txt02 4s 0.5s infinite;
+}
+@keyframes item04_txt02 {
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 .item04_txt03 {
     position: absolute;
@@ -1146,10 +1202,10 @@
     left: -5%;
     bottom: 84px;
     transform: translateX(-50%);
-    width: 217px;
+    width: 220px;
     height: 87px;
     background: url('../images/img_cont01_4_1.png') no-repeat 0 0;
-    background-size: 217px auto;
+    background-size: 220px auto;
     font-size: 0;
     opacity: 0;
 }
@@ -1696,13 +1752,51 @@
     background: url('../images/txt01.png') no-repeat 0 0;
     background-size: 324px 22px;
     font-size: 0;
+    animation: txt01 4s 1s infinite;
+}
+@keyframes txt01 {
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .txt02 {
+    display: flex;
+    justify-content: center;
     height: 72px;
-    background: #338dfc url('../images/txt02.png') no-repeat center 16px;
-    background-size: 266px 40px;
+    background-color: #338dfc;
     font-size: 0;
+}
+.txt02 span {
+    display: block;
+    width: 266px;
+    height: 72px;
+    background:  url('../images/txt02.png') no-repeat center 16px;
+    background-size: 266px 40px;
+    animation: txt02 4s 1s infinite;
+}
+@keyframes txt02 {
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .control {
