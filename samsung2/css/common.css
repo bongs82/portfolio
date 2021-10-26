@@ -83,7 +83,7 @@
     opacity: 0;
 }
 .swiper-slide-active .item01_txt01 {
-    animation: opacityCon 1s 0.3s forwards;
+    animation: opacityCon 0.5s 0.3s forwards;
 }
 
 .item01_txt02 {
@@ -129,7 +129,7 @@
     opacity: 0;
 }
 .swiper-slide-active .item01_bg {
-    animation: opacityCon 1s forwards;
+    animation: opacityCon 0.5s forwards;
 }
 
 .item01_img01 {
@@ -143,7 +143,7 @@
     font-size: 0;
 }
 .swiper-slide-active .item01_img01 {
-    animation: opacityCon2 1s 2s forwards;
+    animation: opacityCon2 0.5s 2s forwards;
 }
 .item01_img02 {
     position: absolute;
@@ -156,7 +156,7 @@
     font-size: 0;
 }
 .swiper-slide-active .item01_img02 {
-    animation: opacityCon2 1s 4.5s forwards;
+    animation: opacityCon2 0.5s 5.5s forwards;
 }
 .item01_img03 {
     position: absolute;
@@ -169,7 +169,7 @@
     font-size: 0;
 }
 .swiper-slide-active .item01_img03 {
-    animation: opacityCon2 1s 7s forwards;
+    animation: opacityCon2 0.5s 9s forwards;
 }
 .item01_img04 {
     position: absolute;
@@ -184,7 +184,18 @@
     opacity: 0;
 }
 .swiper-slide-active .item01_img04 {
-    animation: opacityCon 1s 2s forwards;
+    animation: item01_img04 4s 2s forwards;
+}
+@keyframes item01_img04 {
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 .item01_img05 {
     position: absolute;
@@ -199,7 +210,18 @@
     opacity: 0;
 }
 .swiper-slide-active .item01_img05 {
-    animation: opacityCon 1s 4.5s forwards;
+    animation: item01_img04 4s 5.5s forwards;
+}
+@keyframes item01_img04 {
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 .item01_img06 {
     position: absolute;
@@ -214,7 +236,15 @@
     opacity: 0;
 }
 .swiper-slide-active .item01_img06 {
-    animation: opacityCon 1s 7s forwards;
+    animation: item01_img04 4s 9s forwards;
+}
+@keyframes item01_img04 {
+    25% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .dim {
@@ -242,47 +272,47 @@
     top: 124px;
 }
 .item01.swiper-slide-active .hand {
-    animation: item01_hand 8s 1.5s forwards;
+    animation: item01_hand 10s 1.5s forwards;
 }
 @keyframes item01_hand {
-    6% {
+    5% {
         opacity: 1;
         transform: scale(1);
     }
-    12% {
+    10% {
         transform: scale(0.9);
     }
-    18% {
+    15% {
         transform: scale(1);
     }
-    30% {
+    20% {
         left: 242px;
         top: 124px;
     }
-    36% {
+    35% {
         left: 154px;
         top: 182px;
         transform: scale(1);
     }
-    42% {
+    40% {
         transform: scale(0.9);
     }
-    48% {
+    45% {
         transform: scale(1);
     }
-    60% {
+    50% {
         left: 154px;
         top: 182px;
     }
-    66% {
+    65% {
         left: 245px;
         top: 240px;
         transform: scale(1);
     }
-    72% {
+    70% {
         transform: scale(0.9);
     }
-    78% {
+    75% {
         transform: scale(1);
     }
     100% {
@@ -305,7 +335,7 @@
     opacity: 0;
 }
 .swiper-slide-active .item02_txt01 {
-    animation: opacityCon 1s 0.3s forwards;
+    animation: opacityCon 0.5s 0.3s forwards;
 }
 
 .item02_txt02 {
@@ -350,7 +380,7 @@
     opacity: 0;
 }
 .swiper-slide-active .item02_txt03 {
-    animation: opacityCon 1s 0.7s forwards;
+    animation: opacityCon 0.5s 0.7s forwards;
 }
 .item02_txt04 {
     position: absolute;
@@ -365,10 +395,10 @@
     opacity: 0;
 }
 .swiper-slide-active .item02_txt04 {
-    animation: opacityCon 1s 7s forwards;
+    animation: opacityCon 0.5s 10s forwards;
 }
 .swiper-slide-active .item02_txt_cont {
-    animation: opacityCon2 1s 6.5s forwards;
+    animation: opacityCon2 0.5s 9.5s forwards;
 }
 
 .item02_img01 {
@@ -384,14 +414,17 @@
     opacity: 0;
 }
 .swiper-slide-active .item02_img01 {
-    animation: item02_img01 10s forwards;
+    animation: item02_img01 20s forwards;
 }
 @keyframes item02_img01 {
-    10% {
+    5% {
         opacity: 1;
     }
-    80% {
+    55% {
         opacity: 1;
+    }
+    60% {
+        opacity: 0;
     }
     90% {
         opacity: 0;
@@ -410,14 +443,17 @@
     opacity: 0;
 }
 .swiper-slide-active .item02_img01_2 {
-    animation: item02_img01_2 8s forwards;
+    animation: item02_img01_2 20s forwards;
 }
 @keyframes item02_img01_2 {
-    12.5% {
+    5% {
         opacity: 1;
     }
-    87.5% {
+    50% {
         opacity: 1;
+    }
+    55% {
+        opacity: 0;
     }
     100% {
         opacity: 0;
@@ -437,7 +473,7 @@
     opacity: 0;
 }
 .swiper-slide-active .item02_img01_3 {
-    animation: opacityCon 1s 8s forwards;
+    animation: opacityCon 0.5s 11s forwards;
 }
 
 .item02_img02 {
@@ -454,14 +490,14 @@
     opacity: 0;
 }
 .swiper-slide-active .item02_img02 {
-    animation: item02_img02 3s 2s forwards;
+    animation: item02_img02 10s 2s forwards;
 }
 @keyframes item02_img02 {
-    33% {
+    5% {
         transform: translateX(-50%) scale(1);
         opacity: 1;
     }
-    80% {
+    30% {
         transform: translateX(-50%) scale(1);
         opacity: 1;
     }
@@ -483,26 +519,26 @@
     z-index: 1;
 }
 .swiper-slide-active .item02_img03 {
-    animation: item02_img03 10s 4s forwards;
+    animation: item02_img03 20s 5s forwards;
 }
 @keyframes item02_img03 {
-    5% {
+    2.5% {
+        transform: translateX(-50%) translateY(-50%);
+        opacity: 1;
+    }
+    20% {
         transform: translateX(-50%) translateY(-50%);
         opacity: 1;
     }
     25% {
-        transform: translateX(-50%) translateY(-50%);
-        opacity: 1;
-    }
-    30% {
         transform: translateX(-50%) translateY(63%);
         opacity: 0;
     }
-    70% {
+    45% {
         transform: translateX(-50%) translateY(63%);
         opacity: 0;
     }
-    75% {
+    47.5% {
         transform: translateX(-50%) translateY(-50%);
         opacity: 1;
     }
@@ -512,22 +548,22 @@
     }
 }
 .item02.swiper-slide-active .dim {
-    animation: item02_dim 10s 4s forwards;
+    animation: item02_dim 20s 5s forwards;
 }
 @keyframes item02_dim {
-    5% {
+    2.5% {
         opacity: 1;
     }
-    25% {
+    20% {
         opacity: 1;
     }
-    30% {
+    22.5% {
         opacity: 0;
     }
-    70% {
+    45% {
         opacity: 0;
     }
-    75% {
+    47.5% {
         opacity: 1;
     }
     100% {
@@ -545,7 +581,7 @@
     font-size: 0;
 }
 .swiper-slide-active .item02_img04 {
-    animation: opacityCon2 1s 13s forwards;
+    animation: opacityCon2 0.5s 15.5s forwards;
 }
 
 .item02_img05 {
@@ -559,10 +595,10 @@
     font-size: 0;
 }
 .swiper-slide-active .item02_img05 {
-    animation: item02_img05 5s 5s forwards;
+    animation: item02_img05 10s 7s forwards;
 }
 @keyframes item02_img05 {
-    8% {
+    5% {
         opacity: 0;
     }
     49% {
@@ -584,7 +620,7 @@
     font-size: 0;
 }
 /* .swiper-slide-active .item02_img06 {
-    animation: opacityCon2 1s 7s forwards;
+    animation: opacityCon2 0.5s 7s forwards;
 } */
 
 .item02_img07 {
@@ -601,7 +637,18 @@
     z-index: 1;
 }
 .swiper-slide-active .item02_img07 {
-    animation: opacityCon 1s 13s forwards;
+    animation: item02_img07 10s 15.5s forwards;
+}
+@keyframes item02_img07 {
+    5% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 .item02_img08 {
     position: absolute;
@@ -617,14 +664,17 @@
     z-index: 1;
 }
 .swiper-slide-active .item02_img08 {
-    animation: item02_img08 2s 5s forwards;
+    animation: item02_img08 10s 7s forwards;
 }
 @keyframes item02_img08 {
-    25% {
+    5% {
         opacity: 1;
     }
-    70% {
+    20% {
         opacity: 1;
+    }
+    25% {
+        opacity: 0;
     }
     100% {
         opacity: 0;
@@ -646,7 +696,7 @@
     transform-origin: left bottom;
 }
 .swiper-slide-active .item02_img09 {
-    animation: item02_img09 10s 9s forwards;
+    animation: item02_img09 10s 12s forwards;
 }
 @keyframes item02_img09 {
     5% {
@@ -668,17 +718,17 @@
     top: 68px;
 }
 .item02.swiper-slide-active .hand {
-    animation: item02_hand 10s 4.5s forwards;
+    animation: item02_hand 20s 5.5s forwards;
 }
 @keyframes item02_hand {
     5% {
         opacity: 1;
         transform: scale(1);
     }
-    10% {
+    7.5% {
         transform: scale(0.9);
     }
-    15% {
+    10% {
         transform: scale(1);
     }
     20% {
@@ -686,21 +736,26 @@
         top: 68px;
         opacity: 1;
     }
-    70% {
+    30% {
+        left: 64px;
+        top: 68px;
+        opacity: 1;
+    }
+    40% {
         left: 152px;
         top: 11px;
         opacity: 0;
     }
-    80% {
+    47.5% {
         left: 152px;
         top: 11px;
         opacity: 1;
         transform: scale(1);
     }
-    85% {
+    50% {
         transform: scale(0.9);
     }
-    90% {
+    52.5% {
         transform: scale(1);
     }
     100% {
@@ -723,7 +778,7 @@
     opacity: 0;
 }
 .swiper-slide-active .item03_txt01 {
-    animation: opacityCon 1s 0.3s forwards;
+    animation: opacityCon 0.5s 0.3s forwards;
 }
 
 .item03_txt02 {
@@ -768,7 +823,7 @@
     opacity: 0;
 }
 .swiper-slide-active .item03_txt03 {
-    animation: opacityCon 1s 0.7s forwards;
+    animation: opacityCon 0.5s 0.7s forwards;
 }
 .item03_txt04 {
     position: absolute;
@@ -783,7 +838,7 @@
     opacity: 0;
 }
 .swiper-slide-active .item03_txt04 {
-    animation: opacityCon 1s 6s forwards;
+    animation: opacityCon 0.5s 7s forwards;
 }
 
 .item03_img01_1 {
@@ -885,7 +940,7 @@
 
 .swiper-slide-active .item03_txt_cont,
 .swiper-slide-active .item03_img01 {
-    animation: opacityCon2 1s 5s forwards;
+    animation: opacityCon2 0.5s 6s forwards;
 }
 
 .item03_img02_1 {
@@ -901,13 +956,13 @@
     opacity: 0;
 }
 .swiper-slide-active .item03_img02_1 {
-    animation: item03_img02_1 10s 6s forwards;
+    animation: item03_img02_1 10s 7s forwards;
 }
 @keyframes item03_img02_1 {
-    10% {
+    5% {
         opacity: 1;
     }
-    20% {
+    25% {
         opacity: 1;
     }
     30% {
@@ -929,13 +984,13 @@
     opacity: 0;
 }
 .swiper-slide-active .item03_img02_2 {
-    animation: item03_img02_2 10s 6.5s forwards;
+    animation: item03_img02_2 10s 7.5s forwards;
 }
 @keyframes item03_img02_2 {
-    10% {
+    5% {
         opacity: 1;
     }
-    15% {
+    20% {
         opacity: 1;
     }
     25% {
@@ -959,13 +1014,13 @@
     opacity: 0;
 }
 .swiper-slide-active .item03_img02_3 {
-    animation: item03_img02_3 10s 8.5s forwards;
+    animation: item03_img02_3 10s 10s forwards;
 }
 @keyframes item03_img02_3 {
-    10% {
+    5% {
         opacity: 1;
     }
-    20% {
+    25% {
         opacity: 1;
     }
     30% {
@@ -987,13 +1042,13 @@
     opacity: 0;
 }
 .swiper-slide-active .item03_img02_4 {
-    animation: item03_img02_4 10s 9s forwards;
+    animation: item03_img02_4 10s 10.5s forwards;
 }
 @keyframes item03_img02_4 {
-    10% {
+    5% {
         opacity: 1;
     }
-    15% {
+    20% {
         opacity: 1;
     }
     25% {
@@ -1017,10 +1072,10 @@
     opacity: 0;
 }
 .swiper-slide-active .item03_img02_5 {
-    animation: item03_img02_5 10s 11s forwards;
+    animation: item03_img02_5 10s 13s forwards;
 }
 @keyframes item03_img02_5 {
-    10% {
+    5% {
         opacity: 1;
     }
     100% {
@@ -1039,10 +1094,10 @@
     opacity: 0;
 }
 .swiper-slide-active .item03_img02_6 {
-    animation: item03_img02_6 10s 11.5s forwards;
+    animation: item03_img02_6 10s 13.5s forwards;
 }
 @keyframes item03_img02_6 {
-    10% {
+    5% {
         opacity: 1;
     }
     100% {
@@ -1063,10 +1118,10 @@
     opacity: 0;
 }
 .swiper-slide-active .item03_img02_7 {
-    animation: item03_img02_7 10s 12s forwards;
+    animation: item03_img02_7 10s 14s forwards;
 }
 @keyframes item03_img02_7 {
-    10% {
+    5% {
         opacity: 1;
     }
     100% {
@@ -1085,10 +1140,10 @@
     opacity: 0;
 }
 .swiper-slide-active .item03_img02_8 {
-    animation: item03_img02_8 10s 12.5s forwards;
+    animation: item03_img02_8 10s 14.5s forwards;
 }
 @keyframes item03_img02_8 {
-    10% {
+    5% {
         opacity: 1;
     }
     100% {
@@ -1109,7 +1164,7 @@
     opacity: 0;
 }
 .swiper-slide-active .item04_txt01 {
-    animation: opacityCon 1s 0.3s forwards;
+    animation: opacityCon 0.5s 0.3s forwards;
 }
 
 .item04_txt02 {
@@ -1154,7 +1209,7 @@
     opacity: 0;
 }
 .swiper-slide-active .item04_txt03 {
-    animation: opacityCon 1s 0.7s forwards;
+    animation: opacityCon 0.5s 0.7s forwards;
 }
 .item04_txt04 {
     position: absolute;
@@ -1169,7 +1224,7 @@
     opacity: 0;
 }
 .swiper-slide-active .item04_txt04 {
-    animation: opacityCon 1s 6.5s forwards;
+    animation: opacityCon 0.5s 7.5s forwards;
 }
 .item04_img01_1 {
     position: absolute;
@@ -1344,7 +1399,7 @@
 
 .swiper-slide-active .item04_txt_cont,
 .swiper-slide-active .item04_img01 {
-    animation: opacityCon2 1s 5.5s forwards;
+    animation: opacityCon2 0.5s 7s forwards;
 }
 
 .item04_img02_1 {
@@ -1360,13 +1415,13 @@
     opacity: 0;
 }
 .swiper-slide-active .item04_img02_1 {
-    animation: item04_img02_1 10s 6.5s forwards;
+    animation: item04_img02_1 10s 7.5s forwards;
 }
 @keyframes item04_img02_1 {
-    10% {
+    5% {
         opacity: 1;
     }
-    20% {
+    25% {
         opacity: 1;
     }
     30% {
@@ -1388,13 +1443,13 @@
     opacity: 0;
 }
 .swiper-slide-active .item04_img02_2 {
-    animation: item04_img02_2 10s 7s forwards;
+    animation: item04_img02_2 10s 8s forwards;
 }
 @keyframes item04_img02_2 {
-    10% {
+    5% {
         opacity: 1;
     }
-    15% {
+    20% {
         opacity: 1;
     }
     25% {
@@ -1418,13 +1473,13 @@
     opacity: 0;
 }
 .swiper-slide-active .item04_img02_3 {
-    animation: item04_img02_3 10s 9s forwards;
+    animation: item04_img02_3 10s 10.5s forwards;
 }
 @keyframes item04_img02_3 {
-    10% {
+    5% {
         opacity: 1;
     }
-    20% {
+    25% {
         opacity: 1;
     }
     30% {
@@ -1446,13 +1501,13 @@
     opacity: 0;
 }
 .swiper-slide-active .item04_img02_4 {
-    animation: item04_img02_4 10s 9.5s forwards;
+    animation: item04_img02_4 10s 11s forwards;
 }
 @keyframes item04_img02_4 {
-    10% {
+    5% {
         opacity: 1;
     }
-    15% {
+    20% {
         opacity: 1;
     }
     25% {
@@ -1476,10 +1531,10 @@
     opacity: 0;
 }
 .swiper-slide-active .item04_img02_5 {
-    animation: item04_img02_5 10s 11.5s forwards;
+    animation: item04_img02_5 10s 13.5s forwards;
 }
 @keyframes item04_img02_5 {
-    10% {
+    5% {
         opacity: 1;
     }
     100% {
@@ -1498,10 +1553,10 @@
     opacity: 0;
 }
 .swiper-slide-active .item04_img02_6 {
-    animation: item04_img02_6 10s 12s forwards;
+    animation: item04_img02_6 10s 14s forwards;
 }
 @keyframes item04_img02_6 {
-    10% {
+    5% {
         opacity: 1;
     }
     100% {
@@ -1534,7 +1589,7 @@
     opacity: 0;
 }
 .cont02.on .img_cont {
-    animation: opacityCon 1s forwards;
+    animation: opacityCon 0.5s forwards;
 }
 .cont02 .img01 {
     position: absolute;
