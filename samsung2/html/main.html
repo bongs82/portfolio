@@ -197,7 +197,6 @@
         });
         $('.control').off().on('click',function () {
             clearTimeout(playSet2);
-            console.log(playTime , $('.swiper .swiper-slide').eq(swiper.activeIndex).attr('data-swiper-autoplay'));
             if($(this).hasClass('pause')) {
                 $(this).removeClass('pause');
                 swiper.autoplay.stop();
