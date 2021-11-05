@@ -4,9 +4,20 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 		<link rel="stylesheet" href="../css/common.css" type="text/css">
+
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/jquery.rwdImageMaps.min.js"></script>
+        <script src="../js/swiper.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(function() {
+                    $('img[usemap]').rwdImageMaps();
+                });
+            });
+        </script>
     </head>
     <body>
-        <div id="wrap">
+        <div id="wrap" class="bg_landing">
             <div class="header">
                 <div class="logo">LG Chem</div>
                 <div class="menu">
@@ -22,16 +33,23 @@
                     </div>
                     <div class="lang">
                         <a href="#">KOR</a>
+                        <ul>
+                            <li><a href="#">ENG</a></li>
+                            <li><a href="#">CHN</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="container landing">
+            <div class="container">
                 <div class="contents">
                     <div class="cont_landing">
-                        <a href="#" class="link1">환경안전</a>
-                        <a href="#" class="link2">구매</a>
-                        <a href="#" class="link3">DX</a>
-                        <a href="#" class="link4">행사 다시보기</a>
+                        <img src="../images/img_landing.png" alt="2021 LG Chem Innovation Festival LG CIF 2021.11.18(목)  ~ 11.24(화) LGCIF Week 안내 LGCIF에서 만나보지 못한 전사 대표 혁신활동을 디지털 포스터쇼로 만나 볼 수 있는 기회. 지금 바로 만나 보시죠!!" usemap="#img">
+                        <map name="img">
+                            <area shape="rec" coords="532,82,985,422" href="#" alt="환경안전">
+                            <area shape="rec" coords="1109,82,1665,422" href="#" alt="구매">
+                            <area shape="rec" coords="532,508,985,888" href="#" alt="DX">
+                            <area shape="rec" coords="1109,508,1665,888" href="#" alt="행사 다시보기">
+                        </map>
                     </div>
                 </div>
             </div>
